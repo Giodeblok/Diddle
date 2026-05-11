@@ -1,3 +1,8 @@
+# Environment — NOOIT committen
+.env
+.env.local
+.env.production
+
 # Logs
 logs
 *.log

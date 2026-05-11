@@ -10,6 +10,7 @@ import InspirationPage from './pages/InspirationPage';
 import FAQPage from './pages/FAQPage';
 import ContactPage from './pages/ContactPage';
 import CheckoutPage from './pages/CheckoutPage';
+import AdminPage from './pages/AdminPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,6 +34,7 @@ function AppRoutes() {
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/afrekenen" element={<CheckoutPage />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </main>
       <Footer />
