@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
 const links = [
-  { to: "/shop", label: "Collections" },
+  { to: "/collectie", label: "Collectie" },
   { to: "/inspiration", label: "Inspiration" },
   { to: "/about", label: "Our Story" },
   { to: "/faq", label: "Care & FAQ" },
@@ -27,7 +27,7 @@ export function Header() {
             </Link>
           ))}
         </div>
-        <Link to="/shop" className="text-[10px] uppercase tracking-[0.22em] font-medium text-foreground/70 hover:text-accent transition-colors">
+        <Link to="/collectie" className="text-[10px] uppercase tracking-[0.22em] font-medium text-foreground/70 hover:text-accent transition-colors">
           Cart (0)
         </Link>
       </nav>

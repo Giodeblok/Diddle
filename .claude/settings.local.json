@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.blokshop.nl)",
+      "Bash(Get-Content \"C:\\\\Users\\\\giode\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-giode-OneDrive-Documenten-glazen-hart\\\\7c5f1010-a557-41a6-8081-bb06abbb28b5\\\\tasks\\\\b9oqeteea.output\" -Wait)",
+      "Bash(Select-String -Pattern \"Local|Error|error|failed|EADDRINUSE\")"
+    ]
+  }
+}

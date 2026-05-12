@@ -11,6 +11,7 @@ import FAQPage from './pages/FAQPage';
 import ContactPage from './pages/ContactPage';
 import CheckoutPage from './pages/CheckoutPage';
 import AdminPage from './pages/AdminPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/collectie" element={<ProductPage />} />
+          <Route path="/collectie/:id" element={<ProductDetailPage />} />
           <Route path="/ontwerp" element={<DesignPage />} />
           <Route path="/inspiratie" element={<InspirationPage />} />
           <Route path="/faq" element={<FAQPage />} />

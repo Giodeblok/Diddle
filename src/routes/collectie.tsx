@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { LivePreview } from "@/components/site/LivePreview";
 
-export const Route = createFileRoute("/shop")({
+export const Route = createFileRoute("/collectie")({
   head: () => ({
     meta: [
       { title: "Collectie — Glazen Hart" },
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/shop")({
       },
     ],
   }),
-  component: ShopPage,
+  component: CollectiePage,
 });
 
 type Product = {
@@ -312,7 +312,7 @@ function ProductCard({ product }: { product: Product }) {
   );
 }
 
-function ShopPage() {
+function CollectiePage() {
   return (
     <SiteLayout>
       <section className="px-6 lg:px-10 pt-20 pb-16 text-center max-w-3xl mx-auto fade-up">

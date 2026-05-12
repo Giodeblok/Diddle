@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Shield, Package, ChevronRight, Heart } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import GlassHeartPreview from '../components/GlassHeartPreview';
+import { Link, useSearchParams } from 'react-router-dom';
 import LuxuryButton from '../components/LuxuryButton';
+import { products } from '../data/products';
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -16,6 +16,10 @@ const steps = [
 ];
 
 export default function CheckoutPage() {
+  const [searchParams] = useSearchParams();
+  const productId = searchParams.get('product');
+  const product = products.find((p) => p.id === productId) ?? products[0];
+
   const [currentStep, setCurrentStep] = useState<Step>(1);
   const [giftWrap, setGiftWrap] = useState(false);
   const [shippingOption, setShippingOption] = useState<'standard' | 'express'>('standard');
@@ -26,7 +30,8 @@ export default function CheckoutPage() {
     giftMessage: '',
   });
 
-  const productPrice = 89;
+  const rawPrice = parseFloat(product.priceDisplay.replace('€', '').replace(',', '.').trim());
+  const productPrice = isNaN(rawPrice) ? 0 : rawPrice;
   const giftWrapPrice = 5;
   const shippingPrice = shippingOption === 'express' ? 12.95 : 0;
   const total = productPrice + (giftWrap ? giftWrapPrice : 0) + shippingPrice;
@@ -42,8 +47,8 @@ export default function CheckoutPage() {
             transition={{ duration: 0.8 }}
             className="max-w-md w-full text-center"
           >
-            <div className="flex justify-center mb-8">
-              <GlassHeartPreview size="medium" name="Moeder" dateRange="1948 – 2023" quote="Jouw liefde blijft ons licht." animated={true} />
+            <div className="flex justify-center mb-8 overflow-hidden w-40 h-32 mx-auto">
+              <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
             </div>
 
             <div className="w-14 h-14 bg-gold-gradient flex items-center justify-center mx-auto mb-7">
@@ -67,7 +72,7 @@ export default function CheckoutPage() {
               </div>
               <div className="flex justify-between">
                 <span className="font-sans text-xs text-taupe">Product</span>
-                <span className="font-sans text-xs text-anthracite">Medium Glazen Hart</span>
+                <span className="font-sans text-xs text-anthracite">{product.name}</span>
               </div>
               <div className="flex justify-between">
                 <span className="font-sans text-xs text-taupe">Totaal betaald</span>
@@ -146,15 +151,14 @@ export default function CheckoutPage() {
                     {/* Product summary */}
                     <div className="border border-beige bg-ivory p-6">
                       <div className="flex items-start gap-5">
-                        <div className="flex-shrink-0 bg-cream-gradient border border-beige p-3 w-20 h-20 flex items-center justify-center">
-                          <GlassHeartPreview size="small" name="Naam" dateRange="1940 – 2024" animated={false} />
+                        <div className="flex-shrink-0 w-20 h-20 overflow-hidden border border-beige">
+                          <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="font-serif text-lg text-anthracite">Medium Glazen Hart</h3>
-                          <p className="font-sans text-xs text-taupe mt-1">12 × 12 cm · Naam: Moeder · 1948 – 2023</p>
-                          <p className="font-serif text-sm italic text-taupe mt-1">"Jouw liefde blijft ons licht."</p>
+                          <h3 className="font-serif text-lg text-anthracite">{product.name}</h3>
+                          <p className="font-sans text-xs text-taupe mt-1">{product.subtitle}</p>
                         </div>
-                        <span className="font-serif text-lg text-anthracite">€ 89</span>
+                        <span className="font-serif text-lg text-anthracite">{product.priceDisplay}</span>
                       </div>
                     </div>
 
@@ -399,11 +403,11 @@ export default function CheckoutPage() {
                   <p className="font-sans text-xs tracking-[0.15em] uppercase text-taupe mb-4">
                     Overzicht
                   </p>
-                  <div className="flex items-center justify-center bg-cream-gradient p-4 mb-4">
-                    <GlassHeartPreview size="small" name="Moeder" dateRange="1948 – 2023" quote="Jouw liefde blijft ons licht." animated={false} />
+                  <div className="overflow-hidden mb-4 aspect-[4/3]">
+                    <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
                   </div>
-                  <p className="font-serif text-base text-anthracite">Medium Glazen Hart</p>
-                  <p className="font-sans text-xs text-taupe mt-1">12 × 12 cm · Gepersonaliseerd</p>
+                  <p className="font-serif text-base text-anthracite">{product.name}</p>
+                  <p className="font-sans text-xs text-taupe mt-1">{product.subtitle}</p>
                 </div>
 
                 <div className="p-6 space-y-3">
