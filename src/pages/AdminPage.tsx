@@ -12,6 +12,9 @@ import {
   Trash2,
   Plus,
   LogOut,
+  Edit2,
+  RotateCcw,
+  Save,
 } from 'lucide-react';
 import LuxuryButton from '../components/LuxuryButton';
 import { getToken, clearToken } from '../utils/auth';
@@ -21,6 +24,23 @@ const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3001';
 async function apiFetch(path: string, options: RequestInit = {}) {
   const token = getToken();
   const res = await fetch(`${API_BASE}/api/bol${path}`, {
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...options.headers,
+    },
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ error: res.statusText }));
+    throw new Error(err.error ?? `HTTP ${res.status}`);
+  }
+  return res.json();
+}
+
+async function productsFetch(path: string, options: RequestInit = {}) {
+  const token = getToken();
+  const res = await fetch(`${API_BASE}/api/products${path}`, {
     ...options,
     headers: {
       'Content-Type': 'application/json',
@@ -53,13 +73,31 @@ function StatusBadge({ status }: StatusBadgeProps) {
   );
 }
 
+interface ProductRow {
+  id: string;
+  name: string;
+  subtitle: string;
+  category: string;
+  image: string;
+  priceDisplay: string;
+  description: string;
+  defaultPrice: string;
+  defaultDescription: string;
+  hasOverride: boolean;
+}
+
 export default function AdminPage() {
   const navigate = useNavigate();
-  const [tab, setTab] = useState<'health' | 'offers' | 'orders'>('health');
+  const [tab, setTab] = useState<'health' | 'offers' | 'orders' | 'producten'>('health');
   const [health, setHealth] = useState<any>(null);
   const [offers, setOffers] = useState<any[]>([]);
   const [catalog, setCatalog] = useState<any[]>([]);
   const [orders, setOrders] = useState<any[]>([]);
+  const [siteProducts, setSiteProducts] = useState<ProductRow[]>([]);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editPrice, setEditPrice] = useState('');
+  const [editDesc, setEditDesc] = useState('');
+  const [savingId, setSavingId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -109,6 +147,55 @@ export default function AdminPage() {
       fail(e.message);
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function loadSiteProducts() {
+    try {
+      const data = await productsFetch('/');
+      setSiteProducts(data.products ?? []);
+    } catch (e: any) {
+      fail(e.message);
+    }
+  }
+
+  function startEdit(product: ProductRow) {
+    setEditingId(product.id);
+    setEditPrice(product.priceDisplay);
+    setEditDesc(product.description);
+  }
+
+  function cancelEdit() {
+    setEditingId(null);
+    setEditPrice('');
+    setEditDesc('');
+  }
+
+  async function saveProduct(id: string) {
+    setSavingId(id);
+    try {
+      await productsFetch(`/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ priceDisplay: editPrice, description: editDesc }),
+      });
+      notify('Product opgeslagen!');
+      setEditingId(null);
+      loadSiteProducts();
+    } catch (e: any) {
+      fail(e.message);
+    } finally {
+      setSavingId(null);
+    }
+  }
+
+  async function resetProduct(id: string) {
+    if (!confirm('Terugzetten naar standaard prijs en omschrijving?')) return;
+    try {
+      await productsFetch(`/${id}`, { method: 'DELETE' });
+      notify('Product teruggezet naar standaard.');
+      loadSiteProducts();
+    } catch (e: any) {
+      fail(e.message);
     }
   }
 
@@ -167,6 +254,7 @@ export default function AdminPage() {
   useEffect(() => {
     if (tab === 'offers') loadOffers();
     if (tab === 'orders') loadOrders();
+    if (tab === 'producten') loadSiteProducts();
   }, [tab]);
 
   return (
@@ -216,7 +304,7 @@ export default function AdminPage() {
 
         {/* Tabs */}
         <div className="flex gap-0 mb-8 border-b border-beige">
-          {(['health', 'offers', 'orders'] as const).map((t) => (
+          {(['health', 'producten', 'offers', 'orders'] as const).map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
@@ -226,7 +314,7 @@ export default function AdminPage() {
                   : 'border-transparent text-taupe hover:text-anthracite'
               }`}
             >
-              {t === 'health' ? 'Status' : t === 'offers' ? 'Aanbiedingen' : 'Bestellingen'}
+              {t === 'health' ? 'Status' : t === 'producten' ? 'Producten' : t === 'offers' ? 'Aanbiedingen' : 'Bestellingen'}
             </button>
           ))}
         </div>
@@ -386,6 +474,137 @@ export default function AdminPage() {
                   </p>
                 </div>
               )
+            )}
+          </div>
+        )}
+
+        {/* === PRODUCTEN TAB === */}
+        {tab === 'producten' && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="font-serif text-xl text-anthracite">Productprijzen &amp; omschrijvingen</h2>
+                <p className="font-sans text-xs text-taupe mt-1">
+                  Wijzigingen worden direct opgeslagen en zijn zichtbaar op de website.
+                </p>
+              </div>
+              <button onClick={loadSiteProducts} className="text-taupe hover:text-gold-deep transition-colors">
+                <RefreshCw className="w-4 h-4" />
+              </button>
+            </div>
+
+            {siteProducts.length === 0 ? (
+              <div className="text-center py-12 border border-dashed border-beige">
+                <Package className="w-8 h-8 text-taupe/30 mx-auto mb-3" />
+                <p className="font-sans text-sm text-taupe">Producten laden…</p>
+              </div>
+            ) : (
+              <div className="space-y-3">
+                {siteProducts.map((product) => (
+                  <div key={product.id} className="border border-beige bg-ivory">
+                    {editingId === product.id ? (
+                      /* Bewerkformulier */
+                      <div className="p-5">
+                        <div className="flex items-start gap-4 mb-4">
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="w-14 h-14 object-cover flex-shrink-0 border border-beige"
+                          />
+                          <div className="flex-1 min-w-0">
+                            <p className="font-sans text-xs text-taupe tracking-wide uppercase mb-0.5">{product.category}</p>
+                            <p className="font-serif text-base text-anthracite leading-snug">{product.name}</p>
+                            <p className="font-sans text-xs text-taupe">{product.subtitle}</p>
+                          </div>
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                          <div>
+                            <label className="block font-sans text-xs tracking-[0.1em] uppercase text-taupe mb-1.5">
+                              Prijs
+                            </label>
+                            <input
+                              type="text"
+                              value={editPrice}
+                              onChange={(e) => setEditPrice(e.target.value)}
+                              placeholder="bijv. €79,95"
+                              className="w-full border border-beige bg-cream px-3 py-2 font-sans text-sm text-anthracite focus:outline-none focus:border-gold/60"
+                            />
+                            <p className="font-sans text-[11px] text-taupe/60 mt-1">
+                              Standaard: {product.defaultPrice}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="mb-4">
+                          <label className="block font-sans text-xs tracking-[0.1em] uppercase text-taupe mb-1.5">
+                            Omschrijving
+                          </label>
+                          <textarea
+                            value={editDesc}
+                            onChange={(e) => setEditDesc(e.target.value)}
+                            rows={4}
+                            className="w-full border border-beige bg-cream px-3 py-2 font-sans text-sm text-anthracite focus:outline-none focus:border-gold/60 resize-none"
+                          />
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <button
+                            onClick={() => saveProduct(product.id)}
+                            disabled={savingId === product.id}
+                            className="flex items-center gap-1.5 font-sans text-xs tracking-[0.1em] uppercase px-4 py-2 bg-anthracite text-ivory hover:bg-brown transition-colors disabled:opacity-50"
+                          >
+                            <Save className="w-3.5 h-3.5" />
+                            {savingId === product.id ? 'Opslaan…' : 'Opslaan'}
+                          </button>
+                          <button
+                            onClick={cancelEdit}
+                            className="font-sans text-xs text-taupe hover:text-anthracite transition-colors"
+                          >
+                            Annuleren
+                          </button>
+                          {product.hasOverride && (
+                            <button
+                              onClick={() => resetProduct(product.id)}
+                              className="ml-auto flex items-center gap-1 font-sans text-xs text-taupe/60 hover:text-red-500 transition-colors"
+                            >
+                              <RotateCcw className="w-3 h-3" />
+                              Standaard herstellen
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    ) : (
+                      /* Weergave */
+                      <div className="flex items-center gap-4 p-4">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-12 h-12 object-cover flex-shrink-0 border border-beige"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-0.5">
+                            <p className="font-sans text-sm text-anthracite truncate">{product.name}</p>
+                            {product.hasOverride && (
+                              <span className="flex-shrink-0 text-[10px] font-sans uppercase tracking-wide bg-amber-100 text-amber-700 px-1.5 py-0.5">
+                                Aangepast
+                              </span>
+                            )}
+                          </div>
+                          <p className="font-sans text-xs text-taupe truncate">{product.description}</p>
+                        </div>
+                        <div className="flex items-center gap-4 flex-shrink-0">
+                          <span className="font-serif text-sm text-anthracite">{product.priceDisplay}</span>
+                          <button
+                            onClick={() => startEdit(product)}
+                            className="text-taupe hover:text-gold-deep transition-colors"
+                            title="Bewerken"
+                          >
+                            <Edit2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             )}
           </div>
         )}

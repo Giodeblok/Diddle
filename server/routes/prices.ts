@@ -9,39 +9,64 @@ const router = Router();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PRICES_FILE = join(__dirname, '../data/prices.json');
 
-function loadOverrides(): Record<string, string> {
+interface ProductOverride {
+  priceDisplay?: string;
+  description?: string;
+}
+
+function loadOverrides(): Record<string, ProductOverride> {
   try {
-    return JSON.parse(readFileSync(PRICES_FILE, 'utf-8'));
+    const raw = JSON.parse(readFileSync(PRICES_FILE, 'utf-8'));
+    // Migreer oud formaat: { productId: "€xx,xx" } → nieuw formaat
+    const result: Record<string, ProductOverride> = {};
+    for (const [id, val] of Object.entries(raw)) {
+      if (typeof val === 'string') {
+        result[id] = { priceDisplay: val };
+      } else {
+        result[id] = val as ProductOverride;
+      }
+    }
+    return result;
   } catch {
     return {};
   }
 }
 
-function saveOverrides(data: Record<string, string>) {
+function saveOverrides(data: Record<string, ProductOverride>) {
   writeFileSync(PRICES_FILE, JSON.stringify(data, null, 2), 'utf-8');
 }
 
-// Publiek: geeft alle producten terug met actuele prijs
+// Publiek: geeft alle producten terug met actuele prijzen en omschrijvingen
 router.get('/', (_req: Request, res: Response) => {
   const overrides = loadOverrides();
-  const result = products.map((p) => ({
-    id: p.id,
-    name: p.name,
-    category: p.category,
-    priceDisplay: overrides[p.id] ?? p.priceDisplay,
-    defaultPrice: p.priceDisplay,
-    hasOverride: !!overrides[p.id],
-  }));
-  res.json({ prices: result });
+  const result = products.map((p) => {
+    const ov = overrides[p.id] ?? {};
+    return {
+      id: p.id,
+      name: p.name,
+      subtitle: p.subtitle,
+      category: p.category,
+      image: p.image,
+      priceDisplay: ov.priceDisplay ?? p.priceDisplay,
+      description: ov.description ?? p.description,
+      defaultPrice: p.priceDisplay,
+      defaultDescription: p.description,
+      hasOverride: !!(ov.priceDisplay || ov.description),
+    };
+  });
+  res.json({ products: result });
 });
 
-// Admin: prijs bijwerken voor één product
+// Admin: prijs en/of omschrijving bijwerken voor één product
 router.put('/:id', verifyJwt, (req: Request, res: Response) => {
-  const { id } = req.params;
-  const { priceDisplay } = req.body as { priceDisplay?: string };
+  const id = req.params.id as string;
+  const { priceDisplay, description } = req.body as {
+    priceDisplay?: string;
+    description?: string;
+  };
 
-  if (!priceDisplay || typeof priceDisplay !== 'string' || !priceDisplay.trim()) {
-    res.status(400).json({ error: 'priceDisplay is verplicht.' });
+  if (!priceDisplay && !description) {
+    res.status(400).json({ error: 'priceDisplay of description is verplicht.' });
     return;
   }
 
@@ -52,25 +77,50 @@ router.put('/:id', verifyJwt, (req: Request, res: Response) => {
   }
 
   const overrides = loadOverrides();
+  const current = overrides[id] ?? {};
 
-  // Als de nieuwe prijs gelijk is aan de standaard, verwijder de override
-  if (priceDisplay.trim() === product.priceDisplay) {
+  if (priceDisplay !== undefined) {
+    if (priceDisplay.trim() === product.priceDisplay) {
+      delete current.priceDisplay;
+    } else {
+      current.priceDisplay = priceDisplay.trim();
+    }
+  }
+
+  if (description !== undefined) {
+    if (description.trim() === product.description) {
+      delete current.description;
+    } else {
+      current.description = description.trim();
+    }
+  }
+
+  if (!current.priceDisplay && !current.description) {
     delete overrides[id];
   } else {
-    overrides[id] = priceDisplay.trim();
+    overrides[id] = current;
   }
 
   saveOverrides(overrides);
-  res.json({ id, priceDisplay: priceDisplay.trim() });
+  res.json({
+    id,
+    priceDisplay: current.priceDisplay ?? product.priceDisplay,
+    description: current.description ?? product.description,
+  });
 });
 
-// Admin: reset prijs naar standaard
+// Admin: reset alle overrides naar standaard
 router.delete('/:id', verifyJwt, (req: Request, res: Response) => {
-  const { id } = req.params;
+  const id = req.params.id as string;
   const overrides = loadOverrides();
   delete overrides[id];
   saveOverrides(overrides);
-  res.json({ id, priceDisplay: products.find((p) => p.id === id)?.priceDisplay ?? null });
+  const product = products.find((p) => p.id === id);
+  res.json({
+    id,
+    priceDisplay: product?.priceDisplay ?? null,
+    description: product?.description ?? null,
+  });
 });
 
 export default router;

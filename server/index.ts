@@ -7,6 +7,7 @@ import bolcomRouter from './routes/bolcom.js';
 import myparcelRouter from './routes/myparcel.js';
 import authRouter from './routes/auth.js';
 import reviewsRouter from './routes/reviews.js';
+import pricesRouter from './routes/prices.js';
 import { verifyJwt } from './middleware/verifyJwt.js';
 
 const app = express();
@@ -65,6 +66,9 @@ app.use('/api/auth', authRouter);
 
 // Google Reviews (public, cached)
 app.use('/api/reviews', reviewsRouter);
+
+// Product catalog with price/description overrides (GET public, PUT/DELETE require JWT)
+app.use('/api/products', pricesRouter);
 
 // Public webhook endpoint (bol.com posts here — no JWT needed)
 app.post('/api/bol/webhook/events', bolcomRouter);
