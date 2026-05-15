@@ -6,10 +6,10 @@ export default function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contact | Eeuwig Dichtbij</title>
+        <title>Contact | Eeuwig Hart</title>
         <meta
           name="description"
-          content="Neem contact op met Eeuwig Dichtbij. We helpen je graag bij het ontwerpen van een persoonlijk glazen hart."
+          content="Neem contact op met Eeuwig Hart. We helpen je graag bij het ontwerpen van een persoonlijk glazen hart."
         />
       </Helmet>
 

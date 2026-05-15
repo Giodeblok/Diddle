@@ -31,10 +31,10 @@ export default function OverOnsPage() {
   return (
     <>
       <Helmet>
-        <title>Over Ons | Eeuwig Dichtbij</title>
+        <title>Over Ons | Eeuwig Hart</title>
         <meta
           name="description"
-          content="Ontdek het verhaal achter Eeuwig Dichtbij. Wij maken persoonlijke glazen harten waarin herinneringen aan dierbaren voor altijd worden bewaard."
+          content="Ontdek het verhaal achter Eeuwig Hart. Wij maken persoonlijke glazen harten waarin herinneringen aan dierbaren voor altijd worden bewaard."
         />
       </Helmet>
 
@@ -65,7 +65,7 @@ export default function OverOnsPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="font-sans text-base text-taupe max-w-xl mx-auto leading-relaxed"
           >
-            Eeuwig Dichtbij ontstond vanuit één overtuiging: elke herinnering verdient een thuis,
+            Eeuwig Hart ontstond vanuit één overtuiging: elke herinnering verdient een thuis,
             iets tastbaars, moois en persoonlijks om te koesteren.
           </motion.p>
         </div>
@@ -96,7 +96,7 @@ export default function OverOnsPage() {
             <div className="space-y-6">
               {[
                 'De dood neemt mensen mee, maar niet de liefde die ze achterlieten. Toch is het moeilijk om die liefde ergens in vast te houden. Bloemen verwelken. Kaarten vergelen. Maar glas behoudt zijn glans, voor altijd.',
-                'Eeuwig Dichtbij werd geboren uit een eenvoudig maar diep verlangen: mensen helpen om de herinneringen aan hun geliefden levend te houden op een manier die even waardig en mooi is als de persoon zelf. Elk hart dat wij maken is een uniek kunstwerk. Een foto gegraveerd in kristalglas verliest haar vergankelijkheid. Woorden vastgelegd in glas blijven voor altijd leesbaar.',
+                'Eeuwig Hart werd geboren uit een eenvoudig maar diep verlangen: mensen helpen om de herinneringen aan hun geliefden levend te houden op een manier die even waardig en mooi is als de persoon zelf. Elk hart dat wij maken is een uniek kunstwerk. Een foto gegraveerd in kristalglas verliest haar vergankelijkheid. Woorden vastgelegd in glas blijven voor altijd leesbaar.',
                 'Wij werken uitsluitend met hoogwaardig optisch kristalglas. Dat is geen toevallige keuze: dit type glas heeft een uitzonderlijke helderheid en glans die gewoon glas niet kan evenaren. Een gravure in optisch kristal blijft scherp, helder en prachtig, na tien jaar net zo mooi als op de eerste dag. Want een herinnering verdient geen compromis.',
               ].map((text, i) => (
                 <motion.p

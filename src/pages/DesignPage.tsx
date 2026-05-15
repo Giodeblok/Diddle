@@ -7,7 +7,7 @@ export default function DesignPage() {
   return (
     <>
       <Helmet>
-        <title>Ontwerp Jouw Glazen Hart | Eeuwig Dichtbij</title>
+        <title>Ontwerp Jouw Glazen Hart | Eeuwig Hart</title>
         <meta
           name="description"
           content="Personaliseer jouw glazen hart met een foto, naam, datum en persoonlijk citaat. Zie direct het resultaat in ons live voorbeeldscherm."

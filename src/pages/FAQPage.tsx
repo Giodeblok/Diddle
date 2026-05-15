@@ -6,7 +6,7 @@ export default function FAQPage() {
   return (
     <>
       <Helmet>
-        <title>Veelgestelde Vragen | Eeuwig Dichtbij</title>
+        <title>Veelgestelde Vragen | Eeuwig Hart</title>
         <meta
           name="description"
           content="Antwoorden op veelgestelde vragen over persoonlijke glazen harten, levering, betaling en personalisatie."

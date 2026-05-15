@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import bolcomRouter from './routes/bolcom.js';
 import myparcelRouter from './routes/myparcel.js';
@@ -12,6 +13,22 @@ const app = express();
 const PORT = process.env.PORT ?? 3001;
 
 // ---- Middleware ----
+
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", "data:", "https:"],
+      connectSrc: ["'self'", process.env.FRONTEND_URL ?? 'http://localhost:5173'],
+    },
+  },
+  hsts: {
+    maxAge: 15552000,
+    includeSubDomains: true,
+  },
+}));
 
 app.use(cors({
   origin: process.env.FRONTEND_URL ?? 'http://localhost:5173',
@@ -66,7 +83,7 @@ app.use((err: Error, _req: express.Request, res: express.Response, _next: expres
 // ---- Start ----
 
 app.listen(PORT, () => {
-  console.log(`✓ Eeuwig Dichtbij API server running on http://localhost:${PORT}`);
+  console.log(`✓ Eeuwig Hart API server running on http://localhost:${PORT}`);
   console.log(`  bol.com demo mode: ${process.env.BOL_DEMO_MODE === 'true' ? 'YES' : 'NO'}`);
   console.log(`  credentials configured: ${!!(process.env.BOL_CLIENT_ID && process.env.BOL_CLIENT_SECRET)}`);
 });

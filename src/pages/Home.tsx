@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Gepersonaliseerd Glazen Hart met Foto | Luxe Herdenkingscadeau | Eeuwig Dichtbij</title>
+        <title>Gepersonaliseerd Glazen Hart met Foto | Luxe Herdenkingscadeau | Eeuwig Hart</title>
         <meta
           name="description"
           content="Laat een liefdevolle herinnering vereeuwigen in een gepersonaliseerd glazen hart met foto, naam en tekst. Een elegant en troostend herdenkingscadeau voor wie altijd dichtbij blijft."

@@ -59,7 +59,7 @@ export default function Header() {
                   strokeWidth={1.5}
                 />
                 <span className="font-serif text-xl text-anthracite tracking-wide">
-                  Eeuwig Dichtbij
+                  Eeuwig Hart
                 </span>
               </motion.div>
             </Link>
@@ -115,7 +115,7 @@ export default function Header() {
             <div className="flex items-center justify-between px-6 h-20 border-b border-gold/20">
               <Link to="/" className="flex items-center gap-2.5">
                 <Heart className="w-5 h-5 fill-gold stroke-gold" strokeWidth={1.5} />
-                <span className="font-serif text-xl text-anthracite">Eeuwig Dichtbij</span>
+                <span className="font-serif text-xl text-anthracite">Eeuwig Hart</span>
               </Link>
               <button
                 onClick={() => setMenuOpen(false)}

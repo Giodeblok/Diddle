@@ -53,7 +53,7 @@ export default function InspirationPage() {
   return (
     <>
       <Helmet>
-        <title>Inspiratie & Herdenkingsgedichten | Eeuwig Dichtbij</title>
+        <title>Inspiratie & Herdenkingsgedichten | Eeuwig Hart</title>
         <meta
           name="description"
           content="Gedichten, herdenkingsteksten en citaten voor een persoonlijk glazen hart. Laat u inspireren voor de mooiste woorden bij een bijzonder aandenken."

@@ -8,7 +8,7 @@ export default function ProductPage() {
   return (
     <>
       <Helmet>
-        <title>De Collectie | Glazen Harten met Gravure | Eeuwig Dichtbij</title>
+        <title>De Collectie | Glazen Harten met Gravure | Eeuwig Hart</title>
         <meta
           name="description"
           content="Ontdek onze collectie persoonlijk gegraveerde glazen harten. Van intiem klein tot groot luxe formaat met LED-basis. Elk hart handgemaakt met zorg."

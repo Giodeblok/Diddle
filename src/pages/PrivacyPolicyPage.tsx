@@ -5,9 +5,9 @@ const sections = [
   {
     title: '1. Wie zijn wij?',
     content: [
-      'Eeuwig Dichtbij is verantwoordelijk voor de verwerking van uw persoonsgegevens zoals beschreven in dit privacybeleid.',
-      'Handelsnaam: Eeuwig Dichtbij',
-      'E-mailadres: info@eeuwigdichtbij.nl',
+      'Eeuwig Hart is verantwoordelijk voor de verwerking van uw persoonsgegevens zoals beschreven in dit privacybeleid.',
+      'Handelsnaam: Eeuwig Hart',
+      'E-mailadres: info@eeuwighart.nl',
       'Telefoon: +31 (0)85 000 0000',
       'KVK-nummer: [in te vullen]',
       'Vestigingsadres: [in te vullen]',
@@ -20,7 +20,7 @@ const sections = [
       'Bestelgegevens: voornaam, achternaam, e-mailadres, bezorgadres (straat, huisnummer, postcode, woonplaats) en telefoonnummer (voor bezorging via MyParcel).',
       'Contactformuliergegevens: naam, e-mailadres en de inhoud van uw bericht.',
       'Beheerdersgegevens (intern): gebruikersnaam en een versleuteld wachtwoord (bcrypt-hashing), uitsluitend zichtbaar voor bevoegd personeel.',
-      'Betaalkaartgegevens worden nooit opgeslagen door Eeuwig Dichtbij. Alle betalingen worden volledig afgehandeld door iCEPAY (PCI-DSS gecertificeerd). Wij ontvangen uitsluitend een bevestiging van de geslaagde betaling.',
+      'Betaalkaartgegevens worden nooit opgeslagen door Eeuwig Hart. Alle betalingen worden volledig afgehandeld door iCEPAY (PCI-DSS gecertificeerd). Wij ontvangen uitsluitend een bevestiging van de geslaagde betaling.',
       'Personalisatiegegevens (foto, naam overledene, data, citaat) worden uitsluitend lokaal in uw browser verwerkt voor de live preview. Deze gegevens worden nooit opgeslagen op onze servers of doorgegeven aan derden. U deelt ze vervolgens met ons via e-mail om uw bestelling te personaliseren.',
     ],
   },
@@ -34,7 +34,7 @@ const sections = [
       'Beantwoording van contactberichten — grondslag: gerechtvaardigd belang (klantenservice, art. 6(1)(f) AVG).',
       'Transactionele e-mails via Resend (orderbevestiging, digitale preview) — grondslag: uitvoering van een overeenkomst (art. 6(1)(b) AVG).',
       'Opslag van bestelgegevens in Supabase — grondslag: gerechtvaardigd belang (technische bedrijfsvoering, art. 6(1)(f) AVG).',
-      'Eeuwig Dichtbij verstuurt geen nieuwsbrieven en verwerkt geen persoonsgegevens voor marketingdoeleinden.',
+      'Eeuwig Hart verstuurt geen nieuwsbrieven en verwerkt geen persoonsgegevens voor marketingdoeleinden.',
     ],
   },
   {
@@ -50,7 +50,7 @@ const sections = [
     title: '5. Derden en verwerkers',
     content: [
       'Om onze diensten te kunnen verlenen, maken wij gebruik van de volgende externe verwerkers. Met elk van deze partijen is een verwerkersovereenkomst gesloten of zijn zij gebonden aan passende juridische waarborgen. Uw gegevens worden nooit verkocht of voor andere doeleinden gedeeld.',
-      'iCEPAY (betaalverwerker, Nederland) — ontvangt: e-mailadres en transactiebedrag. PCI-DSS gecertificeerd. Betaalkaartgegevens komen nooit bij Eeuwig Dichtbij.',
+      'iCEPAY (betaalverwerker, Nederland) — ontvangt: e-mailadres en transactiebedrag. PCI-DSS gecertificeerd. Betaalkaartgegevens komen nooit bij Eeuwig Hart.',
       'bol.com (verkoopplatform, Nederland) — ontvangt: volledige klantgegevens bij via bol.com geplaatste bestellingen. Eigen privacybeleid van bol.com is van toepassing.',
       'MyParcel (verzendlogistiek via PostNL, bpost of DPD, Nederland) — ontvangt: naam, adres, postcode, woonplaats, telefoonnummer en e-mailadres.',
       'Resend (transactionele e-maildienst, VS) — ontvangt: e-mailadres, naam en orderinhoud. Doorgifte buiten de EU op basis van Standard Contractual Clauses (SCCs).',
@@ -60,7 +60,7 @@ const sections = [
   {
     title: '6. Beveiliging',
     content: [
-      'Eeuwig Dichtbij neemt passende technische en organisatorische maatregelen om uw persoonsgegevens te beschermen tegen verlies, onbevoegde toegang of misbruik:',
+      'Eeuwig Hart neemt passende technische en organisatorische maatregelen om uw persoonsgegevens te beschermen tegen verlies, onbevoegde toegang of misbruik:',
       'HTTPS/TLS-encryptie voor alle dataoverdracht.',
       'Bcrypt-hashing voor beheerderwachtwoorden.',
       'JWT-authenticatie voor intern beheerpaneel.',
@@ -79,7 +79,7 @@ const sections = [
       'Recht op beperking van de verwerking (art. 18 AVG): u kunt in bepaalde situaties vragen de verwerking tijdelijk te stoppen.',
       'Recht op bezwaar (art. 21 AVG): u kunt bezwaar maken tegen verwerking op basis van gerechtvaardigd belang. Wij stoppen dan met de verwerking, tenzij wij dwingende gerechtvaardigde gronden hebben.',
       'Recht op gegevensoverdraagbaarheid (art. 20 AVG): u kunt uw gegevens opvragen in een gestructureerd, gangbaar en machineleesbaar formaat.',
-      'U kunt uw verzoek indienen via info@eeuwigdichtbij.nl. Wij reageren binnen 30 dagen. Wij kunnen om een identiteitsbevestiging vragen om uw verzoek te verifiëren.',
+      'U kunt uw verzoek indienen via info@eeuwighart.nl. Wij reageren binnen 30 dagen. Wij kunnen om een identiteitsbevestiging vragen om uw verzoek te verifiëren.',
     ],
   },
   {
@@ -93,7 +93,7 @@ const sections = [
   {
     title: '9. Klachten',
     content: [
-      'Bent u niet tevreden over de wijze waarop wij met uw persoonsgegevens omgaan? Neem dan eerst contact met ons op via info@eeuwigdichtbij.nl. Wij lossen het graag persoonlijk met u op.',
+      'Bent u niet tevreden over de wijze waarop wij met uw persoonsgegevens omgaan? Neem dan eerst contact met ons op via info@eeuwighart.nl. Wij lossen het graag persoonlijk met u op.',
       'U heeft ook het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens, de Nederlandse toezichthouder voor gegevensbescherming:',
       'Autoriteit Persoonsgegevens — Postbus 93374, 2509 AJ Den Haag — autoriteitpersoonsgegevens.nl',
     ],
@@ -110,10 +110,10 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <Helmet>
-        <title>Privacybeleid | Eeuwig Dichtbij</title>
+        <title>Privacybeleid | Eeuwig Hart</title>
         <meta
           name="description"
-          content="Lees hoe Eeuwig Dichtbij omgaat met uw persoonsgegevens, welke gegevens wij verwerken en wat uw rechten zijn onder de AVG."
+          content="Lees hoe Eeuwig Hart omgaat met uw persoonsgegevens, welke gegevens wij verwerken en wat uw rechten zijn onder de AVG."
         />
         <meta name="robots" content="noindex, follow" />
       </Helmet>
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
           </h1>
           <div className="luxury-divider mb-5" />
           <p className="font-sans text-base text-taupe max-w-lg mx-auto px-6">
-            Versie mei 2025 — van toepassing op alle verwerkingen via eeuwigdichtbij.nl
+            Versie mei 2025 — van toepassing op alle verwerkingen via eeuwighart.nl
           </p>
         </div>
 

@@ -27,7 +27,7 @@ export default function ContactSection() {
                 {
                   icon: Mail,
                   title: 'E-mail',
-                  value: 'info@eeuwigdichtbij.nl',
+                  value: 'info@eeuwighart.nl',
                   sub: 'We reageren binnen 1 werkdag',
                 },
                 {

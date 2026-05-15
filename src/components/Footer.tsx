@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5 mb-5">
               <Heart className="w-5 h-5 fill-gold stroke-gold" strokeWidth={1.5} />
-              <span className="font-serif text-xl text-ivory">Eeuwig Dichtbij</span>
+              <span className="font-serif text-xl text-ivory">Eeuwig Hart</span>
             </div>
             <p className="font-sans text-sm leading-relaxed text-ivory/60 max-w-sm mb-6">
               Persoonlijke glazen harten met foto, naam en woorden die liefde tastbaar houden.
@@ -32,7 +32,7 @@ export default function Footer() {
                 <Globe className="w-4 h-4" />
               </a>
               <a
-                href="mailto:info@eeuwigdichtbij.nl"
+                href="mailto:info@eeuwighart.nl"
                 className="w-9 h-9 border border-ivory/20 flex items-center justify-center hover:border-gold hover:text-gold transition-all duration-300"
                 aria-label="E-mail"
               >
@@ -73,7 +73,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li className="font-sans text-sm text-ivory/60">
-                info@eeuwigdichtbij.nl
+                info@eeuwighart.nl
               </li>
               <li className="font-sans text-sm text-ivory/60">
                 +31 (0)85 000 0000
@@ -94,7 +94,7 @@ export default function Footer() {
 
         <div className="border-t border-ivory/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-sans text-xs text-ivory/30">
-            © 2025 Eeuwig Dichtbij. Met liefde gemaakt in Nederland.
+            © 2025 Eeuwig Hart. Met liefde gemaakt in Nederland.
           </p>
           <div className="flex items-center gap-6">
             <Link to="/privacybeleid" className="font-sans text-xs text-ivory/30 hover:text-ivory/60 transition-colors duration-300">

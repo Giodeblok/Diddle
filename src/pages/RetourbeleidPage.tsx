@@ -17,9 +17,9 @@ export default function RetourbeleidPage() {
   return (
     <>
       <Helmet>
-        <title>Retourbeleid — Eeuwig Dichtbij</title>
+        <title>Retourbeleid — Eeuwig Hart</title>
         <meta name="description" content="Alles over ons retour- en klachtenbeleid. Lees hoe u een product kunt retourneren en hoe wij u helpen bij gebreken of beschadiging." />
-        <meta property="og:title" content="Retourbeleid — Eeuwig Dichtbij" />
+        <meta property="og:title" content="Retourbeleid — Eeuwig Hart" />
         <meta property="og:description" content="Retourneren binnen 14 dagen, uitzonderingen voor urnproducten, en hoe wij gebreken oplossen." />
       </Helmet>
 
@@ -75,7 +75,7 @@ export default function RetourbeleidPage() {
             <div className="space-y-1">
               <p>
                 <span className="text-[10px] uppercase tracking-[0.25em] text-accent block mb-1">E-mail</span>
-                info@eeuwigdichtbij.nl
+                info@eeuwighart.nl
               </p>
               <p>
                 <span className="text-[10px] uppercase tracking-[0.25em] text-accent block mb-1 mt-3">Telefoon</span>

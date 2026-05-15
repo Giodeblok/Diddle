@@ -39,7 +39,7 @@ export default function CheckoutPage() {
   if (currentStep === 4) {
     return (
       <>
-        <Helmet><title>Bestelling bevestigd | Eeuwig Dichtbij</title></Helmet>
+        <Helmet><title>Bestelling bevestigd | Eeuwig Hart</title></Helmet>
         <div className="pt-20 min-h-screen bg-hero-gradient flex items-center justify-center px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -92,7 +92,7 @@ export default function CheckoutPage() {
   return (
     <>
       <Helmet>
-        <title>Afrekenen | Eeuwig Dichtbij</title>
+        <title>Afrekenen | Eeuwig Hart</title>
         <meta name="description" content="Plaats uw bestelling voor een persoonlijk glazen hart." />
       </Helmet>
 

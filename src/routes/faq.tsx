@@ -11,9 +11,9 @@ import {
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "Veelgestelde vragen — Eeuwig Dichtbij" },
+      { title: "Veelgestelde vragen — Eeuwig Hart" },
       { name: "description", content: "Antwoorden over bezorgtijd, verpakking, betaling, verzending en ons retourbeleid voor glazen harten." },
-      { property: "og:title", content: "Veelgestelde vragen — Eeuwig Dichtbij" },
+      { property: "og:title", content: "Veelgestelde vragen — Eeuwig Hart" },
       { property: "og:description", content: "Alles wat u wilt weten over bestellen en zorgen voor uw glazen hart." },
     ],
   }),
@@ -57,7 +57,7 @@ const faqs: { q: string; a: ReactNode }[] = [
     q: "Wat als mijn hart beschadigd aankomt of een fout bevat?",
     a: (
       <>
-        Dat spijt ons zeer. Stuur ons binnen 14 dagen na ontvangst een e-mail naar info@eeuwigdichtbij.nl met uw bestelnummer, een omschrijving en foto's van het probleem. Wij reageren binnen 1 werkdag en zorgen voor een passende oplossing. Lees ons volledige{" "}
+        Dat spijt ons zeer. Stuur ons binnen 14 dagen na ontvangst een e-mail naar info@eeuwighart.nl met uw bestelnummer, een omschrijving en foto's van het probleem. Wij reageren binnen 1 werkdag en zorgen voor een passende oplossing. Lees ons volledige{" "}
         <Link to="/retourbeleid" className="underline underline-offset-2 hover:text-foreground/90 transition-colors">
           retourbeleid
         </Link>{" "}
