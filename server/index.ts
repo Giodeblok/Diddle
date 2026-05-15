@@ -12,6 +12,11 @@ import { verifyJwt } from './middleware/verifyJwt.js';
 const app = express();
 const PORT = process.env.PORT ?? 3001;
 
+const allowedOrigins = (process.env.FRONTEND_URL ?? 'http://localhost:5173')
+  .split(',')
+  .map((o) => o.trim())
+  .filter(Boolean);
+
 // ---- Middleware ----
 
 app.use(helmet({
@@ -21,7 +26,7 @@ app.use(helmet({
       scriptSrc: ["'self'"],
       styleSrc: ["'self'", "'unsafe-inline'"],
       imgSrc: ["'self'", "data:", "https:"],
-      connectSrc: ["'self'", process.env.FRONTEND_URL ?? 'http://localhost:5173'],
+      connectSrc: ["'self'", ...allowedOrigins],
     },
   },
   hsts: {
@@ -31,7 +36,13 @@ app.use(helmet({
 }));
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL ?? 'http://localhost:5173',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS: origin niet toegestaan: ${origin}`));
+    }
+  },
   credentials: true,
 }));
 

@@ -13,7 +13,7 @@ export default function Footer() {
               <span className="font-serif text-xl text-ivory">Eeuwig Hart</span>
             </div>
             <p className="font-sans text-sm leading-relaxed text-ivory/60 max-w-sm mb-6">
-              Persoonlijke glazen harten met foto, naam en woorden die liefde tastbaar houden.
+              Persoonlijke glazen harten met naam en woorden die liefde tastbaar houden.
               Gemaakt met aandacht, bewaard voor altijd.
             </p>
             <div className="flex items-center gap-4">

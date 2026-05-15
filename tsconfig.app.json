@@ -21,5 +21,15 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "src/start.ts",
+    "src/server.ts",
+    "src/router.tsx",
+    "src/routeTree.gen.ts",
+    "src/routes",
+    "src/components/site",
+    "src/lib/error-capture.ts",
+    "src/lib/error-page.ts"
+  ]
 }

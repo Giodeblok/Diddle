@@ -66,12 +66,30 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   return brandedErrorResponse();
 }
 
+function addSecurityHeaders(response: Response): Response {
+  const headers = new Headers(response.headers);
+  headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+  headers.set("X-Content-Type-Options", "nosniff");
+  headers.set("X-Frame-Options", "SAMEORIGIN");
+  headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  return new Response(response.body, { status: response.status, headers });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const url = new URL(request.url);
+
+    // Redirect HTTP naar HTTPS (alleen in productie, niet localhost)
+    if (url.protocol === "http:" && url.hostname !== "localhost") {
+      url.protocol = "https:";
+      return Response.redirect(url.toString(), 301);
+    }
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const normalized = await normalizeCatastrophicSsrResponse(response);
+      return addSecurityHeaders(normalized);
     } catch (error) {
       console.error(error);
       return brandedErrorResponse();

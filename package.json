@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite",
     "dev:server": "npx tsx watch server/index.ts",
+    "dev:worker": "wrangler dev --config wrangler.api.jsonc",
     "dev:all": "npx concurrently \"npm run dev\" \"npm run dev:server\"",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "build:server": "tsc -p tsconfig.server.json",
     "start:server": "node dist-server/index.js",
+    "deploy:worker": "wrangler deploy --config wrangler.api.jsonc",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -28,6 +30,7 @@
     "express-rate-limit": "^8.5.1",
     "framer-motion": "^12.38.0",
     "helmet": "^8.1.0",
+    "hono": "^4.12.18",
     "jsonwebtoken": "^9.0.3",
     "lucide-react": "^1.14.0",
     "react": "^19.2.6",
@@ -59,6 +62,7 @@
     "tsx": "^4.21.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.12"
+    "vite": "^8.0.12",
+    "wrangler": "^4.92.0"
   }
 }
