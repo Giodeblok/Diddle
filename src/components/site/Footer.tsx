@@ -33,8 +33,12 @@ export function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col sm:flex-row justify-between gap-3 text-[10px] uppercase tracking-[0.25em] text-cream/35">
-        <span>© {new Date().getFullYear()} Eternal Light Atelier</span>
-        <span>Crafted with reverence in Europe</span>
+        <span>© {new Date().getFullYear()} Eeuwig Dichtbij</span>
+        <div className="flex flex-wrap items-center gap-6">
+          <Link to="/retourbeleid" className="hover:text-cream/60 transition-colors duration-300">Retourbeleid</Link>
+          <a href="#" className="hover:text-cream/60 transition-colors duration-300">Algemene voorwaarden</a>
+          <a href="#" className="hover:text-cream/60 transition-colors duration-300">Privacybeleid</a>
+        </div>
       </div>
     </footer>
   );

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MessageCircle, Clock } from 'lucide-react';
-import SectionHeading from './SectionHeading';
 import LuxuryButton from './LuxuryButton';
 
 export default function ContactSection() {
@@ -16,12 +15,6 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-ivory py-24 lg:py-32">
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
-        <SectionHeading
-          eyebrow="Contact"
-          title="We denken graag liefdevol met u mee."
-          subtitle="Heb je hulp nodig bij het kiezen van een foto, tekst of ontwerp? We zijn er voor je."
-        />
-
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Info */}
           <div className="lg:col-span-2 space-y-6">

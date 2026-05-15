@@ -375,6 +375,14 @@ export default function CheckoutPage() {
                       </p>
                     </div>
 
+                    <p className="font-sans text-xs text-taupe/70 leading-relaxed border border-beige bg-ivory/50 px-4 py-3">
+                      Door te bestellen gaat u akkoord met onze{' '}
+                      <Link to="/algemene-voorwaarden" className="underline hover:text-anthracite transition-colors duration-300">
+                        Algemene Voorwaarden
+                      </Link>
+                      . Gepersonaliseerde producten zijn niet retourneerbaar na goedkeuring van de digitale preview (art. 6:230p sub b BW).
+                    </p>
+
                     <div className="flex gap-4">
                       <button
                         onClick={() => setCurrentStep(2)}

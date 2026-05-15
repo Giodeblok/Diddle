@@ -1,12 +1,13 @@
 export interface Review {
   id: string;
   name: string;
-  location: string;
+  location?: string;
   rating: number;
   text: string;
-  product: string;
+  product?: string;
   date: string;
   initials: string;
+  photoUrl?: string;
 }
 
 export const reviews: Review[] = [

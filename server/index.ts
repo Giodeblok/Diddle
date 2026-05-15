@@ -3,7 +3,10 @@ import express from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import bolcomRouter from './routes/bolcom.js';
-import { requireAdminKey } from './middleware/auth.js';
+import myparcelRouter from './routes/myparcel.js';
+import authRouter from './routes/auth.js';
+import reviewsRouter from './routes/reviews.js';
+import { verifyJwt } from './middleware/verifyJwt.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3001;
@@ -29,22 +32,28 @@ app.use('/api', limiter);
 
 // ---- Routes ----
 
-// Public webhook endpoint (bol.com posts here — no admin key needed)
+// Auth login (public)
+app.use('/api/auth', authRouter);
+
+// Google Reviews (public, cached)
+app.use('/api/reviews', reviewsRouter);
+
+// Public webhook endpoint (bol.com posts here — no JWT needed)
 app.post('/api/bol/webhook/events', bolcomRouter);
 
-// All other bol.com endpoints require admin key
-app.use('/api/bol', requireAdminKey, bolcomRouter);
+// All other bol.com and MyParcel endpoints require JWT
+app.use('/api/bol', verifyJwt, bolcomRouter);
+app.use('/api/myparcel', verifyJwt, myparcelRouter);
 
 // ---- Error handler ----
 
 app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error('[server error]', err.message);
 
-  // Forward bol.com API errors clearly
   if ((err as any).response) {
     const bolError = (err as any).response;
     res.status(bolError.status ?? 500).json({
-      error: 'bol.com API error',
+      error: 'Upstream API error',
       status: bolError.status,
       detail: bolError.data,
     });

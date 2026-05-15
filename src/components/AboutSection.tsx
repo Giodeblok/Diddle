@@ -9,8 +9,8 @@ const values = [
   },
   {
     number: '02',
-    title: 'Digitaal voorbeeld',
-    description: 'Je ontvangt altijd een voorbeeld ter goedkeuring vóór productie.',
+    title: 'Ontwerp online',
+    description: 'Via de website voeg je een foto toe en maak je eenvoudig een eigen ontwerp ter inspiratie.',
   },
   {
     number: '03',

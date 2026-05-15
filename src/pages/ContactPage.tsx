@@ -19,11 +19,11 @@ export default function ContactPage() {
             Contact
           </span>
           <h1 className="font-serif text-4xl md:text-5xl text-anthracite mb-5 leading-tight">
-            Wij zijn er voor u.
+            We denken graag liefdevol met u mee.
           </h1>
           <div className="luxury-divider mb-5" />
           <p className="font-sans text-base text-taupe max-w-lg mx-auto px-6">
-            Met warmte en geduld helpen we u graag verder.
+            Heeft u vragen over onze producten of wilt u hulp bij het maken van een keuze? We helpen u graag.
           </p>
         </div>
 

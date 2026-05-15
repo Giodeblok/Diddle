@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import type { ReactNode } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -10,16 +11,16 @@ import {
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "Care, Shipping & FAQ — Eternal Light" },
-      { name: "description", content: "Answers about delivery times, photo quality, engraving, packaging, payment and shipping for your hand-engraved memorial heart." },
-      { property: "og:title", content: "FAQ — Eternal Light" },
-      { property: "og:description", content: "Everything you need to know about ordering, personalizing and caring for your memorial heart." },
+      { title: "Veelgestelde vragen — Eeuwig Dichtbij" },
+      { name: "description", content: "Antwoorden over bezorgtijd, verpakking, betaling, verzending en ons retourbeleid voor glazen harten." },
+      { property: "og:title", content: "Veelgestelde vragen — Eeuwig Dichtbij" },
+      { property: "og:description", content: "Alles wat u wilt weten over bestellen en zorgen voor uw glazen hart." },
     ],
   }),
   component: FaqPage,
 });
 
-const faqs = [
+const faqs: { q: string; a: ReactNode }[] = [
   {
     q: "How long does delivery take?",
     a: "Each heart is made to order and ships within 12–14 working days via insured concierge delivery. Express creation is available on request — please write to us.",
@@ -47,6 +48,22 @@ const faqs = [
   {
     q: "Do you ship internationally?",
     a: "Yes. We ship worldwide with full insurance. Customs and duties for non-EU destinations are calculated at checkout where possible.",
+  },
+  {
+    q: "Kan ik mijn bestelling retourneren?",
+    a: "Ja, u kunt uw bestelling binnen 14 dagen na ontvangst retourneren, op voorwaarde dat het product ongebruikt en in originele staat is. De retourkosten zijn voor uw rekening. Uitzondering: glazen harten met mini-urn waarbij de urn al is gevuld, kunnen niet worden geretourneerd vanwege de intieme en hygiënische aard van het product.",
+  },
+  {
+    q: "Wat als mijn hart beschadigd aankomt of een fout bevat?",
+    a: (
+      <>
+        Dat spijt ons zeer. Stuur ons binnen 14 dagen na ontvangst een e-mail naar info@eeuwigdichtbij.nl met uw bestelnummer, een omschrijving en foto's van het probleem. Wij reageren binnen 1 werkdag en zorgen voor een passende oplossing. Lees ons volledige{" "}
+        <Link to="/retourbeleid" className="underline underline-offset-2 hover:text-foreground/90 transition-colors">
+          retourbeleid
+        </Link>{" "}
+        voor meer informatie.
+      </>
+    ),
   },
   {
     q: "How do I care for the heart?",

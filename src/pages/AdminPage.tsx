@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Package,
@@ -10,18 +11,20 @@ import {
   Send,
   Trash2,
   Plus,
+  LogOut,
 } from 'lucide-react';
 import LuxuryButton from '../components/LuxuryButton';
+import { getToken, clearToken } from '../utils/auth';
 
 const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3001';
-const ADMIN_KEY = import.meta.env.VITE_ADMIN_KEY ?? '';
 
 async function apiFetch(path: string, options: RequestInit = {}) {
+  const token = getToken();
   const res = await fetch(`${API_BASE}/api/bol${path}`, {
     ...options,
     headers: {
       'Content-Type': 'application/json',
-      'x-admin-key': ADMIN_KEY,
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...options.headers,
     },
   });
@@ -51,6 +54,7 @@ function StatusBadge({ status }: StatusBadgeProps) {
 }
 
 export default function AdminPage() {
+  const navigate = useNavigate();
   const [tab, setTab] = useState<'health' | 'offers' | 'orders'>('health');
   const [health, setHealth] = useState<any>(null);
   const [offers, setOffers] = useState<any[]>([]);
@@ -169,14 +173,23 @@ export default function AdminPage() {
     <div className="pt-20 min-h-screen bg-cream">
       <div className="max-w-6xl mx-auto px-6 py-10">
         {/* Header */}
-        <div className="mb-8">
-          <span className="font-sans text-xs tracking-[0.2em] uppercase text-taupe block mb-2">
-            Beheerpaneel
-          </span>
-          <h1 className="font-serif text-3xl text-anthracite">bol.com Integratie</h1>
-          <p className="font-sans text-sm text-taupe mt-2">
-            Beheer je producten, aanbiedingen en bestellingen op bol.com.
-          </p>
+        <div className="mb-8 flex items-start justify-between">
+          <div>
+            <span className="font-sans text-xs tracking-[0.2em] uppercase text-taupe block mb-2">
+              Beheerpaneel
+            </span>
+            <h1 className="font-serif text-3xl text-anthracite">bol.com Integratie</h1>
+            <p className="font-sans text-sm text-taupe mt-2">
+              Beheer je producten, aanbiedingen en bestellingen op bol.com.
+            </p>
+          </div>
+          <button
+            onClick={() => { clearToken(); navigate('/admin/login'); }}
+            className="flex items-center gap-1.5 font-sans text-xs tracking-[0.1em] uppercase text-taupe hover:text-anthracite transition-colors mt-1"
+          >
+            <LogOut className="w-3.5 h-3.5" />
+            Uitloggen
+          </button>
         </div>
 
         {/* Notifications */}

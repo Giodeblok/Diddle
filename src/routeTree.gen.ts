@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RetourbeleidRouteImport } from './routes/retourbeleid'
 import { Route as CollectieRouteImport } from './routes/collectie'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as InspirationRouteImport } from './routes/inspiration'
@@ -17,6 +18,11 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const RetourbeleidRoute = RetourbeleidRouteImport.update({
+  id: '/retourbeleid',
+  path: '/retourbeleid',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CollectieRoute = CollectieRouteImport.update({
   id: '/collectie',
   path: '/collectie',
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/inspiration': typeof InspirationRoute
   '/shop': typeof ShopRoute
   '/collectie': typeof CollectieRoute
+  '/retourbeleid': typeof RetourbeleidRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/inspiration': typeof InspirationRoute
   '/shop': typeof ShopRoute
   '/collectie': typeof CollectieRoute
+  '/retourbeleid': typeof RetourbeleidRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,12 +88,13 @@ export interface FileRoutesById {
   '/inspiration': typeof InspirationRoute
   '/shop': typeof ShopRoute
   '/collectie': typeof CollectieRoute
+  '/retourbeleid': typeof RetourbeleidRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/faq' | '/inspiration' | '/shop' | '/collectie'
+  fullPaths: '/' | '/about' | '/contact' | '/faq' | '/inspiration' | '/shop' | '/collectie' | '/retourbeleid'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/faq' | '/inspiration' | '/shop' | '/collectie'
+  to: '/' | '/about' | '/contact' | '/faq' | '/inspiration' | '/shop' | '/collectie' | '/retourbeleid'
   id:
     | '__root__'
     | '/'
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
     | '/inspiration'
     | '/shop'
     | '/collectie'
+    | '/retourbeleid'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -105,6 +115,7 @@ export interface RootRouteChildren {
   InspirationRoute: typeof InspirationRoute
   ShopRoute: typeof ShopRoute
   CollectieRoute: typeof CollectieRoute
+  RetourbeleidRoute: typeof RetourbeleidRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -114,6 +125,13 @@ declare module '@tanstack/react-router' {
       path: '/collectie'
       fullPath: '/collectie'
       preLoaderRoute: typeof CollectieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/retourbeleid': {
+      id: '/retourbeleid'
+      path: '/retourbeleid'
+      fullPath: '/retourbeleid'
+      preLoaderRoute: typeof RetourbeleidRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shop': {
@@ -169,6 +187,7 @@ const rootRouteChildren: RootRouteChildren = {
   InspirationRoute: InspirationRoute,
   ShopRoute: ShopRoute,
   CollectieRoute: CollectieRoute,
+  RetourbeleidRoute: RetourbeleidRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

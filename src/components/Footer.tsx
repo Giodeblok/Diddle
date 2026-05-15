@@ -50,7 +50,7 @@ export default function Footer() {
               {[
                 { label: 'Collectie', to: '/collectie' },
                 { label: 'Ontwerp jouw hart', to: '/ontwerp' },
-                { label: 'Inspiratie & gedichten', to: '/inspiratie' },
+                // { label: 'Inspiratie & gedichten', to: '/inspiratie' }, // tijdelijk verborgen
                 { label: 'Veelgestelde vragen', to: '/faq' },
                 { label: 'Contact', to: '/contact' },
               ].map((link) => (
@@ -97,15 +97,15 @@ export default function Footer() {
             © 2025 Eeuwig Dichtbij. Met liefde gemaakt in Nederland.
           </p>
           <div className="flex items-center gap-6">
-            {['Privacybeleid', 'Algemene voorwaarden', 'Retourbeleid'].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="font-sans text-xs text-ivory/30 hover:text-ivory/60 transition-colors duration-300"
-              >
-                {item}
-              </a>
-            ))}
+            <Link to="/privacybeleid" className="font-sans text-xs text-ivory/30 hover:text-ivory/60 transition-colors duration-300">
+              Privacybeleid
+            </Link>
+            <Link to="/algemene-voorwaarden" className="font-sans text-xs text-ivory/30 hover:text-ivory/60 transition-colors duration-300">
+              Algemene voorwaarden
+            </Link>
+            <Link to="/retourbeleid" className="font-sans text-xs text-ivory/30 hover:text-ivory/60 transition-colors duration-300">
+              Retourbeleid
+            </Link>
           </div>
         </div>
       </div>

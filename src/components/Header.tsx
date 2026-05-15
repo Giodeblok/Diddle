@@ -7,8 +7,8 @@ import LuxuryButton from './LuxuryButton';
 const navLinks = [
   { label: 'Collectie', to: '/collectie' },
   { label: 'Ontwerp', to: '/ontwerp' },
-  { label: 'Inspiratie', to: '/inspiratie' },
-  { label: 'Over ons', to: '/#over-ons' },
+  // { label: 'Inspiratie', to: '/inspiratie' }, // tijdelijk verborgen
+  { label: 'Over ons', to: '/over-ons' },
   { label: 'FAQ', to: '/faq' },
   { label: 'Contact', to: '/contact' },
 ];

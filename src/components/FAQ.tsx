@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import SectionHeading from './SectionHeading';
 import FAQAccordion from './FAQAccordion';
 import { faqs } from '../data/faqs';
 import LuxuryButton from './LuxuryButton';
@@ -17,13 +16,6 @@ export default function FAQ() {
   return (
     <section id="faq" className="bg-cream py-24 lg:py-32">
       <div className="max-w-4xl mx-auto px-6 lg:px-10">
-        <SectionHeading
-          eyebrow="Vragen"
-          title="Veelgestelde vragen"
-          subtitle="We begrijpen dat elk detail telt. Hier vindt u antwoorden op de meest gestelde vragen."
-        />
-
-        {/* Category tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {categories.map((cat) => (
             <button
