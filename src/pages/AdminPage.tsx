@@ -21,9 +21,9 @@ import { getToken, clearToken } from '../utils/auth';
 
 const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3001';
 
-async function apiFetch(path: string, options: RequestInit = {}) {
+async function authFetch(url: string, options: RequestInit = {}): Promise<any> {
   const token = getToken();
-  const res = await fetch(`${API_BASE}/api/bol${path}`, {
+  const res = await fetch(url, {
     ...options,
     headers: {
       'Content-Type': 'application/json',
@@ -31,6 +31,11 @@ async function apiFetch(path: string, options: RequestInit = {}) {
       ...options.headers,
     },
   });
+  if (res.status === 401) {
+    clearToken();
+    window.location.href = '/admin/login';
+    throw new Error('Sessie verlopen, opnieuw inloggen.');
+  }
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: res.statusText }));
     throw new Error(err.error ?? `HTTP ${res.status}`);
@@ -38,22 +43,11 @@ async function apiFetch(path: string, options: RequestInit = {}) {
   return res.json();
 }
 
-async function productsFetch(path: string, options: RequestInit = {}) {
-  const token = getToken();
-  const res = await fetch(`${API_BASE}/api/products${path}`, {
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...options.headers,
-    },
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({ error: res.statusText }));
-    throw new Error(err.error ?? `HTTP ${res.status}`);
-  }
-  return res.json();
-}
+const apiFetch = (path: string, options: RequestInit = {}) =>
+  authFetch(`${API_BASE}/api/bol${path}`, options);
+
+const productsFetch = (path: string, options: RequestInit = {}) =>
+  authFetch(`${API_BASE}/api/products${path}`, options);
 
 interface StatusBadgeProps {
   status: string;
