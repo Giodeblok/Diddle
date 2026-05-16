@@ -27,6 +27,6 @@ authRoutes.post('/login', async (c) => {
   }
 
   const exp = Math.floor(Date.now() / 1000) + 8 * 3600;
-  const token = await sign({ role: 'admin', exp }, c.env.JWT_SECRET);
+  const token = await sign({ role: 'admin', exp }, c.env.JWT_SECRET, 'HS256');
   return c.json({ token });
 });

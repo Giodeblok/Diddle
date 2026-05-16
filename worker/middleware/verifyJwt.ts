@@ -9,7 +9,7 @@ export const verifyJwt: MiddlewareHandler<{ Bindings: Env }> = async (c, next) =
   }
   const token = authHeader.slice(7);
   try {
-    await verify(token, c.env.JWT_SECRET);
+    await verify(token, c.env.JWT_SECRET, 'HS256');
     await next();
   } catch {
     return c.json({ error: 'Sessie verlopen of ongeldig token.' }, 401);
