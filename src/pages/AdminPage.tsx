@@ -151,7 +151,7 @@ export default function AdminPage() {
     setProductsLoading(true);
     setProductsError(null);
     try {
-      const data = await productsFetch('/');
+      const data = await productsFetch('');
       setSiteProducts(data.products ?? []);
     } catch (e: any) {
       setProductsError(e.message);
