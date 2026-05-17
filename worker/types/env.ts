@@ -9,4 +9,5 @@ export type Env = {
   MYPARCEL_API_KEY: string;
   GOOGLE_PLACES_API_KEY: string;
   GOOGLE_PLACE_ID: string;
+  PRICE_OVERRIDES: KVNamespace;
 };

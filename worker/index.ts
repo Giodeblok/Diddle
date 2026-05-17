@@ -6,6 +6,7 @@ import { authRoutes } from './routes/auth.js';
 import { reviewsRoutes } from './routes/reviews.js';
 import { bolcomRoutes } from './routes/bolcom.js';
 import { myparcelRoutes } from './routes/myparcel.js';
+import { pricesRoutes } from './routes/prices.js';
 import { verifyJwt } from './middleware/verifyJwt.js';
 
 const app = new Hono<{ Bindings: Env }>();
@@ -31,9 +32,11 @@ app.route('/api/auth', authRoutes);
 app.route('/api/reviews', reviewsRoutes);
 
 // Beveiligd met JWT
+app.use('/api/products/:id', verifyJwt);
 app.use('/api/bol/*', verifyJwt);
 app.use('/api/myparcel/*', verifyJwt);
 
+app.route('/api/products', pricesRoutes);
 app.route('/api/bol', bolcomRoutes);
 app.route('/api/myparcel', myparcelRoutes);
 

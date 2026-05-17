@@ -1,8 +1,11 @@
 import SectionHeading from './SectionHeading';
 import ProductCard from './ProductCard';
-import { products, categories } from '../data/products';
+import { categories } from '../data/products';
+import { useProducts } from '../hooks/useProducts';
 
 export default function ProductShowcase() {
+  const products = useProducts();
+
   return (
     <section id="collectie" className="bg-cream py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
