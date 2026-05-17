@@ -89,6 +89,8 @@ export default function AdminPage() {
   const [catalog, setCatalog] = useState<any[]>([]);
   const [orders, setOrders] = useState<any[]>([]);
   const [siteProducts, setSiteProducts] = useState<ProductRow[]>([]);
+  const [productsLoading, setProductsLoading] = useState(false);
+  const [productsError, setProductsError] = useState<string | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editPrice, setEditPrice] = useState('');
   const [editDesc, setEditDesc] = useState('');
@@ -146,11 +148,15 @@ export default function AdminPage() {
   }
 
   async function loadSiteProducts() {
+    setProductsLoading(true);
+    setProductsError(null);
     try {
       const data = await productsFetch('/');
       setSiteProducts(data.products ?? []);
     } catch (e: any) {
-      fail(e.message);
+      setProductsError(e.message);
+    } finally {
+      setProductsLoading(false);
     }
   }
 
@@ -587,10 +593,27 @@ export default function AdminPage() {
               </button>
             </div>
 
-            {siteProducts.length === 0 ? (
+            {productsLoading ? (
               <div className="text-center py-12 border border-dashed border-beige">
                 <Package className="w-8 h-8 text-taupe/30 mx-auto mb-3" />
                 <p className="font-sans text-sm text-taupe">Producten laden…</p>
+              </div>
+            ) : productsError ? (
+              <div className="text-center py-12 border border-dashed border-red-200 bg-red-50">
+                <XCircle className="w-8 h-8 text-red-300 mx-auto mb-3" />
+                <p className="font-sans text-sm text-red-700">Kon producten niet laden.</p>
+                <p className="font-sans text-xs text-red-500 mt-1">{productsError}</p>
+                <button
+                  onClick={loadSiteProducts}
+                  className="mt-4 font-sans text-xs text-red-600 hover:text-red-800 underline"
+                >
+                  Opnieuw proberen
+                </button>
+              </div>
+            ) : siteProducts.length === 0 ? (
+              <div className="text-center py-12 border border-dashed border-beige">
+                <Package className="w-8 h-8 text-taupe/30 mx-auto mb-3" />
+                <p className="font-sans text-sm text-taupe">Geen producten gevonden.</p>
               </div>
             ) : (
               <div className="space-y-3">
