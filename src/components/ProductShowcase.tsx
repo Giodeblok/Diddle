@@ -12,7 +12,7 @@ export default function ProductShowcase() {
         <SectionHeading
           eyebrow="De collectie"
           title="Een tastbaar aandenken aan wie altijd bij je blijft."
-          subtitle="Glazen harten met gedicht, fotoruimte en — voor wie dat wenst — een mini urn voor as. Elk stuk inclusief luxe geschenkverpakking."
+          subtitle="Glazen harten met gedicht, fotoruimte en — voor wie dat wenst — een mini urn voor as."
         />
 
         {categories.map((category) => {

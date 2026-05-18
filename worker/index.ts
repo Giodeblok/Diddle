@@ -7,6 +7,9 @@ import { reviewsRoutes } from './routes/reviews.js';
 import { bolcomRoutes } from './routes/bolcom.js';
 import { myparcelRoutes } from './routes/myparcel.js';
 import { pricesRoutes } from './routes/prices.js';
+import { emailRoutes } from './routes/email.js';
+import { ordersRoutes } from './routes/orders.js';
+import { icepayRoutes } from './routes/icepay.js';
 import { verifyJwt } from './middleware/verifyJwt.js';
 
 const app = new Hono<{ Bindings: Env }>();
@@ -31,10 +34,20 @@ app.post('/api/bol/webhook/events', (c) => bolcomRoutes.fetch(c.req.raw, c.env))
 app.route('/api/auth', authRoutes);
 app.route('/api/reviews', reviewsRoutes);
 
+// Email: contact + orderbevestiging (publiek)
+app.route('/api/email', emailRoutes);
+
+// Orders: plaatsen publiek, beheer beschermd
+app.route('/api/orders', ordersRoutes);
+
+// iCEPAY: betaling aanmaken (publiek) en webhook (publiek — komt van iCEPAY servers)
+app.route('/api/icepay', icepayRoutes);
+
 // Beveiligd met JWT
 app.use('/api/products/:id', verifyJwt);
 app.use('/api/bol/*', verifyJwt);
 app.use('/api/myparcel/*', verifyJwt);
+app.use('/api/orders/website/*', verifyJwt);
 
 app.route('/api/products', pricesRoutes);
 app.route('/api/bol', bolcomRoutes);

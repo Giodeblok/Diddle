@@ -15,9 +15,9 @@ export default function CTASection() {
         >
           <GlassHeartPreview
             size="medium"
-            name="Voor Altijd"
-            dateRange="In ons hart"
-            quote="Jouw liefde blijft ons licht."
+            name="Voor EEUWIG in het HART"
+            dateRange=""
+            quote=""
             animated={true}
           />
         </motion.div>

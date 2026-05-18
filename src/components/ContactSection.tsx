@@ -3,13 +3,34 @@ import { motion } from 'framer-motion';
 import { Mail, MessageCircle, Clock } from 'lucide-react';
 import LuxuryButton from './LuxuryButton';
 
+const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3001';
+
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch(`${API_BASE}/api/email/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error ?? 'Er is iets misgegaan. Probeer het opnieuw.');
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Er is iets misgegaan. Probeer het opnieuw.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -124,8 +145,14 @@ export default function ContactSection() {
                   />
                 </div>
 
-                <LuxuryButton type="submit" variant="primary" fullWidth size="md">
-                  Stuur bericht
+                {error && (
+                  <p className="font-sans text-xs text-red-600 bg-red-50 border border-red-200 px-4 py-3">
+                    {error}
+                  </p>
+                )}
+
+                <LuxuryButton type="submit" variant="primary" fullWidth size="md" disabled={loading}>
+                  {loading ? 'Bericht versturen…' : 'Stuur bericht'}
                 </LuxuryButton>
 
                 <p className="font-sans text-xs text-taupe/60 text-center">

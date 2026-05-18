@@ -109,38 +109,11 @@ export default function Hero() {
 
             <GlassHeartPreview
               size="large"
-              name="Moeder"
-              dateRange="1948 – 2023"
-              quote="Jouw liefde blijft ons licht."
+              name="Voor EEUWIG in het HART"
+              dateRange=""
+              quote=""
               animated={true}
             />
-
-            {/* Floating quote badge */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 0.7 }}
-              className="absolute -right-4 top-16 bg-ivory border border-gold/30 shadow-luxury px-5 py-3.5 max-w-[180px]"
-            >
-              <p className="font-serif text-xs italic text-anthracite/80 leading-relaxed">
-                "Jouw liefde blijft ons licht."
-              </p>
-            </motion.div>
-
-            {/* Size badge */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1, duration: 0.7 }}
-              className="absolute -left-4 bottom-20 bg-anthracite shadow-luxury px-4 py-3"
-            >
-              <p className="font-sans text-[10px] tracking-[0.15em] uppercase text-gold">
-                Premium Kristalglas
-              </p>
-              <p className="font-sans text-xs text-ivory/70 mt-0.5">
-                Handgegraveerd in Nederland
-              </p>
-            </motion.div>
           </motion.div>
         </div>
       </div>

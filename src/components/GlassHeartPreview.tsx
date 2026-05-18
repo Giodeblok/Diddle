@@ -102,19 +102,41 @@ export default function GlassHeartPreview({
           />
 
           {/* Engraved text */}
-          {name && (
-            <text
-              x="100"
-              y="115"
-              textAnchor="middle"
-              fontFamily="Cormorant Garamond, serif"
-              fontSize="16"
-              fill="rgba(35,35,35,0.7)"
-              fontWeight="500"
-            >
-              {name}
-            </text>
-          )}
+          {name && (() => {
+            const onlyName = !dateRange && !quote;
+            if (onlyName && name.length > 14) {
+              const mid = Math.floor(name.length / 2);
+              const split = name.lastIndexOf(' ', mid) !== -1 ? name.lastIndexOf(' ', mid) : name.indexOf(' ', mid);
+              const line1 = split !== -1 ? name.substring(0, split) : name;
+              const line2 = split !== -1 ? name.substring(split + 1) : '';
+              return (
+                <text
+                  x="100"
+                  textAnchor="middle"
+                  fontFamily="Cormorant Garamond, serif"
+                  fontSize="16"
+                  fill="rgba(35,35,35,0.7)"
+                  fontWeight="500"
+                >
+                  <tspan x="100" y={line2 ? '92' : '100'}>{line1}</tspan>
+                  {line2 && <tspan x="100" dy="22">{line2}</tspan>}
+                </text>
+              );
+            }
+            return (
+              <text
+                x="100"
+                y={onlyName ? '100' : '115'}
+                textAnchor="middle"
+                fontFamily="Cormorant Garamond, serif"
+                fontSize="16"
+                fill="rgba(35,35,35,0.7)"
+                fontWeight="500"
+              >
+                {name}
+              </text>
+            );
+          })()}
           {dateRange && (
             <text
               x="100"

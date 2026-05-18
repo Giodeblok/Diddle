@@ -10,4 +10,11 @@ export type Env = {
   GOOGLE_PLACES_API_KEY: string;
   GOOGLE_PLACE_ID: string;
   PRICE_OVERRIDES: KVNamespace;
+  RESEND_API_KEY: string;
+  RESEND_FROM_EMAIL: string;
+  SUPABASE_URL: string;
+  SUPABASE_SERVICE_ROLE_KEY: string;
+  ICEPAY_MERCHANT_ID: string;
+  ICEPAY_MERCHANT_SECRET: string;
+  SERVER_URL?: string;
 };

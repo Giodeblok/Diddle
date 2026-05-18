@@ -27,7 +27,7 @@ export default function ProductPage() {
           </h1>
           <div className="luxury-divider mb-5" />
           <p className="font-sans text-base text-taupe max-w-lg mx-auto px-6">
-            Kies het formaat dat past bij de liefde die je wilt bewaren.
+            Kies het hart dat past bij de liefde die je wilt bewaren.
           </p>
         </div>
         <TrustSection />

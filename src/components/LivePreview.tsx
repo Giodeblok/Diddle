@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import SectionHeading from './SectionHeading';
 import LuxuryButton from './LuxuryButton';
 import { products } from '../data/products';
@@ -14,6 +14,8 @@ const filterOptions: { id: UrnFilter; label: string; subtitle: string }[] = [
 export default function LivePreview() {
   const [urnFilter, setUrnFilter] = useState<UrnFilter>('met-urn');
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
+  const [uploadedPhoto, setUploadedPhoto] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const filteredProducts = products.filter((p) =>
     urnFilter === 'met-urn'
@@ -27,6 +29,16 @@ export default function LivePreview() {
   const handleFilterChange = (filter: UrnFilter) => {
     setUrnFilter(filter);
     setSelectedProductId(null);
+    setUploadedPhoto(null);
+  };
+
+  const handlePhotoUpload = (file: File) => {
+    setUploadedPhoto(URL.createObjectURL(file));
+  };
+
+  const handleRemovePhoto = () => {
+    setUploadedPhoto(null);
+    if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
   return (
@@ -87,7 +99,7 @@ export default function LivePreview() {
                 </span>
                 <h3 className="font-serif text-lg text-anthracite">Kies een artikel</h3>
               </div>
-              <div className="flex flex-col gap-3 h-[548px] overflow-y-scroll pr-1">
+              <div className="flex flex-col gap-3 h-[408px] overflow-y-scroll pr-1">
                 {filteredProducts.map((product) => (
                   <button
                     key={product.id}
@@ -115,6 +127,94 @@ export default function LivePreview() {
                   </button>
                 ))}
               </div>
+            </motion.div>
+
+            {/* Stap 3: Upload uw foto */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="border border-beige p-6"
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <span className="w-7 h-7 bg-anthracite text-ivory flex items-center justify-center font-sans text-xs">
+                  3
+                </span>
+                <h3 className="font-serif text-lg text-anthracite">Upload uw foto</h3>
+              </div>
+
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) handlePhotoUpload(file);
+                }}
+              />
+
+              {uploadedPhoto ? (
+                <div className="flex items-center gap-4">
+                  <div className="shrink-0 w-20 h-28 border border-beige overflow-hidden">
+                    <img
+                      src={uploadedPhoto}
+                      alt="Geüploade foto"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <p className="font-sans text-xs text-taupe leading-relaxed">
+                      Uw foto is zichtbaar in het live voorbeeld.
+                    </p>
+                    <button
+                      onClick={() => fileInputRef.current?.click()}
+                      className="font-sans text-xs text-gold-deep underline underline-offset-2 text-left hover:text-anthracite transition-colors"
+                    >
+                      Andere foto kiezen
+                    </button>
+                    <button
+                      onClick={handleRemovePhoto}
+                      className="font-sans text-xs text-taupe underline underline-offset-2 text-left hover:text-anthracite transition-colors"
+                    >
+                      Foto verwijderen
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  onDragOver={(e) => e.preventDefault()}
+                  onDrop={(e) => {
+                    e.preventDefault();
+                    const file = e.dataTransfer.files?.[0];
+                    if (file && file.type.startsWith('image/')) handlePhotoUpload(file);
+                  }}
+                  className="w-full border border-dashed border-gold/40 p-8 flex flex-col items-center gap-3 hover:border-gold transition-colors duration-300 group"
+                >
+                  <svg
+                    className="w-8 h-8 text-gold/50 group-hover:text-gold transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <div className="text-center">
+                    <p className="font-serif text-sm text-anthracite">Klik om een foto te uploaden</p>
+                    <p className="font-sans text-xs text-taupe mt-1">of sleep uw foto hierheen</p>
+                  </div>
+                  <p className="font-sans text-[10px] tracking-widest uppercase text-taupe/70">
+                    5 × 7 cm formaat aanbevolen
+                  </p>
+                </button>
+              )}
             </motion.div>
 
             {selectedProduct && (
@@ -150,12 +250,49 @@ export default function LivePreview() {
                   transition={{ duration: 0.35 }}
                   className="w-full flex flex-col items-center"
                 >
-                  <div className="w-full overflow-hidden border border-beige">
+                  <div className="w-full overflow-hidden border border-beige relative" style={{ aspectRatio: '1/1' }}>
                     <img
                       src={selectedProduct.image}
                       alt={selectedProduct.name}
-                      className="w-full h-auto block"
+                      className="w-full h-full object-cover block"
+                      style={{ objectPosition: selectedProduct.imageObjectPosition ?? 'center center' }}
                     />
+                    {selectedProduct.photoFrame && (
+                      <div
+                        style={{
+                          position: 'absolute',
+                          top: selectedProduct.photoFrame.top,
+                          left: selectedProduct.photoFrame.left,
+                          width: selectedProduct.photoFrame.width,
+                          aspectRatio: '5/8.2',
+                          transform: `rotate(${selectedProduct.photoFrame.rotation ?? '-1.9deg'})`,
+                          border: '2px dashed rgba(214,185,140,0.7)',
+                          pointerEvents: 'none',
+                        }}
+                      />
+                    )}
+                    <AnimatePresence>
+                      {uploadedPhoto && selectedProduct.photoFrame && (
+                        <motion.img
+                          key={uploadedPhoto}
+                          src={uploadedPhoto}
+                          alt="Uw foto"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          style={{
+                            position: 'absolute',
+                            top: selectedProduct.photoFrame.top,
+                            left: selectedProduct.photoFrame.left,
+                            width: selectedProduct.photoFrame.width,
+                            aspectRatio: '5/8.2',
+                            objectFit: 'cover',
+                            transform: `rotate(${selectedProduct.photoFrame.rotation ?? '-1.9deg'})`,
+                          }}
+                        />
+                      )}
+                    </AnimatePresence>
                   </div>
                   <div className="mt-6 text-center space-y-1">
                     <p className="font-serif text-base text-anthracite">{selectedProduct.name}</p>
@@ -172,11 +309,20 @@ export default function LivePreview() {
               )}
 
               <div className="mt-6 w-full border-t border-gold/20 pt-5">
-                <p className="font-sans text-xs text-taupe text-center leading-relaxed">
-                  De teksten op het glazen hart zijn <span className="text-anthracite font-medium">vooraf bepaald</span> en staan vast.
-                  <br />
-                  De foto plaatst u <span className="text-gold-deep">zelf thuis</span> in de fotolijst.
-                </p>
+                {!uploadedPhoto && (
+                  <p className="font-sans text-xs text-taupe text-center leading-relaxed">
+                    De teksten op het glazen hart zijn <span className="text-anthracite font-medium">vooraf bepaald</span> en staan vast.
+                    <br />
+                    De foto plaatst u <span className="text-gold-deep">zelf thuis</span> in de fotolijst.
+                  </p>
+                )}
+                {uploadedPhoto && (
+                  <p className="font-sans text-xs text-taupe text-center leading-relaxed">
+                    Zo ziet uw foto eruit in de fotolijst van het glazen hart.
+                    <br />
+                    De exacte positie kan iets afwijken van het werkelijke product.
+                  </p>
+                )}
               </div>
             </div>
           </motion.div>

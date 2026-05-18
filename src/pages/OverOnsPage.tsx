@@ -160,7 +160,7 @@ export default function OverOnsPage() {
                 <div className="luxury-divider ml-0 mb-7" />
                 <div className="space-y-5">
                   {[
-                    'Glas heeft iets bijzonders. Het is transparant en toch robuust. Het vangt het licht en weerkaatst het op een manier die andere materialen niet kunnen. Wanneer de zon door een glazen hart schijnt en het licht door de kamer danst, voelt dat als aanwezigheid. Als een herinnering die zichtbaar wordt.',
+                    'Glas heeft iets bijzonders. Het is transparant en toch robuust. Het vangt het licht en weerkaatst het op een manier die andere materialen niet kunnen. Wanneer de zon door een glazen hart schijnt, verspreidt het licht zich op een bijzondere manier door de kamer. Als een herinnering die zichtbaar wordt.',
                     'Dat is waarom we voor glas kozen, en niet voor hout, steen of metaal. Glas is kwetsbaar én sterk tegelijk. Net zoals rouw. Net zoals liefde.',
                   ].map((text, i) => (
                     <motion.p

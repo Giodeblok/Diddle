@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Collectie', to: '/collectie' },
   { label: 'Ontwerp', to: '/ontwerp' },
   // { label: 'Inspiratie', to: '/inspiratie' }, // tijdelijk verborgen
+  { label: 'Blog', to: '/blog' },
   { label: 'Over ons', to: '/over-ons' },
   { label: 'FAQ', to: '/faq' },
   { label: 'Contact', to: '/contact' },

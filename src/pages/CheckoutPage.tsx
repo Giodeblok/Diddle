@@ -15,26 +15,86 @@ const steps = [
   { id: 4, label: 'Bevestiging' },
 ];
 
+const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3001';
+
 export default function CheckoutPage() {
   const [searchParams] = useSearchParams();
   const productId = searchParams.get('product');
   const product = products.find((p) => p.id === productId) ?? products[0];
 
   const [currentStep, setCurrentStep] = useState<Step>(1);
-  const [giftWrap, setGiftWrap] = useState(false);
   const [shippingOption, setShippingOption] = useState<'standard' | 'express'>('standard');
+  const [selectedMethod, setSelectedMethod] = useState<'ideal' | 'creditcard'>('ideal');
+  const [orderLoading, setOrderLoading] = useState(false);
+  const [orderError, setOrderError] = useState<string | null>(null);
+  const [orderNumber, setOrderNumber] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     firstName: '', lastName: '', email: '', phone: '',
     address: '', postalCode: '', city: '',
-    cardNumber: '', cardName: '', expiry: '', cvv: '',
-    giftMessage: '',
   });
 
   const rawPrice = parseFloat(product.priceDisplay.replace('€', '').replace(',', '.').trim());
   const productPrice = isNaN(rawPrice) ? 0 : rawPrice;
-  const giftWrapPrice = 5;
   const shippingPrice = shippingOption === 'express' ? 12.95 : 0;
-  const total = productPrice + (giftWrap ? giftWrapPrice : 0) + shippingPrice;
+  const total = productPrice + shippingPrice;
+
+  const handlePlaceOrder = async () => {
+    const { firstName, lastName, email, address, postalCode, city } = formData;
+    if (!firstName || !lastName || !email || !address || !postalCode || !city) {
+      setOrderError('Vul alle verzendgegevens in (stap 2) voordat u de bestelling plaatst.');
+      return;
+    }
+    setOrderLoading(true);
+    setOrderError(null);
+    try {
+      const orderRes = await fetch(`${API_BASE}/api/orders`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          phone: formData.phone,
+          address,
+          postalCode,
+          city,
+          productId: product.id,
+          productName: product.name,
+          productSubtitle: product.subtitle,
+          productPrice,
+          shippingOption,
+          shippingPrice,
+          totalPrice: total,
+        }),
+      });
+      const orderData = await orderRes.json().catch(() => ({}));
+      if (!orderRes.ok) {
+        throw new Error(orderData.error ?? 'Er is iets misgegaan. Probeer het opnieuw.');
+      }
+      const createdOrderNumber: string = orderData.orderNumber;
+      setOrderNumber(createdOrderNumber);
+
+      const paymentRes = await fetch(`${API_BASE}/api/icepay/payment`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          productName: product.name,
+          amountEuros: total,
+          email,
+          paymentMethod: selectedMethod === 'ideal' ? 'IDEAL' : 'CREDITCARD',
+          reference: createdOrderNumber,
+        }),
+      });
+      const paymentData = await paymentRes.json().catch(() => ({}));
+      if (!paymentRes.ok) {
+        throw new Error(paymentData.error ?? 'Betaling kon niet worden gestart. Probeer het opnieuw.');
+      }
+      window.location.href = paymentData.checkoutUrl;
+    } catch (err) {
+      setOrderError(err instanceof Error ? err.message : 'Er is iets misgegaan. Probeer het opnieuw.');
+      setOrderLoading(false);
+    }
+  };
 
   if (currentStep === 4) {
     return (
@@ -68,7 +128,7 @@ export default function CheckoutPage() {
             <div className="border border-beige bg-ivory p-6 mb-8 text-left space-y-3">
               <div className="flex justify-between">
                 <span className="font-sans text-xs text-taupe">Bestelnummer</span>
-                <span className="font-sans text-xs text-anthracite font-medium">#EDB-2025-0847</span>
+                <span className="font-sans text-xs text-anthracite font-medium">#{orderNumber ?? 'EDB-0000'}</span>
               </div>
               <div className="flex justify-between">
                 <span className="font-sans text-xs text-taupe">Product</span>
@@ -161,46 +221,6 @@ export default function CheckoutPage() {
                         <span className="font-serif text-lg text-anthracite">{product.priceDisplay}</span>
                       </div>
                     </div>
-
-                    {/* Gift wrap */}
-                    <div
-                      onClick={() => setGiftWrap(!giftWrap)}
-                      className={`flex items-center gap-4 p-5 border cursor-pointer transition-all duration-300 ${
-                        giftWrap ? 'border-gold/40 bg-gold/5' : 'border-beige bg-ivory hover:border-gold/30'
-                      }`}
-                    >
-                      <div className={`w-5 h-5 border flex items-center justify-center flex-shrink-0 transition-colors ${
-                        giftWrap ? 'border-gold bg-gold' : 'border-beige'
-                      }`}>
-                        {giftWrap && <Check className="w-3 h-3 text-anthracite" />}
-                      </div>
-                      <div className="flex-1">
-                        <p className="font-sans text-sm text-anthracite font-medium">Luxe geschenkverpakking</p>
-                        <p className="font-sans text-xs text-taupe">Fluwelen doos met lint en handgeschreven kaart</p>
-                      </div>
-                      <span className="font-sans text-sm text-taupe">+ € 5,00</span>
-                    </div>
-
-                    {/* Gift message */}
-                    {giftWrap && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <label className="font-sans text-xs tracking-[0.1em] uppercase text-taupe block mb-2">
-                          Persoonlijke boodschap (optioneel)
-                        </label>
-                        <textarea
-                          rows={3}
-                          value={formData.giftMessage}
-                          onChange={(e) => setFormData({ ...formData, giftMessage: e.target.value })}
-                          placeholder="Een persoonlijk woord bij het cadeau..."
-                          className="w-full border border-beige bg-ivory px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-gold/50 transition-colors resize-none"
-                        />
-                      </motion.div>
-                    )}
 
                     <LuxuryButton
                       onClick={() => setCurrentStep(2)}
@@ -332,40 +352,27 @@ export default function CheckoutPage() {
 
                     {/* Payment method */}
                     <div className="grid grid-cols-2 gap-3">
-                      {['iDEAL', 'Creditcard', 'Bancontact', 'PayPal'].map((method) => (
-                        <div
-                          key={method}
-                          className="border border-beige bg-ivory p-4 text-center cursor-pointer hover:border-gold/40 transition-colors duration-300 first:border-gold/40 first:bg-gold/5"
-                        >
-                          <p className="font-sans text-sm text-anthracite">{method}</p>
-                        </div>
-                      ))}
+                      {(['iDEAL', 'Creditcard'] as const).map((method) => {
+                        const key = method === 'iDEAL' ? 'ideal' : 'creditcard';
+                        const selected = selectedMethod === key;
+                        return (
+                          <div
+                            key={method}
+                            onClick={() => setSelectedMethod(key)}
+                            className={`border p-4 text-center cursor-pointer transition-colors duration-300 ${selected ? 'border-gold/40 bg-gold/5' : 'border-beige bg-ivory hover:border-gold/40'}`}
+                          >
+                            <p className="font-sans text-sm text-anthracite">{method}</p>
+                          </div>
+                        );
+                      })}
                     </div>
 
-                    <div className="space-y-4">
-                      {[
-                        { key: 'cardName', label: 'Naam op kaart', placeholder: 'Zoals op uw kaart staat' },
-                        { key: 'cardNumber', label: 'Kaartnummer', placeholder: '1234 5678 9012 3456' },
-                      ].map((field) => (
-                        <div key={field.key}>
-                          <label className="font-sans text-xs tracking-[0.1em] uppercase text-taupe block mb-2">{field.label}</label>
-                          <input
-                            type="text"
-                            placeholder={field.placeholder}
-                            className="w-full border border-beige bg-ivory px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-gold/50 transition-colors"
-                          />
-                        </div>
-                      ))}
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <label className="font-sans text-xs tracking-[0.1em] uppercase text-taupe block mb-2">Vervaldatum</label>
-                          <input type="text" placeholder="MM / JJ" className="w-full border border-beige bg-ivory px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-gold/50 transition-colors" />
-                        </div>
-                        <div>
-                          <label className="font-sans text-xs tracking-[0.1em] uppercase text-taupe block mb-2">CVV</label>
-                          <input type="text" placeholder="123" className="w-full border border-beige bg-ivory px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-gold/50 transition-colors" />
-                        </div>
-                      </div>
+                    <div className="px-4 py-3 border border-beige bg-ivory/50">
+                      <p className="font-sans text-sm text-taupe">
+                        {selectedMethod === 'ideal'
+                          ? 'U kiest uw bank op de beveiligde iCEPAY betaalpagina.'
+                          : 'U voert uw kaartgegevens in op de beveiligde iCEPAY betaalpagina.'}
+                      </p>
                     </div>
 
                     <div className="flex items-center gap-3 p-4 border border-beige bg-ivory">
@@ -383,20 +390,28 @@ export default function CheckoutPage() {
                       . Gepersonaliseerde producten zijn niet retourneerbaar na goedkeuring van de digitale preview (art. 6:230p sub b BW).
                     </p>
 
+                    {orderError && (
+                      <p className="font-sans text-xs text-red-600 bg-red-50 border border-red-200 px-4 py-3">
+                        {orderError}
+                      </p>
+                    )}
+
                     <div className="flex gap-4">
                       <button
                         onClick={() => setCurrentStep(2)}
                         className="flex-1 font-sans text-xs tracking-[0.12em] uppercase text-taupe border border-beige py-3.5 hover:border-gold/40 transition-colors duration-300"
+                        disabled={orderLoading}
                       >
                         Terug
                       </button>
                       <LuxuryButton
-                        onClick={() => setCurrentStep(4)}
+                        onClick={handlePlaceOrder}
                         variant="primary"
                         size="md"
                         className="flex-1"
+                        disabled={orderLoading}
                       >
-                        Bevestig bestelling
+                        {orderLoading ? 'Bestelling plaatsen…' : 'Bevestig bestelling'}
                       </LuxuryButton>
                     </div>
                   </motion.div>
@@ -423,12 +438,6 @@ export default function CheckoutPage() {
                     <span className="font-sans text-sm text-taupe">Product</span>
                     <span className="font-sans text-sm text-anthracite">€ {productPrice},-</span>
                   </div>
-                  {giftWrap && (
-                    <div className="flex justify-between">
-                      <span className="font-sans text-sm text-taupe">Geschenkverpakking</span>
-                      <span className="font-sans text-sm text-anthracite">€ {giftWrapPrice},-</span>
-                    </div>
-                  )}
                   <div className="flex justify-between">
                     <span className="font-sans text-sm text-taupe">Verzending</span>
                     <span className="font-sans text-sm text-anthracite">

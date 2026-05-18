@@ -49,22 +49,58 @@ const apiFetch = (path: string, options: RequestInit = {}) =>
 const productsFetch = (path: string, options: RequestInit = {}) =>
   authFetch(`${API_BASE}/api/products${path}`, options);
 
+const ordersFetch = (path: string, options: RequestInit = {}) =>
+  authFetch(`${API_BASE}/api/orders${path}`, options);
+
 interface StatusBadgeProps {
   status: string;
 }
 function StatusBadge({ status }: StatusBadgeProps) {
   const map: Record<string, string> = {
+    // bol.com statussen
     SUCCESS: 'bg-green-100 text-green-800',
     PENDING: 'bg-yellow-100 text-yellow-800',
     FAILURE: 'bg-red-100 text-red-800',
     OPEN: 'bg-blue-100 text-blue-800',
     SHIPPED: 'bg-green-100 text-green-800',
+    // Website order statussen
+    pending: 'bg-yellow-100 text-yellow-800',
+    paid: 'bg-blue-100 text-blue-800',
+    in_production: 'bg-purple-100 text-purple-800',
+    shipped: 'bg-green-100 text-green-800',
+    delivered: 'bg-green-100 text-green-800',
+    cancelled: 'bg-red-100 text-red-800',
+  };
+  const label: Record<string, string> = {
+    pending: 'Nieuw',
+    paid: 'Betaald',
+    in_production: 'In productie',
+    shipped: 'Verzonden',
+    delivered: 'Afgeleverd',
+    cancelled: 'Geannuleerd',
   };
   return (
     <span className={`inline-block px-2 py-0.5 text-[10px] font-sans tracking-wide uppercase rounded ${map[status] ?? 'bg-gray-100 text-gray-600'}`}>
-      {status}
+      {label[status] ?? status}
     </span>
   );
+}
+
+interface WebsiteOrder {
+  id: string;
+  order_number: string;
+  status: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  address: string;
+  postal_code: string;
+  city: string;
+  product_price: number;
+  shipping_price: number;
+  total_price: number;
+  shipping_option: string;
+  created_at: string;
 }
 
 interface ProductRow {
@@ -84,6 +120,11 @@ export default function AdminPage() {
   const navigate = useNavigate();
   const [section, setSection] = useState<'bolcom' | 'website'>('bolcom');
   const [tab, setTab] = useState<'health' | 'offers' | 'orders'>('health');
+  const [websiteTab, setWebsiteTab] = useState<'products' | 'orders'>('products');
+  const [websiteOrders, setWebsiteOrders] = useState<WebsiteOrder[]>([]);
+  const [websiteOrdersLoading, setWebsiteOrdersLoading] = useState(false);
+  const [websiteOrdersError, setWebsiteOrdersError] = useState<string | null>(null);
+  const [updatingOrderId, setUpdatingOrderId] = useState<string | null>(null);
   const [health, setHealth] = useState<any>(null);
   const [offers, setOffers] = useState<any[]>([]);
   const [catalog, setCatalog] = useState<any[]>([]);
@@ -200,6 +241,37 @@ export default function AdminPage() {
     }
   }
 
+  async function loadWebsiteOrders() {
+    setWebsiteOrdersLoading(true);
+    setWebsiteOrdersError(null);
+    try {
+      const data = await ordersFetch('/website');
+      setWebsiteOrders(data.orders ?? []);
+    } catch (e: any) {
+      setWebsiteOrdersError(e.message);
+    } finally {
+      setWebsiteOrdersLoading(false);
+    }
+  }
+
+  async function updateWebsiteOrderStatus(orderId: string, status: string) {
+    setUpdatingOrderId(orderId);
+    try {
+      await ordersFetch(`/website/${orderId}/status`, {
+        method: 'PATCH',
+        body: JSON.stringify({ status }),
+      });
+      notify('Status bijgewerkt.');
+      setWebsiteOrders((prev) =>
+        prev.map((o) => (o.id === orderId ? { ...o, status } : o))
+      );
+    } catch (e: any) {
+      fail(e.message);
+    } finally {
+      setUpdatingOrderId(null);
+    }
+  }
+
   async function publishProduct(productId: string) {
     try {
       const data = await apiFetch('/offers', {
@@ -258,8 +330,11 @@ export default function AdminPage() {
   }, [tab]);
 
   useEffect(() => {
-    if (section === 'website') loadSiteProducts();
-  }, [section]);
+    if (section === 'website') {
+      if (websiteTab === 'products') loadSiteProducts();
+      if (websiteTab === 'orders') loadWebsiteOrders();
+    }
+  }, [section, websiteTab]);
 
   return (
     <div className="pt-20 min-h-screen bg-cream">
@@ -581,6 +656,25 @@ export default function AdminPage() {
         {/* === MIJN WEBSITE SECTIE === */}
         {section === 'website' && (
           <div className="space-y-6">
+            {/* Website sub-tabs */}
+            <div className="flex gap-0 mb-8 border-b border-beige">
+              {(['products', 'orders'] as const).map((t) => (
+                <button
+                  key={t}
+                  onClick={() => setWebsiteTab(t)}
+                  className={`font-sans text-xs tracking-[0.12em] uppercase px-6 py-3.5 border-b-2 transition-colors duration-200 ${
+                    websiteTab === t
+                      ? 'border-gold-deep text-anthracite'
+                      : 'border-transparent text-taupe hover:text-anthracite'
+                  }`}
+                >
+                  {t === 'products' ? 'Producten' : 'Bestellingen'}
+                </button>
+              ))}
+            </div>
+
+            {/* PRODUCTS SUB-TAB */}
+            {websiteTab === 'products' && (<>
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="font-serif text-xl text-anthracite">Productprijzen &amp; omschrijvingen</h2>
@@ -719,6 +813,112 @@ export default function AdminPage() {
                     )}
                   </div>
                 ))}
+              </div>
+            )}
+            </>)}
+
+            {/* ORDERS SUB-TAB */}
+            {websiteTab === 'orders' && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h2 className="font-serif text-xl text-anthracite">Website bestellingen</h2>
+                    <p className="font-sans text-xs text-taupe mt-1">
+                      Bestellingen geplaatst via eeuwighart.nl.
+                    </p>
+                  </div>
+                  <button onClick={loadWebsiteOrders} className="text-taupe hover:text-gold-deep transition-colors">
+                    <RefreshCw className={`w-4 h-4 ${websiteOrdersLoading ? 'animate-spin' : ''}`} />
+                  </button>
+                </div>
+
+                {websiteOrdersLoading ? (
+                  <div className="text-center py-12 border border-dashed border-beige">
+                    <Package className="w-8 h-8 text-taupe/30 mx-auto mb-3" />
+                    <p className="font-sans text-sm text-taupe">Bestellingen laden…</p>
+                  </div>
+                ) : websiteOrdersError ? (
+                  <div className="text-center py-12 border border-dashed border-red-200 bg-red-50">
+                    <XCircle className="w-8 h-8 text-red-300 mx-auto mb-3" />
+                    <p className="font-sans text-sm text-red-700">Kon bestellingen niet laden.</p>
+                    <p className="font-sans text-xs text-red-500 mt-1">{websiteOrdersError}</p>
+                    <button onClick={loadWebsiteOrders} className="mt-4 font-sans text-xs text-red-600 hover:text-red-800 underline">
+                      Opnieuw proberen
+                    </button>
+                  </div>
+                ) : websiteOrders.length === 0 ? (
+                  <div className="text-center py-12 border border-dashed border-beige">
+                    <ShoppingBag className="w-8 h-8 text-taupe/30 mx-auto mb-3" />
+                    <p className="font-sans text-sm text-taupe">Nog geen bestellingen.</p>
+                    <p className="font-sans text-xs text-taupe/60 mt-1">
+                      Nieuwe bestellingen verschijnen hier zodra klanten via de website bestellen.
+                    </p>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    {websiteOrders.map((order) => (
+                      <div key={order.id} className="border border-beige bg-ivory p-5">
+                        <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+                          <div>
+                            <p className="font-sans text-sm font-medium text-anthracite">
+                              {order.order_number}
+                            </p>
+                            <p className="font-sans text-xs text-taupe mt-0.5">
+                              {new Date(order.created_at).toLocaleDateString('nl-NL', {
+                                day: 'numeric', month: 'long', year: 'numeric',
+                                hour: '2-digit', minute: '2-digit',
+                              })}
+                            </p>
+                          </div>
+                          <StatusBadge status={order.status} />
+                        </div>
+
+                        <div className="grid sm:grid-cols-3 gap-3 text-xs font-sans mb-4">
+                          <div>
+                            <p className="text-taupe uppercase tracking-wide text-[10px] mb-0.5">Klant</p>
+                            <p className="text-anthracite">{order.first_name} {order.last_name}</p>
+                            <p className="text-taupe">{order.email}</p>
+                          </div>
+                          <div>
+                            <p className="text-taupe uppercase tracking-wide text-[10px] mb-0.5">Bezorgadres</p>
+                            <p className="text-anthracite">{order.address}</p>
+                            <p className="text-taupe">{order.postal_code} {order.city}</p>
+                          </div>
+                          <div>
+                            <p className="text-taupe uppercase tracking-wide text-[10px] mb-0.5">Bedrag</p>
+                            <p className="text-anthracite font-medium">€ {order.total_price.toFixed(2)}</p>
+                            <p className="text-taupe capitalize">{order.shipping_option === 'express' ? 'Express verzending' : 'Standaard verzending'}</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <p className="font-sans text-xs text-taupe">Status wijzigen:</p>
+                          <select
+                            value={order.status}
+                            onChange={(e) => updateWebsiteOrderStatus(order.id, e.target.value)}
+                            disabled={updatingOrderId === order.id}
+                            className="font-sans text-xs border border-beige bg-cream px-2 py-1.5 text-anthracite focus:outline-none focus:border-gold/50 disabled:opacity-50"
+                          >
+                            {['pending', 'paid', 'in_production', 'shipped', 'delivered', 'cancelled'].map((s) => {
+                              const labels: Record<string, string> = {
+                                pending: 'Nieuw',
+                                paid: 'Betaald',
+                                in_production: 'In productie',
+                                shipped: 'Verzonden',
+                                delivered: 'Afgeleverd',
+                                cancelled: 'Geannuleerd',
+                              };
+                              return <option key={s} value={s}>{labels[s]}</option>;
+                            })}
+                          </select>
+                          {updatingOrderId === order.id && (
+                            <RefreshCw className="w-3.5 h-3.5 text-taupe animate-spin" />
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </div>

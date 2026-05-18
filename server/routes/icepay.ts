@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import crypto from 'crypto';
+import { updateOrderStatusByOrderNumber } from '../services/database.js';
 
 const router = Router();
 const ICEPAY_BASE = 'https://checkout.icepay.com/api';
@@ -113,7 +114,7 @@ router.get('/payment/:key', async (req: Request, res: Response) => {
 });
 
 // POST /api/icepay/webhook — ontvang betalingsstatus-updates van iCEPAY
-router.post('/webhook', (req: Request, res: Response) => {
+router.post('/webhook', async (req: Request, res: Response) => {
   const signature = req.headers['icepay-signature'] as string | undefined;
 
   if (signature) {
@@ -134,10 +135,20 @@ router.post('/webhook', (req: Request, res: Response) => {
     }
   }
 
-  const event = req.body as { key?: string; status?: string };
-  console.log('[icepay] webhook ontvangen: key=%s status=%s', event.key, event.status);
+  const event = req.body as { key?: string; status?: string; reference?: string };
+  console.log('[icepay] webhook ontvangen: key=%s status=%s reference=%s', event.key, event.status, event.reference);
 
-  // TODO: verwerk betaalstatus in database (bijv. order markeren als betaald)
+  if (event.reference) {
+    if (event.status === 'COMPLETED' || event.status === 'PAID') {
+      await updateOrderStatusByOrderNumber(event.reference, 'paid').catch((err) =>
+        console.error('[icepay] webhook: kon orderstatus niet bijwerken', err)
+      );
+    } else if (event.status === 'FAILED' || event.status === 'CANCELLED') {
+      await updateOrderStatusByOrderNumber(event.reference, 'cancelled').catch((err) =>
+        console.error('[icepay] webhook: kon orderstatus niet bijwerken', err)
+      );
+    }
+  }
 
   res.status(200).json({ received: true });
 });

@@ -38,7 +38,7 @@ const categories: Category[] = [
     id: "hart-mini-urn",
     name: "Glazen Hart met Mini Urn",
     description:
-      "Kristalhelder glazen hart met mini urn (15 g as), kaarshouder, fotoruimte (5×7 cm) en gedicht in spiegelletter. Inclusief luxe geschenkverpakking.",
+      "Kristalhelder glazen hart met mini urn (15 g as), kaarshouder, fotoruimte (5×7 cm) en gedicht in spiegelletter.",
     badge: "Meest compleet",
     products: [
       {
@@ -110,7 +110,7 @@ const categories: Category[] = [
     id: "hart-urn",
     name: "Glazen Hart met Urn",
     description:
-      "Glazen hart gecombineerd met urn voor as, kaarshouder, fotoruimte (5×7 cm) en een ontroerend gedicht in spiegelletter. Inclusief luxe geschenkverpakking.",
+      "Glazen hart gecombineerd met urn voor as, kaarshouder, fotoruimte (5×7 cm) en een ontroerend gedicht in spiegelletter.",
     products: [
       {
         id: "hart-urn-mijn-liefste",

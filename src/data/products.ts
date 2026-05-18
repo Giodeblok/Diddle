@@ -10,6 +10,13 @@ export interface Product {
   badge?: string;
   popular?: boolean;
   category: string;
+  photoFrame?: {
+    top: string;
+    left: string;
+    width: string;
+    rotation?: string;
+  };
+  imageObjectPosition?: string;
 }
 
 export const products: Product[] = [
@@ -23,8 +30,9 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/9/7/977x1200_1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-hart-met-mini-urn-en-gedicht-je-bent-zo-snel-8717904040118-blokshop-krel-nl.html',
-    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-mini-urn-in-mijn-hart',
@@ -35,8 +43,9 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/2/1200x1134_2_2.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-mini-urn-gedicht-in-mijn-hart-8717904040101-blokshop-krel-nl.html',
-    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-mini-urn-mam',
@@ -47,8 +56,9 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/waxinehouder_in_memoriam_overleden_glas_hart_met_mini_urn_gedicht_mam..._8717904023944_blokshop.nl_1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-mini-urn-gedicht-mam-8717904040095-blokshop-krel-nl.html',
-    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-mini-urn-pa',
@@ -59,8 +69,9 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/2/1200x1116_2.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-mini-urn-gedicht-pa-8717904023920-blokshop-krel-nl.html',
-    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-mini-urn-mijn-herinnering',
@@ -71,8 +82,9 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/2/1200x1099_1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-mini-urn-gedicht-mijn-herinnering-8717904040064-blokshop-krel-nl.html',
-    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%', rotation: '-1deg' },
   },
   {
     id: 'hart-mini-urn-lieve-oma',
@@ -83,8 +95,9 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/o/m/oma_urn.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-mini-urn-gedicht-lieve-oma-overlijden-overleden-herdenken-8717904012283-blokshop-krel-nl.html',
-    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-mini-urn-lieve-opa',
@@ -95,8 +108,9 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/i/lieve_opa_urn_met_kaarsje.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-mini-urn-gedicht-lieve-opa.html',
-    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
 
   // ── Glazen Hart met Urn ───────────────────────────────────────────
@@ -109,8 +123,9 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/waxinehouder_in_memoriam_overleden_glas_hart_met_gedicht_mijn_liefste_..._blokshop.nl_2.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-urn-gedicht-mijn-liefste.html',
-    features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-urn-jouw-lach',
@@ -121,8 +136,9 @@ export const products: Product[] = [
     priceDisplay: '€77,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/waxinehouder_in_memoriam_overleden_glas_hart_met_gedicht_jouw_lach..._blokshop.nl_2.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-urn-en-gedicht-jouw-lach.html',
-    features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-urn-waarom',
@@ -133,8 +149,9 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/2/1200x1042_2_1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-hart-met-urn-en-gedicht-waarom-2290010952842-blokshop-krel-nl.html',
-    features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-urn-ouders',
@@ -145,8 +162,9 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/waxinehouder_in_memoriam_overleden_glas_hart_met_gedicht_ouders_..._blokshop.nl_1_1_urn_1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-urn-en-gedicht-ouders-2290011900026-blokshop-krel-nl.html',
-    features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
 
   // ── Glazen Hart zonder Mini Urn ───────────────────────────────────────
@@ -159,8 +177,9 @@ export const products: Product[] = [
     priceDisplay: '€54,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/2/1200x1051.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-gedicht-mam-8717904040026-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-gedicht-pa',
@@ -171,8 +190,9 @@ export const products: Product[] = [
     priceDisplay: '€54,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/waxinehouder_in_memoriam_overleden_glas_hart_met_gedicht_pa_..._blokshop.nl_1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-gedicht-pa-8717904040033-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-gedicht-ouders',
@@ -183,8 +203,9 @@ export const products: Product[] = [
     priceDisplay: '€54,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/waxinehouder_in_memoriam_overleden_glas_hart_met_gedicht_ouders_..._blokshop.nl_1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-gedicht-ouders-8717904040040-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'hart-gedicht-lieve-opa',
@@ -195,8 +216,9 @@ export const products: Product[] = [
     priceDisplay: '€54,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/2/1200x1078.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-gedicht-lieve-opa-8717904040057-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
 
   // ── Fotolijst Hart met Gedicht ────────────────────────────────────
@@ -209,9 +231,10 @@ export const products: Product[] = [
     priceDisplay: '€76,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/u/r/urn1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-met-mini-urn-en-gedicht-te-snel-je-bent-zo-fotolijst-in-memoriam-in-memoriam-overlijden-overleden-herdenken-008717904039983-blokshop-krel-nl.html',
-    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Luxe geschenkverpakking'],
+    features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     badge: 'Met urn',
     category: 'Glazen Hart met Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'fotolijst-mijn-liefste',
@@ -222,8 +245,9 @@ export const products: Product[] = [
     priceDisplay: '€55,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/i/mijn_liefste_4.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-met-gedicht-mijn-liefste-fotolijst-in-memoriam-in-memoriam-overlijden-overleden-herdenken-8717904040019-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'fotolijst-jouw-lach',
@@ -234,8 +258,9 @@ export const products: Product[] = [
     priceDisplay: '€54,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/j/o/jou_lach_1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-met-gedicht-jouw-lach-fotolijst-in-memoriam-in-memoriam-overlijden-overleden-herdenken-8717904040002-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'fotolijst-lieve-oma',
@@ -246,8 +271,9 @@ export const products: Product[] = [
     priceDisplay: '€54,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/o/m/oma_1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-met-gedicht-lieve-oma-fotolijst-in-memoriam-in-memoriam-overlijden-overleden-herdenken-8717904039990-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'fotolijst-te-snel',
@@ -258,8 +284,9 @@ export const products: Product[] = [
     priceDisplay: '€54,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/2/1200x1025.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-met-gedicht-te-snel-je-bent-zo-fotolijst-in-memoriam-in-memoriam-overlijden-overleden-herdenken-8717904039983-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'fotolijst-in-mijn-hart',
@@ -270,8 +297,9 @@ export const products: Product[] = [
     priceDisplay: '€54,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/6/_/6_7.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-met-gedicht-in-mijn-hart-fotolijst-in-memoriam-in-memoriam-overlijden-overleden-herdenken-8717904039976-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'fotolijst-mijn-herinnering',
@@ -282,8 +310,9 @@ export const products: Product[] = [
     priceDisplay: '€54,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/_/1_74.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-met-gedicht-mijn-herinnering-fotolijst-in-memoriam-in-memoriam-overlijden-overleden-herdenken-8717904039969-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
   {
     id: 'fotolijst-waarom',
@@ -294,8 +323,9 @@ export const products: Product[] = [
     priceDisplay: '€54,95',
     image: 'https://media.blokshop.nl/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/2/1200x1042_1_1.jpg',
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-met-gedicht-waarom-fotolijst-in-memoriam-in-memoriam-overlijden-overleden-herdenken-8717904039952-blokshop-krel-nl.html',
-    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht', 'Luxe geschenkverpakking'],
+    features: ['Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter', 'Inclusief waxinelicht'],
     category: 'Glazen Hart zonder Mini Urn',
+    photoFrame: { top: '24%', left: '56%', width: '26%' },
   },
 ];
 

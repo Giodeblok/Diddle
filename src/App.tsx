@@ -18,6 +18,9 @@ import AlgemeneVoorwaardenPage from './pages/AlgemeneVoorwaardenPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import OverOnsPage from './pages/OverOnsPage';
 import RetourbeleidPage from './pages/RetourbeleidPage';
+import BetalingResultaatPage from './pages/BetalingResultaatPage';
+import BlogListPage from './pages/BlogListPage';
+import BlogPostPage from './pages/BlogPostPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -46,6 +49,9 @@ function AppRoutes() {
           <Route path="/algemene-voorwaarden" element={<AlgemeneVoorwaardenPage />} />
           <Route path="/privacybeleid" element={<PrivacyPolicyPage />} />
           <Route path="/retourbeleid" element={<RetourbeleidPage />} />
+          <Route path="/betaling/resultaat" element={<BetalingResultaatPage />} />
+          <Route path="/blog" element={<BlogListPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/admin/login" element={<LoginPage />} />
           <Route path="/admin" element={<ProtectedRoute><AdminPage /></ProtectedRoute>} />
         </Routes>

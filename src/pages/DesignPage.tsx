@@ -26,7 +26,7 @@ export default function DesignPage() {
           </h1>
           <div className="luxury-divider mb-5" />
           <p className="font-sans text-base text-taupe max-w-lg mx-auto px-6">
-            Upload een foto, voeg naam en tekst toe en zie live hoe jouw glazen hart eruitziet.
+            Kies een hart, upload een foto en zie live hoe jouw glazen hart eruitziet.
           </p>
         </div>
 

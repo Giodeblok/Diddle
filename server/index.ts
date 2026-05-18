@@ -8,6 +8,9 @@ import myparcelRouter from './routes/myparcel.js';
 import authRouter from './routes/auth.js';
 import reviewsRouter from './routes/reviews.js';
 import pricesRouter from './routes/prices.js';
+import emailRouter from './routes/email.js';
+import ordersRouter from './routes/orders.js';
+import icepayRouter from './routes/icepay.js';
 import { verifyJwt } from './middleware/verifyJwt.js';
 
 const app = express();
@@ -47,7 +50,9 @@ app.use(cors({
   credentials: true,
 }));
 
-app.use(express.json());
+app.use(express.json({
+  verify: (req: any, _res, buf) => { req.rawBody = buf; },
+}));
 
 // Rate limit the admin API
 const limiter = rateLimit({
@@ -66,6 +71,16 @@ app.use('/api/auth', authRouter);
 
 // Google Reviews (public, cached)
 app.use('/api/reviews', reviewsRouter);
+
+// Email: contact form + order confirmation (public)
+app.use('/api/email', emailRouter);
+
+// Orders: publiek plaatsen, admin beschermd
+app.post('/api/orders', ordersRouter);
+app.use('/api/orders', verifyJwt, ordersRouter);
+
+// iCEPAY: betaling aanmaken (publiek) en webhook (publiek — komt van iCEPAY servers)
+app.use('/api/icepay', icepayRouter);
 
 // Product catalog with price/description overrides (GET public, PUT/DELETE require JWT)
 app.use('/api/products', pricesRouter);
