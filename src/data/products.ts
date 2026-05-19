@@ -32,7 +32,7 @@ export const products: Product[] = [
     externalUrl: 'https://www.blokshop.nl/waxinehouder-hart-met-mini-urn-en-gedicht-je-bent-zo-snel-8717904040118-blokshop-krel-nl.html',
     features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
-    photoFrame: { top: '24%', left: '56%', width: '26%' },
+    photoFrame: { top: '5%', left: '48%', width: '23%', rotation: '0deg' },
   },
   {
     id: 'hart-mini-urn-in-mijn-hart',
