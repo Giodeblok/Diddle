@@ -264,7 +264,7 @@ export default function LivePreview() {
                           top: selectedProduct.photoFrame.top,
                           left: selectedProduct.photoFrame.left,
                           width: selectedProduct.photoFrame.width,
-                          aspectRatio: '5/8.2',
+                          aspectRatio: selectedProduct.photoFrame?.aspectRatio ?? '5/8.2',
                           transform: `rotate(${selectedProduct.photoFrame.rotation ?? '-1.9deg'})`,
                           border: '2px dashed rgba(214,185,140,0.7)',
                           pointerEvents: 'none',
@@ -286,7 +286,7 @@ export default function LivePreview() {
                             top: selectedProduct.photoFrame.top,
                             left: selectedProduct.photoFrame.left,
                             width: selectedProduct.photoFrame.width,
-                            aspectRatio: '5/8.2',
+                            aspectRatio: selectedProduct.photoFrame?.aspectRatio ?? '5/8.2',
                             objectFit: 'cover',
                             transform: `rotate(${selectedProduct.photoFrame.rotation ?? '-1.9deg'})`,
                           }}

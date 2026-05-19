@@ -15,6 +15,7 @@ export interface Product {
     left: string;
     width: string;
     rotation?: string;
+    aspectRatio?: string;
   };
   imageObjectPosition?: string;
 }
@@ -32,7 +33,7 @@ export const products: Product[] = [
     externalUrl: 'https://www.blokshop.nl/waxinehouder-hart-met-mini-urn-en-gedicht-je-bent-zo-snel-8717904040118-blokshop-krel-nl.html',
     features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
-    photoFrame: { top: '5%', left: '48%', width: '23%', rotation: '0deg' },
+    photoFrame: { top: '11.5%', left: '53.5%', width: '22.5%', rotation: '-1deg' },
   },
   {
     id: 'hart-mini-urn-in-mijn-hart',
@@ -45,7 +46,7 @@ export const products: Product[] = [
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-mini-urn-gedicht-in-mijn-hart-8717904040101-blokshop-krel-nl.html',
     features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
-    photoFrame: { top: '24%', left: '56%', width: '26%' },
+    photoFrame: { top: '24%', left: '57%', width: '26%', rotation: '-2deg' },
   },
   {
     id: 'hart-mini-urn-mam',
@@ -84,7 +85,7 @@ export const products: Product[] = [
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-mini-urn-gedicht-mijn-herinnering-8717904040064-blokshop-krel-nl.html',
     features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
-    photoFrame: { top: '24%', left: '56%', width: '26%', rotation: '-1deg' },
+    photoFrame: { top: '25%', left: '56%', width: '26%', rotation: '-0.8deg' },
   },
   {
     id: 'hart-mini-urn-lieve-oma',
@@ -110,7 +111,7 @@ export const products: Product[] = [
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-mini-urn-gedicht-lieve-opa.html',
     features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
-    photoFrame: { top: '24%', left: '56%', width: '26%' },
+    photoFrame: { top: '27%', left: '55.5%', width: '24%', rotation: '-1.6deg' },
   },
 
   // ── Glazen Hart met Urn ───────────────────────────────────────────
@@ -125,7 +126,7 @@ export const products: Product[] = [
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-urn-gedicht-mijn-liefste.html',
     features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
-    photoFrame: { top: '24%', left: '56%', width: '26%' },
+    photoFrame: { top: '24%', left: '54.2%', width: '25.5%' },
   },
   {
     id: 'hart-urn-jouw-lach',
@@ -138,7 +139,7 @@ export const products: Product[] = [
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-urn-en-gedicht-jouw-lach.html',
     features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
-    photoFrame: { top: '24%', left: '56%', width: '26%' },
+    photoFrame: { top: '24%', left: '56%', width: '26.4%' },
   },
   {
     id: 'hart-urn-waarom',
@@ -151,7 +152,7 @@ export const products: Product[] = [
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-hart-met-urn-en-gedicht-waarom-2290010952842-blokshop-krel-nl.html',
     features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
-    photoFrame: { top: '24%', left: '56%', width: '26%' },
+    photoFrame: { top: '27.1%', left: '51%', width: '24%', rotation: '-0.1deg' },
   },
   {
     id: 'hart-urn-ouders',
@@ -164,7 +165,7 @@ export const products: Product[] = [
     externalUrl: 'https://www.blokshop.nl/waxinehouder-in-memoriam-overleden-glas-hart-met-urn-en-gedicht-ouders-2290011900026-blokshop-krel-nl.html',
     features: ['Urn voor as', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     category: 'Glazen Hart met Mini Urn',
-    photoFrame: { top: '24%', left: '56%', width: '26%' },
+    photoFrame: { top: '22%', left: '53%', width: '25%', rotation: '-2deg' },
   },
 
   // ── Glazen Hart zonder Mini Urn ───────────────────────────────────────
@@ -234,7 +235,7 @@ export const products: Product[] = [
     features: ['Mini urn (15 g as)', 'Kaarshouder', 'Foto 5×7 cm', 'Gedicht in spiegelletter'],
     badge: 'Met urn',
     category: 'Glazen Hart met Mini Urn',
-    photoFrame: { top: '24%', left: '56%', width: '26%' },
+    photoFrame: { top: '26%', left: '51%', width: '25.5%', rotation: '1deg', aspectRatio: '5.1/7.8' },
   },
   {
     id: 'fotolijst-mijn-liefste',
