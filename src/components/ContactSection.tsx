@@ -34,13 +34,13 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-ivory py-24 lg:py-32">
+    <section id="contact" className="bg-off-white py-24 lg:py-32">
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Info */}
           <div className="lg:col-span-2 space-y-6">
-            <p className="font-sans text-sm text-brown/70 leading-relaxed">
-              Wij begrijpen dat het kiezen van een herinnering een emotioneel moment is. Onze medewerkers helpen je graag met warmte en geduld.
+            <p className="font-sans text-sm text-anthracite/70 leading-relaxed">
+              Heb je een vraag over een Diddl product, je bestelling of de collectie? We helpen je graag snel en vriendelijk verder.
             </p>
 
             <div className="space-y-5 pt-2">
@@ -48,7 +48,7 @@ export default function ContactSection() {
                 {
                   icon: Mail,
                   title: 'E-mail',
-                  value: 'info@eeuwighart.nl',
+                  value: 'info@mijndiddl.nl',
                   sub: 'We reageren binnen 1 werkdag',
                 },
                 {
@@ -64,16 +64,16 @@ export default function ContactSection() {
                   sub: 'Altijd persoonlijk antwoord',
                 },
               ].map((item) => (
-                <div key={item.title} className="flex items-start gap-4 p-4 border border-beige">
-                  <div className="w-9 h-9 border border-gold/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <item.icon className="w-4 h-4 text-gold-deep" strokeWidth={1.5} />
+                <div key={item.title} className="flex items-start gap-4 p-4 border border-lavender rounded-xl">
+                  <div className="w-9 h-9 border border-lilac/30 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <item.icon className="w-4 h-4 text-lilac-deep" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className="font-sans text-xs tracking-[0.1em] uppercase text-taupe mb-0.5">
+                    <p className="font-sans text-xs tracking-[0.1em] uppercase text-violet mb-0.5">
                       {item.title}
                     </p>
                     <p className="font-sans text-sm text-anthracite">{item.value}</p>
-                    <p className="font-sans text-xs text-taupe/70 mt-0.5">{item.sub}</p>
+                    <p className="font-sans text-xs text-violet/70 mt-0.5">{item.sub}</p>
                   </div>
                 </div>
               ))}
@@ -89,22 +89,22 @@ export default function ContactSection() {
             className="lg:col-span-3"
           >
             {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center p-12 border border-gold/30 bg-gold/5">
-                <div className="w-12 h-12 border border-gold flex items-center justify-center mb-6">
-                  <Mail className="w-5 h-5 text-gold-deep" />
+              <div className="h-full flex flex-col items-center justify-center text-center p-12 border border-lilac/30 bg-lilac/5 rounded-2xl">
+                <div className="w-12 h-12 border border-lilac rounded-full flex items-center justify-center mb-6">
+                  <Mail className="w-5 h-5 text-lilac-deep" />
                 </div>
                 <h3 className="font-serif text-2xl text-anthracite mb-3">
                   Bericht ontvangen
                 </h3>
-                <p className="font-sans text-sm text-taupe leading-relaxed max-w-xs">
-                  Dank je voor je bericht. We reageren altijd persoonlijk, met zorg en aandacht, binnen één werkdag.
+                <p className="font-sans text-sm text-violet leading-relaxed max-w-xs">
+                  Dank je voor je bericht. We reageren altijd persoonlijk binnen één werkdag.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5 border border-beige p-8 bg-cream/30">
+              <form onSubmit={handleSubmit} className="space-y-5 border border-lavender p-8 bg-lavender/20 rounded-2xl">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="font-sans text-xs tracking-[0.1em] uppercase text-taupe block mb-2">
+                    <label className="font-sans text-xs tracking-[0.1em] uppercase text-violet block mb-2">
                       Naam
                     </label>
                     <input
@@ -112,12 +112,12 @@ export default function ContactSection() {
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full border border-beige bg-ivory px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-gold/50 transition-colors"
-                      placeholder="Uw naam"
+                      className="w-full border border-lavender bg-off-white rounded-xl px-4 py-3 font-sans text-sm text-anthracite placeholder-violet/40 focus:outline-none focus:border-lilac/50 transition-colors"
+                      placeholder="Jouw naam"
                     />
                   </div>
                   <div>
-                    <label className="font-sans text-xs tracking-[0.1em] uppercase text-taupe block mb-2">
+                    <label className="font-sans text-xs tracking-[0.1em] uppercase text-violet block mb-2">
                       E-mailadres
                     </label>
                     <input
@@ -125,14 +125,14 @@ export default function ContactSection() {
                       required
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full border border-beige bg-ivory px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-gold/50 transition-colors"
-                      placeholder="uw@email.nl"
+                      className="w-full border border-lavender bg-off-white rounded-xl px-4 py-3 font-sans text-sm text-anthracite placeholder-violet/40 focus:outline-none focus:border-lilac/50 transition-colors"
+                      placeholder="jouw@email.nl"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="font-sans text-xs tracking-[0.1em] uppercase text-taupe block mb-2">
+                  <label className="font-sans text-xs tracking-[0.1em] uppercase text-violet block mb-2">
                     Bericht
                   </label>
                   <textarea
@@ -140,13 +140,13 @@ export default function ContactSection() {
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full border border-beige bg-ivory px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-gold/50 transition-colors resize-none"
-                    placeholder="Hoe kunnen wij u helpen?"
+                    className="w-full border border-lavender bg-off-white rounded-xl px-4 py-3 font-sans text-sm text-anthracite placeholder-violet/40 focus:outline-none focus:border-lilac/50 transition-colors resize-none"
+                    placeholder="Hoe kunnen wij je helpen?"
                   />
                 </div>
 
                 {error && (
-                  <p className="font-sans text-xs text-red-600 bg-red-50 border border-red-200 px-4 py-3">
+                  <p className="font-sans text-xs text-red-600 bg-red-50 border border-red-200 px-4 py-3 rounded-xl">
                     {error}
                   </p>
                 )}
@@ -155,8 +155,8 @@ export default function ContactSection() {
                   {loading ? 'Bericht versturen…' : 'Stuur bericht'}
                 </LuxuryButton>
 
-                <p className="font-sans text-xs text-taupe/60 text-center">
-                  Uw gegevens worden nooit gedeeld of gebruikt voor reclame.
+                <p className="font-sans text-xs text-violet/60 text-center">
+                  Je gegevens worden nooit gedeeld of gebruikt voor reclame.
                 </p>
               </form>
             )}

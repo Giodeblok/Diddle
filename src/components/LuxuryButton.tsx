@@ -28,17 +28,17 @@ export default function LuxuryButton({
   disabled = false,
 }: LuxuryButtonProps) {
   const base =
-    'inline-flex items-center justify-center gap-2 font-sans tracking-[0.12em] uppercase transition-all duration-500 cursor-pointer select-none disabled:opacity-50 disabled:cursor-not-allowed';
+    'inline-flex items-center justify-center gap-2 font-sans tracking-[0.12em] uppercase transition-all duration-500 cursor-pointer select-none disabled:opacity-50 disabled:cursor-not-allowed rounded-full font-semibold';
 
   const variants = {
     primary:
-      'bg-anthracite text-ivory hover:bg-brown border border-anthracite hover:border-brown shadow-soft hover:shadow-luxury',
+      'bg-lilac-gradient text-white hover:opacity-90 shadow-lilac hover:shadow-luxury',
     secondary:
-      'bg-gold-gradient text-anthracite hover:opacity-90 shadow-gold hover:shadow-luxury',
+      'bg-lilac text-white hover:bg-lilac-deep shadow-lilac hover:shadow-luxury',
     ghost:
-      'bg-transparent text-anthracite border border-gold hover:bg-gold/10 hover:border-gold-deep',
+      'bg-transparent text-anthracite border border-lilac hover:bg-lilac/10 hover:border-lilac-deep',
     outline:
-      'bg-transparent text-ivory border border-ivory/40 hover:bg-ivory/10 hover:border-ivory',
+      'bg-transparent text-off-white border border-off-white/40 hover:bg-off-white/10 hover:border-off-white',
   };
 
   const sizes = {
@@ -50,8 +50,8 @@ export default function LuxuryButton({
   const classes = `${base} ${variants[variant]} ${sizes[size]} ${fullWidth ? 'w-full' : ''} ${className}`;
 
   const motionProps = {
-    whileHover: { scale: disabled ? 1 : 1.02 },
-    whileTap: { scale: disabled ? 1 : 0.98 },
+    whileHover: { scale: disabled ? 1 : 1.03 },
+    whileTap: { scale: disabled ? 1 : 0.97 },
     transition: { duration: 0.2 },
   };
 

@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Gepersonaliseerd Glazen Hart met Foto | Luxe Herdenkingscadeau | Eeuwig Hart</title>
+        <title>Mijn Diddl | Officiële Diddl Webshop Nederland & België</title>
         <meta
           name="description"
-          content="Laat een liefdevolle herinnering vereeuwigen in een gepersonaliseerd glazen hart met foto, naam en tekst. Een elegant en troostend herdenkingscadeau voor wie altijd dichtbij blijft."
+          content="Mijn Diddl — dé officiële webshop voor Diddl-producten in Nederland en België. Notitieboekjes, ansichtkaarten, pluche en accessoires. Snel geleverd, officieel gelicentieerd."
         />
-        <meta name="keywords" content="gepersonaliseerd glazen hart, herdenkingscadeau met foto, gegraveerd glas met foto, luxe herinneringscadeau, glazen hart met gravure, troost cadeau overlijden" />
+        <meta name="keywords" content="Diddl kopen Nederland, Diddl notitieboekje, Diddl knuffel, Diddl comeback 2026, Diddl muisje, Diddl webshop, Diddlina, Diddl stationery" />
       </Helmet>
 
       <Hero />

@@ -7,21 +7,21 @@ export default function ProductShowcase() {
   const products = useProducts();
 
   return (
-    <section id="collectie" className="bg-cream py-24 lg:py-32">
+    <section id="collectie" className="bg-lavender/20 py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <SectionHeading
           eyebrow="De collectie"
-          title="Een tastbaar aandenken aan wie altijd bij je blijft."
-          subtitle="Glazen harten met gedicht, fotoruimte en — voor wie dat wenst — een mini urn voor as."
+          title="Jouw favoriete Diddl artikelen, nu bestelbaar."
+          subtitle="Van klassieke notitieboekjes tot schattige pluche — alles officieel gelicentieerd."
         />
 
         {categories.map((category) => {
           const categoryProducts = products.filter((p) => p.category === category);
           return (
             <div key={category} className="mb-16">
-              <div className="flex items-center gap-4 mb-8 border-b border-beige pb-4">
+              <div className="flex items-center gap-4 mb-8 border-b border-lavender pb-4">
                 <h2 className="font-serif text-2xl text-anthracite">{category}</h2>
-                <span className="font-sans text-xs text-taupe tracking-[0.15em] uppercase">
+                <span className="font-sans text-xs text-violet tracking-[0.15em] uppercase">
                   {categoryProducts.length} artikelen
                 </span>
               </div>

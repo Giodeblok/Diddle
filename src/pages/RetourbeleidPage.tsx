@@ -17,9 +17,9 @@ export default function RetourbeleidPage() {
   return (
     <>
       <Helmet>
-        <title>Retourbeleid — Eeuwig Hart</title>
+        <title>Retourbeleid — Mijn Diddl</title>
         <meta name="description" content="Alles over ons retour- en klachtenbeleid. Lees hoe u een product kunt retourneren en hoe wij u helpen bij gebreken of beschadiging." />
-        <meta property="og:title" content="Retourbeleid — Eeuwig Hart" />
+        <meta property="og:title" content="Retourbeleid — Mijn Diddl" />
         <meta property="og:description" content="Retourneren binnen 14 dagen, uitzonderingen voor urnproducten, en hoe wij gebreken oplossen." />
       </Helmet>
 
@@ -29,7 +29,7 @@ export default function RetourbeleidPage() {
           Uw vertrouwen, <br /><i>onze verantwoordelijkheid.</i>
         </h1>
         <p className="mt-8 text-foreground/70 font-light leading-relaxed">
-          Wij begrijpen dat een glazen hart meer is dan een product — het is een stille aanwezigheid van iemand die u dierbaar is. Wij nemen elk order uiterst serieus en staan voor de kwaliteit van ons werk. Hieronder leest u eerlijk wat u van ons kunt verwachten.
+          Wij willen dat jij 100% tevreden bent met je Diddl bestelling. Hieronder lees je wat je kunt verwachten als je een product wilt retourneren of als er iets mis is met je bestelling.
         </p>
       </section>
 
@@ -45,12 +45,12 @@ export default function RetourbeleidPage() {
             </p>
           </PolicySection>
 
-          <PolicySection title="Uitzondering: urnproducten na gebruik">
+          <PolicySection title="Hoe retourneer je?">
             <p>
-              Glazen harten met mini-urn waarbij de verzegeling is verbroken — d.w.z. de urn is gevuld met as of een ander persoonlijk aandenken — kunnen op grond van artikel 6:230p sub e van het Burgerlijk Wetboek <strong className="font-medium text-foreground/85">niet</strong> worden geretourneerd vanwege de hygiënische en intieme aard van het product.
+              Meld je retour via <strong className="font-medium text-foreground/85">info@mijndiddl.nl</strong> met je bestelnummer. Je ontvangt dan instructies. Verstuur het product in de originele verpakking.
             </p>
             <p>
-              Twijfelt u? Neem vóór gebruik contact met ons op. Wij helpen u graag.
+              Na ontvangst en controle van het retour ontvang je het aankoopbedrag binnen <strong className="font-medium text-foreground/85">14 dagen</strong> terug via de oorspronkelijke betaalmethode.
             </p>
           </PolicySection>
 
@@ -75,7 +75,7 @@ export default function RetourbeleidPage() {
             <div className="space-y-1">
               <p>
                 <span className="text-[10px] uppercase tracking-[0.25em] text-accent block mb-1">E-mail</span>
-                info@eeuwighart.nl
+                info@mijndiddl.nl
               </p>
               <p>
                 <span className="text-[10px] uppercase tracking-[0.25em] text-accent block mb-1 mt-3">Telefoon</span>

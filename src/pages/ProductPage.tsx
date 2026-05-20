@@ -8,26 +8,26 @@ export default function ProductPage() {
   return (
     <>
       <Helmet>
-        <title>De Collectie | Glazen Harten met Gravure | Eeuwig Hart</title>
+        <title>De Collectie | Mijn Diddl</title>
         <meta
           name="description"
-          content="Ontdek onze collectie persoonlijk gegraveerde glazen harten. Van intiem klein tot groot luxe formaat met LED-basis. Elk hart handgemaakt met zorg."
+          content="Ontdek de volledige Diddl comeback collectie bij Mijn Diddl. Notitieboekjes, ansichtkaarten, pluche, schrijfwaren en accessoires — allemaal officieel gelicentieerd."
         />
       </Helmet>
 
       <div className="pt-20">
         <div className="bg-hero-gradient py-20 text-center">
-          <span className="font-sans text-xs tracking-[0.25em] uppercase text-taupe block mb-4">
+          <span className="font-sans text-xs tracking-[0.25em] uppercase text-violet block mb-4">
             Collectie
           </span>
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-anthracite mb-5 leading-tight">
-            Elk hart is uniek,
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-anthracite mb-5 leading-tight font-bold">
+            De volledige Diddl collectie,
             <br />
-            <span className="italic gold-text">net als de herinnering.</span>
+            <span className="lilac-text">voor iedereen.</span>
           </h1>
-          <div className="luxury-divider mb-5" />
-          <p className="font-sans text-base text-taupe max-w-lg mx-auto px-6">
-            Kies het hart dat past bij de liefde die je wilt bewaren.
+          <div className="diddl-divider mb-5" />
+          <p className="font-sans text-base text-violet max-w-lg mx-auto px-6">
+            Van klassieke notitieboekjes tot schattige knuffels — vind jouw favoriete Diddl artikel.
           </p>
         </div>
         <TrustSection />

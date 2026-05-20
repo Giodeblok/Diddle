@@ -30,13 +30,13 @@ export default function BetalingResultaatPage() {
 
   return (
     <>
-      <Helmet><title>Betaalresultaat | Eeuwig Hart</title></Helmet>
+      <Helmet><title>Betaalresultaat | Mijn Diddl</title></Helmet>
       <div className="pt-20 min-h-screen bg-hero-gradient flex items-center justify-center px-6">
         <div className="max-w-md w-full text-center space-y-6">
 
           {status === 'loading' && (
             <>
-              <Loader2 className="w-12 h-12 text-gold animate-spin mx-auto" />
+              <Loader2 className="w-12 h-12 text-lilac animate-spin mx-auto" />
               <p className="font-serif text-xl text-anthracite">Betaalstatus ophalen…</p>
             </>
           )}
@@ -44,13 +44,13 @@ export default function BetalingResultaatPage() {
           {status === 'paid' && (
             <>
               <CheckCircle className="w-16 h-16 text-green-600 mx-auto" />
-              <h1 className="font-serif text-3xl text-anthracite">Betaling geslaagd</h1>
-              <p className="font-sans text-sm text-taupe leading-relaxed">
-                Uw betaling is succesvol ontvangen. U ontvangt een bevestiging per e-mail. Wij beginnen zo snel mogelijk met de productie van uw gepersonaliseerde glazen hart.
+              <h1 className="font-serif text-3xl text-anthracite font-bold">Betaling geslaagd!</h1>
+              <p className="font-sans text-sm text-violet leading-relaxed">
+                Je betaling is succesvol ontvangen. Je Diddl bestelling wordt zo snel mogelijk verwerkt en verzonden. Houd je inbox in de gaten voor een bevestigingsmail.
               </p>
               <Link
                 to="/"
-                className="inline-block font-sans text-xs tracking-[0.12em] uppercase text-ivory bg-anthracite px-8 py-3.5 hover:bg-gold-deep transition-colors duration-300"
+                className="inline-block font-sans text-xs tracking-[0.12em] uppercase text-white bg-lilac-gradient px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity duration-300"
               >
                 Terug naar home
               </Link>
@@ -60,24 +60,24 @@ export default function BetalingResultaatPage() {
           {(status === 'failed' || status === 'unknown') && (
             <>
               <XCircle className="w-16 h-16 text-red-500 mx-auto" />
-              <h1 className="font-serif text-3xl text-anthracite">
+              <h1 className="font-serif text-3xl text-anthracite font-bold">
                 {status === 'failed' ? 'Betaling mislukt' : 'Status onbekend'}
               </h1>
-              <p className="font-sans text-sm text-taupe leading-relaxed">
+              <p className="font-sans text-sm text-violet leading-relaxed">
                 {status === 'failed'
-                  ? 'Uw betaling is niet geslaagd. Geen bedrag is afgeschreven. Probeer het opnieuw of kies een andere betaalmethode.'
-                  : 'We konden de betaalstatus niet ophalen. Controleer uw e-mail voor een bevestiging of neem contact met ons op.'}
+                  ? 'Je betaling is niet geslaagd. Er is geen bedrag afgeschreven. Probeer het opnieuw of kies een andere betaalmethode.'
+                  : 'We konden de betaalstatus niet ophalen. Controleer je e-mail voor een bevestiging of neem contact met ons op.'}
               </p>
               <div className="flex gap-4 justify-center">
                 <Link
                   to="/afrekenen"
-                  className="inline-block font-sans text-xs tracking-[0.12em] uppercase text-ivory bg-anthracite px-6 py-3.5 hover:bg-gold-deep transition-colors duration-300"
+                  className="inline-block font-sans text-xs tracking-[0.12em] uppercase text-white bg-lilac-gradient px-6 py-3.5 rounded-full hover:opacity-90 transition-opacity duration-300"
                 >
                   Opnieuw proberen
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-block font-sans text-xs tracking-[0.12em] uppercase text-anthracite border border-beige px-6 py-3.5 hover:border-gold/40 transition-colors duration-300"
+                  className="inline-block font-sans text-xs tracking-[0.12em] uppercase text-anthracite border border-lavender px-6 py-3.5 rounded-full hover:border-lilac/40 transition-colors duration-300"
                 >
                   Contact
                 </Link>

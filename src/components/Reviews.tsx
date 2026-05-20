@@ -41,12 +41,12 @@ export default function Reviews() {
   const filledStars = Math.round(data.aggregateRating);
 
   return (
-    <section className="bg-ivory py-24 lg:py-32">
+    <section className="bg-off-white py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <SectionHeading
           eyebrow="Ervaringen"
-          title="Wat families over ons zeggen."
-          subtitle="Wij zijn diep dankbaar voor het vertrouwen dat families ons schenken in hun mooiste én moeilijkste momenten."
+          title="Wat Diddl fans over ons zeggen."
+          subtitle="Duizenden tevreden klanten gingen je voor. Lees wat zij vinden van hun Diddl bestelling."
         />
 
         {/* Rating summary */}
@@ -55,7 +55,7 @@ export default function Reviews() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-16 p-8 border border-beige bg-cream max-w-xl mx-auto"
+          className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-16 p-8 border border-lavender bg-lavender/30 rounded-2xl max-w-xl mx-auto"
         >
           <div className="text-center">
             <p className="font-serif text-6xl text-anthracite">{displayRating}</p>
@@ -63,18 +63,18 @@ export default function Reviews() {
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-4 h-4 ${i < filledStars ? 'fill-gold stroke-gold' : 'stroke-taupe fill-none'}`}
+                  className={`w-4 h-4 ${i < filledStars ? 'fill-lilac stroke-lilac' : 'stroke-violet fill-none'}`}
                 />
               ))}
             </div>
           </div>
-          <div className="w-px h-12 bg-beige hidden sm:block" />
+          <div className="w-px h-12 bg-lavender hidden sm:block" />
           <div className="text-center sm:text-left">
             <p className="font-sans text-sm font-medium text-anthracite">Uitstekend</p>
-            <p className="font-sans text-xs text-taupe mt-1">
+            <p className="font-sans text-xs text-violet mt-1">
               Gebaseerd op {data.totalReviews >= 500 ? '500+' : data.totalReviews} bestellingen
             </p>
-            <p className="font-sans text-xs text-taupe mt-0.5">100% persoonlijk voorbeeld vooraf</p>
+            <p className="font-sans text-xs text-violet mt-0.5">Officieel gelicentieerd</p>
           </div>
         </motion.div>
 

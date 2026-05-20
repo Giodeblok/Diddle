@@ -13,7 +13,7 @@ const markdownComponents: Components = {
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="font-serif text-2xl text-anthracite leading-snug mt-12 mb-4 pt-2 border-t border-gold/15">
+    <h2 className="font-serif text-2xl text-anthracite leading-snug mt-12 mb-4 pt-2 border-t border-lilac/15">
       {children}
     </h2>
   ),
@@ -41,7 +41,7 @@ const markdownComponents: Components = {
   a: ({ href, children }) => (
     <a
       href={href}
-      className="text-gold-deep underline underline-offset-2 hover:text-gold transition-colors duration-200"
+      className="text-lilac-deep underline underline-offset-2 hover:text-lilac transition-colors duration-200"
       target={href?.startsWith('http') ? '_blank' : undefined}
       rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
     >
@@ -53,11 +53,11 @@ const markdownComponents: Components = {
   ),
   em: ({ children }) => <em className="italic text-foreground/80">{children}</em>,
   blockquote: ({ children }) => (
-    <blockquote className="border-l-2 border-gold/50 pl-5 my-6 text-foreground/65 italic font-serif text-lg leading-relaxed">
+    <blockquote className="border-l-2 border-lilac/50 pl-5 my-6 text-foreground/65 italic font-serif text-lg leading-relaxed">
       {children}
     </blockquote>
   ),
-  hr: () => <hr className="border-gold/20 my-10" />,
+  hr: () => <hr className="border-lilac/20 my-10" />,
 };
 
 export default function BlogPostPage() {
@@ -83,7 +83,7 @@ export default function BlogPostPage() {
 
       <div className="pt-20">
         {/* Hero image */}
-        <div className="relative w-full max-h-[480px] overflow-hidden bg-beige">
+        <div className="relative w-full max-h-[480px] overflow-hidden bg-lavender">
           <img
             src={post.heroImage}
             alt={post.heroImageAlt}
@@ -93,7 +93,7 @@ export default function BlogPostPage() {
         </div>
 
         {/* Article */}
-        <div className="bg-ivory py-16 lg:py-20 px-6">
+        <div className="bg-off-white py-16 lg:py-20 px-6">
           <div className="max-w-3xl mx-auto">
             {/* Back link */}
             <motion.div
@@ -103,7 +103,7 @@ export default function BlogPostPage() {
             >
               <Link
                 to="/blog"
-                className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] uppercase text-foreground/40 hover:text-gold-deep transition-colors duration-200 mb-10"
+                className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] uppercase text-foreground/40 hover:text-lilac-deep transition-colors duration-200 mb-10"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 Alle blogs
@@ -117,15 +117,15 @@ export default function BlogPostPage() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-4 mb-5"
             >
-              <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold-deep">
+              <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-lilac-deep">
                 {post.category}
               </span>
-              <span className="text-gold/30">·</span>
+              <span className="text-lilac/30">·</span>
               <span className="flex items-center gap-1.5 font-sans text-[10px] text-foreground/40">
                 <Clock className="w-3 h-3" />
                 {post.readTime} min leestijd
               </span>
-              <span className="text-gold/30">·</span>
+              <span className="text-lilac/30">·</span>
               <span className="font-sans text-[10px] text-foreground/40">
                 {post.publishedAt}
               </span>
@@ -141,7 +141,7 @@ export default function BlogPostPage() {
               {post.title}
             </motion.h1>
 
-            <div className="luxury-divider mb-10" />
+            <div className="diddl-divider mb-10" />
 
             {/* Content */}
             <motion.div
@@ -155,21 +155,20 @@ export default function BlogPostPage() {
             </motion.div>
 
             {/* CTA block */}
-            <div className="mt-16 bg-card border border-gold/20 rounded-sm p-8 text-center">
-              <span className="eyebrow">Persoonlijk aandenken</span>
-              <h3 className="font-serif text-2xl mt-3 mb-4 text-anthracite">
-                Een herinnering die voor altijd blijft.
+            <div className="mt-16 bg-lavender/20 border border-lilac/20 rounded-2xl p-8 text-center">
+              <span className="font-sans text-xs tracking-[0.25em] uppercase text-violet block mb-3">Shop nu</span>
+              <h3 className="font-serif text-2xl mt-3 mb-4 text-anthracite font-bold">
+                Diddl is terug — shop de collectie.
               </h3>
-              <p className="font-sans text-sm text-foreground/60 leading-relaxed mb-6 max-w-sm mx-auto">
-                Handgemaakte glazen harten met foto, gedicht en optioneel een mini-urn.
-                Elk stuk met zorg gemaakt.
+              <p className="font-sans text-sm text-violet leading-relaxed mb-6 max-w-sm mx-auto">
+                Van notitieboekjes tot pluche — alles officieel gelicentieerd en snel geleverd.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Link to="/collectie" className="btn-primary">
+                <Link to="/collectie" className="bg-lilac-gradient text-white font-sans text-xs tracking-[0.2em] uppercase font-bold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">
                   Bekijk de collectie
                 </Link>
-                <Link to="/ontwerp" className="btn-ghost">
-                  Ontwerp jouw hart
+                <Link to="/nieuw" className="border border-lilac text-lilac-deep font-sans text-xs tracking-[0.2em] uppercase font-bold py-3 px-8 rounded-full hover:bg-lilac/10 transition-colors duration-300">
+                  Nieuw binnen
                 </Link>
               </div>
             </div>
@@ -178,11 +177,11 @@ export default function BlogPostPage() {
 
         {/* Related blogs */}
         {related.length > 0 && (
-          <section className="bg-cream py-16 lg:py-20 px-6">
+          <section className="bg-lavender/20 py-16 lg:py-20 px-6">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10">
-                <span className="eyebrow">Meer lezen</span>
-                <h2 className="font-serif text-3xl mt-3 text-anthracite">
+                <span className="font-sans text-xs tracking-[0.25em] uppercase text-violet block mb-3">Meer lezen</span>
+                <h2 className="font-serif text-3xl mt-3 text-anthracite font-bold">
                   Gerelateerde artikelen
                 </h2>
               </div>
@@ -192,9 +191,9 @@ export default function BlogPostPage() {
                   <Link
                     key={relatedPost.slug}
                     to={`/blog/${relatedPost.slug}`}
-                    className="group flex gap-5 bg-ivory border border-gold/15 rounded-sm p-5 hover:shadow-soft transition-shadow duration-400"
+                    className="group flex gap-5 bg-off-white border border-lilac/15 rounded-2xl p-5 hover:shadow-soft transition-shadow duration-400"
                   >
-                    <div className="w-24 h-24 shrink-0 overflow-hidden rounded-sm bg-beige">
+                    <div className="w-24 h-24 shrink-0 overflow-hidden rounded-xl bg-lavender">
                       <img
                         src={relatedPost.heroImage}
                         alt={relatedPost.heroImageAlt}
@@ -203,13 +202,13 @@ export default function BlogPostPage() {
                       />
                     </div>
                     <div className="flex flex-col justify-center min-w-0">
-                      <span className="font-sans text-[9px] tracking-[0.2em] uppercase text-gold-deep mb-1">
+                      <span className="font-sans text-[9px] tracking-[0.2em] uppercase text-lilac-deep mb-1">
                         {relatedPost.category}
                       </span>
-                      <h3 className="font-serif text-base leading-snug text-anthracite group-hover:text-gold-deep transition-colors duration-300 line-clamp-2 mb-2">
+                      <h3 className="font-serif text-base leading-snug text-anthracite group-hover:text-lilac-deep transition-colors duration-300 line-clamp-2 mb-2">
                         {relatedPost.title}
                       </h3>
-                      <span className="inline-flex items-center gap-1.5 font-sans text-[10px] text-foreground/40 group-hover:text-gold-deep transition-colors">
+                      <span className="inline-flex items-center gap-1.5 font-sans text-[10px] text-foreground/40 group-hover:text-lilac-deep transition-colors">
                         Lees verder
                         <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
                       </span>

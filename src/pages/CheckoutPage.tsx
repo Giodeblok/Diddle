@@ -99,7 +99,7 @@ export default function CheckoutPage() {
   if (currentStep === 4) {
     return (
       <>
-        <Helmet><title>Bestelling bevestigd | Eeuwig Hart</title></Helmet>
+        <Helmet><title>Bestelling bevestigd | Mijn Diddl</title></Helmet>
         <div className="pt-20 min-h-screen bg-hero-gradient flex items-center justify-center px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -111,36 +111,35 @@ export default function CheckoutPage() {
               <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
             </div>
 
-            <div className="w-14 h-14 bg-gold-gradient flex items-center justify-center mx-auto mb-7">
+            <div className="w-14 h-14 bg-lilac-gradient rounded-full flex items-center justify-center mx-auto mb-7">
               <Check className="w-6 h-6 text-anthracite" />
             </div>
 
             <h1 className="font-serif text-3xl text-anthracite mb-4">
               Dank je voor je bestelling.
             </h1>
-            <div className="luxury-divider mb-5" />
-            <p className="font-sans text-sm text-taupe leading-relaxed mb-8">
-              We behandelen jouw herinnering met de grootste zorg.
-              Je ontvangt binnenkort een digitaal voorbeeld ter goedkeuring.
-              Pas daarna beginnen wij met de productie.
+            <div className="diddl-divider mb-5" />
+            <p className="font-sans text-sm text-violet leading-relaxed mb-8">
+              Je Diddl bestelling is ontvangen en wordt zo snel mogelijk verwerkt.
+              Je ontvangt een bevestigingsmail met je bestelgegevens.
             </p>
 
-            <div className="border border-beige bg-ivory p-6 mb-8 text-left space-y-3">
+            <div className="border border-lavender bg-off-white p-6 mb-8 text-left space-y-3">
               <div className="flex justify-between">
-                <span className="font-sans text-xs text-taupe">Bestelnummer</span>
+                <span className="font-sans text-xs text-violet">Bestelnummer</span>
                 <span className="font-sans text-xs text-anthracite font-medium">#{orderNumber ?? 'EDB-0000'}</span>
               </div>
               <div className="flex justify-between">
-                <span className="font-sans text-xs text-taupe">Product</span>
+                <span className="font-sans text-xs text-violet">Product</span>
                 <span className="font-sans text-xs text-anthracite">{product.name}</span>
               </div>
               <div className="flex justify-between">
-                <span className="font-sans text-xs text-taupe">Totaal betaald</span>
+                <span className="font-sans text-xs text-violet">Totaal betaald</span>
                 <span className="font-serif text-base text-anthracite">€ {total.toFixed(2).replace('.', ',')}</span>
               </div>
             </div>
 
-            <Link to="/" className="font-sans text-xs tracking-[0.15em] uppercase text-taupe hover:text-gold-deep transition-colors duration-300">
+            <Link to="/" className="font-sans text-xs tracking-[0.15em] uppercase text-violet hover:text-lilac-deep transition-colors duration-300">
               Terug naar de homepage
             </Link>
           </motion.div>
@@ -152,13 +151,13 @@ export default function CheckoutPage() {
   return (
     <>
       <Helmet>
-        <title>Afrekenen | Eeuwig Hart</title>
-        <meta name="description" content="Plaats uw bestelling voor een persoonlijk glazen hart." />
+        <title>Afrekenen | Mijn Diddl</title>
+        <meta name="description" content="Bestel je favoriete Diddl producten bij Mijn Diddl." />
       </Helmet>
 
-      <div className="pt-20 min-h-screen bg-cream">
+      <div className="pt-20 min-h-screen bg-lavender/20">
         {/* Progress bar */}
-        <div className="bg-ivory border-b border-beige">
+        <div className="bg-off-white border-b border-lavender">
           <div className="max-w-5xl mx-auto px-6 py-5">
             <div className="flex items-center justify-center gap-0">
               {steps.map((step, i) => (
@@ -166,8 +165,8 @@ export default function CheckoutPage() {
                   <div className="flex flex-col items-center">
                     <div className={`w-8 h-8 flex items-center justify-center border transition-all duration-300 ${
                       currentStep >= step.id
-                        ? 'bg-anthracite border-anthracite text-ivory'
-                        : 'border-beige text-taupe'
+                        ? 'bg-anthracite border-anthracite text-off-white'
+                        : 'border-lavender text-violet'
                     }`}>
                       {currentStep > step.id ? (
                         <Check className="w-3.5 h-3.5" />
@@ -176,14 +175,14 @@ export default function CheckoutPage() {
                       )}
                     </div>
                     <span className={`font-sans text-[10px] tracking-[0.1em] uppercase mt-1.5 hidden sm:block ${
-                      currentStep >= step.id ? 'text-anthracite' : 'text-taupe/50'
+                      currentStep >= step.id ? 'text-anthracite' : 'text-violet/50'
                     }`}>
                       {step.label}
                     </span>
                   </div>
                   {i < steps.length - 1 && (
                     <div className={`w-16 md:w-24 h-px mx-2 mb-4 transition-colors duration-300 ${
-                      currentStep > step.id ? 'bg-gold' : 'bg-beige'
+                      currentStep > step.id ? 'bg-lilac' : 'bg-beige'
                     }`} />
                   )}
                 </div>
@@ -209,14 +208,14 @@ export default function CheckoutPage() {
                     <h2 className="font-serif text-2xl text-anthracite">Uw bestelling</h2>
 
                     {/* Product summary */}
-                    <div className="border border-beige bg-ivory p-6">
+                    <div className="border border-lavender bg-off-white p-6">
                       <div className="flex items-start gap-5">
-                        <div className="flex-shrink-0 w-20 h-20 overflow-hidden border border-beige">
+                        <div className="flex-shrink-0 w-20 h-20 overflow-hidden border border-lavender">
                           <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
                         </div>
                         <div className="flex-1">
                           <h3 className="font-serif text-lg text-anthracite">{product.name}</h3>
-                          <p className="font-sans text-xs text-taupe mt-1">{product.subtitle}</p>
+                          <p className="font-sans text-xs text-violet mt-1">{product.subtitle}</p>
                         </div>
                         <span className="font-serif text-lg text-anthracite">{product.priceDisplay}</span>
                       </div>
@@ -251,13 +250,13 @@ export default function CheckoutPage() {
                         { key: 'lastName', label: 'Achternaam', placeholder: 'Uw achternaam' },
                       ].map((field) => (
                         <div key={field.key}>
-                          <label className="font-sans text-xs tracking-[0.1em] uppercase text-taupe block mb-2">{field.label}</label>
+                          <label className="font-sans text-xs tracking-[0.1em] uppercase text-violet block mb-2">{field.label}</label>
                           <input
                             type="text"
                             value={formData[field.key as keyof typeof formData]}
                             onChange={(e) => setFormData({ ...formData, [field.key]: e.target.value })}
                             placeholder={field.placeholder}
-                            className="w-full border border-beige bg-ivory px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-gold/50 transition-colors"
+                            className="w-full border border-lavender bg-off-white px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-lilac/50 transition-colors"
                           />
                         </div>
                       ))}
@@ -268,13 +267,13 @@ export default function CheckoutPage() {
                       { key: 'address', label: 'Adres', placeholder: 'Straatnaam en huisnummer', type: 'text' },
                     ].map((field) => (
                       <div key={field.key}>
-                        <label className="font-sans text-xs tracking-[0.1em] uppercase text-taupe block mb-2">{field.label}</label>
+                        <label className="font-sans text-xs tracking-[0.1em] uppercase text-violet block mb-2">{field.label}</label>
                         <input
                           type={field.type}
                           value={formData[field.key as keyof typeof formData]}
                           onChange={(e) => setFormData({ ...formData, [field.key]: e.target.value })}
                           placeholder={field.placeholder}
-                          className="w-full border border-beige bg-ivory px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-gold/50 transition-colors"
+                          className="w-full border border-lavender bg-off-white px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-lilac/50 transition-colors"
                         />
                       </div>
                     ))}
@@ -285,13 +284,13 @@ export default function CheckoutPage() {
                         { key: 'city', label: 'Stad', placeholder: 'Uw woonplaats' },
                       ].map((field) => (
                         <div key={field.key}>
-                          <label className="font-sans text-xs tracking-[0.1em] uppercase text-taupe block mb-2">{field.label}</label>
+                          <label className="font-sans text-xs tracking-[0.1em] uppercase text-violet block mb-2">{field.label}</label>
                           <input
                             type="text"
                             value={formData[field.key as keyof typeof formData]}
                             onChange={(e) => setFormData({ ...formData, [field.key]: e.target.value })}
                             placeholder={field.placeholder}
-                            className="w-full border border-beige bg-ivory px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-gold/50 transition-colors"
+                            className="w-full border border-lavender bg-off-white px-4 py-3 font-sans text-sm text-anthracite placeholder-taupe/40 focus:outline-none focus:border-lilac/50 transition-colors"
                           />
                         </div>
                       ))}
@@ -299,7 +298,7 @@ export default function CheckoutPage() {
 
                     {/* Shipping options */}
                     <div className="space-y-3 pt-2">
-                      <p className="font-sans text-xs tracking-[0.1em] uppercase text-taupe">Verzendmethode</p>
+                      <p className="font-sans text-xs tracking-[0.1em] uppercase text-violet">Verzendmethode</p>
                       {[
                         { id: 'standard', label: 'Standaard bezorging', time: '5–7 werkdagen', price: 'Gratis' },
                         { id: 'express', label: 'Express bezorging', time: '2–3 werkdagen', price: '€ 12,95' },
@@ -308,17 +307,17 @@ export default function CheckoutPage() {
                           key={option.id}
                           onClick={() => setShippingOption(option.id as 'standard' | 'express')}
                           className={`flex items-center gap-4 p-4 border cursor-pointer transition-all duration-300 ${
-                            shippingOption === option.id ? 'border-gold/40 bg-gold/5' : 'border-beige bg-ivory hover:border-gold/30'
+                            shippingOption === option.id ? 'border-lilac/40 bg-lilac/5' : 'border-lavender bg-off-white hover:border-lilac/30'
                           }`}
                         >
                           <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
-                            shippingOption === option.id ? 'border-gold' : 'border-beige'
+                            shippingOption === option.id ? 'border-lilac' : 'border-lavender'
                           }`}>
-                            {shippingOption === option.id && <div className="w-2 h-2 rounded-full bg-gold" />}
+                            {shippingOption === option.id && <div className="w-2 h-2 rounded-full bg-lilac" />}
                           </div>
                           <div className="flex-1">
                             <p className="font-sans text-sm text-anthracite">{option.label}</p>
-                            <p className="font-sans text-xs text-taupe">{option.time}</p>
+                            <p className="font-sans text-xs text-violet">{option.time}</p>
                           </div>
                           <span className="font-sans text-sm text-anthracite">{option.price}</span>
                         </div>
@@ -328,7 +327,7 @@ export default function CheckoutPage() {
                     <div className="flex gap-4">
                       <button
                         onClick={() => setCurrentStep(1)}
-                        className="flex-1 font-sans text-xs tracking-[0.12em] uppercase text-taupe border border-beige py-3.5 hover:border-gold/40 transition-colors duration-300"
+                        className="flex-1 font-sans text-xs tracking-[0.12em] uppercase text-violet border border-lavender py-3.5 hover:border-lilac/40 transition-colors duration-300"
                       >
                         Terug
                       </button>
@@ -359,7 +358,7 @@ export default function CheckoutPage() {
                           <div
                             key={method}
                             onClick={() => setSelectedMethod(key)}
-                            className={`border p-4 text-center cursor-pointer transition-colors duration-300 ${selected ? 'border-gold/40 bg-gold/5' : 'border-beige bg-ivory hover:border-gold/40'}`}
+                            className={`border p-4 text-center cursor-pointer transition-colors duration-300 ${selected ? 'border-lilac/40 bg-lilac/5' : 'border-lavender bg-off-white hover:border-lilac/40'}`}
                           >
                             <p className="font-sans text-sm text-anthracite">{method}</p>
                           </div>
@@ -367,27 +366,31 @@ export default function CheckoutPage() {
                       })}
                     </div>
 
-                    <div className="px-4 py-3 border border-beige bg-ivory/50">
-                      <p className="font-sans text-sm text-taupe">
+                    <div className="px-4 py-3 border border-lavender bg-off-white/50">
+                      <p className="font-sans text-sm text-violet">
                         {selectedMethod === 'ideal'
                           ? 'U kiest uw bank op de beveiligde iCEPAY betaalpagina.'
                           : 'U voert uw kaartgegevens in op de beveiligde iCEPAY betaalpagina.'}
                       </p>
                     </div>
 
-                    <div className="flex items-center gap-3 p-4 border border-beige bg-ivory">
-                      <Shield className="w-4 h-4 text-gold-deep flex-shrink-0" />
-                      <p className="font-sans text-xs text-taupe">
+                    <div className="flex items-center gap-3 p-4 border border-lavender bg-off-white">
+                      <Shield className="w-4 h-4 text-lilac-deep flex-shrink-0" />
+                      <p className="font-sans text-xs text-violet">
                         Alle betalingen zijn beveiligd met SSL-encryptie. Uw gegevens worden nooit opgeslagen.
                       </p>
                     </div>
 
-                    <p className="font-sans text-xs text-taupe/70 leading-relaxed border border-beige bg-ivory/50 px-4 py-3">
+                    <p className="font-sans text-xs text-violet/70 leading-relaxed border border-lavender bg-off-white/50 px-4 py-3">
                       Door te bestellen gaat u akkoord met onze{' '}
                       <Link to="/algemene-voorwaarden" className="underline hover:text-anthracite transition-colors duration-300">
                         Algemene Voorwaarden
                       </Link>
-                      . Gepersonaliseerde producten zijn niet retourneerbaar na goedkeuring van de digitale preview (art. 6:230p sub b BW).
+                      {' '}en ons{' '}
+                      <Link to="/retourbeleid" className="underline hover:text-anthracite transition-colors duration-300">
+                        Retourbeleid
+                      </Link>
+                      . Diddl producten hebben een 30-dagen retourrecht.
                     </p>
 
                     {orderError && (
@@ -399,7 +402,7 @@ export default function CheckoutPage() {
                     <div className="flex gap-4">
                       <button
                         onClick={() => setCurrentStep(2)}
-                        className="flex-1 font-sans text-xs tracking-[0.12em] uppercase text-taupe border border-beige py-3.5 hover:border-gold/40 transition-colors duration-300"
+                        className="flex-1 font-sans text-xs tracking-[0.12em] uppercase text-violet border border-lavender py-3.5 hover:border-lilac/40 transition-colors duration-300"
                         disabled={orderLoading}
                       >
                         Terug
@@ -421,30 +424,30 @@ export default function CheckoutPage() {
 
             {/* Order summary */}
             <div className="lg:col-span-1">
-              <div className="sticky top-28 border border-beige bg-ivory">
-                <div className="p-6 border-b border-beige">
-                  <p className="font-sans text-xs tracking-[0.15em] uppercase text-taupe mb-4">
+              <div className="sticky top-28 border border-lavender bg-off-white">
+                <div className="p-6 border-b border-lavender">
+                  <p className="font-sans text-xs tracking-[0.15em] uppercase text-violet mb-4">
                     Overzicht
                   </p>
                   <div className="overflow-hidden mb-4 aspect-[4/3]">
                     <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
                   </div>
                   <p className="font-serif text-base text-anthracite">{product.name}</p>
-                  <p className="font-sans text-xs text-taupe mt-1">{product.subtitle}</p>
+                  <p className="font-sans text-xs text-violet mt-1">{product.subtitle}</p>
                 </div>
 
                 <div className="p-6 space-y-3">
                   <div className="flex justify-between">
-                    <span className="font-sans text-sm text-taupe">Product</span>
+                    <span className="font-sans text-sm text-violet">Product</span>
                     <span className="font-sans text-sm text-anthracite">€ {productPrice},-</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-sans text-sm text-taupe">Verzending</span>
+                    <span className="font-sans text-sm text-violet">Verzending</span>
                     <span className="font-sans text-sm text-anthracite">
                       {shippingOption === 'express' ? '€ 12,95' : 'Gratis'}
                     </span>
                   </div>
-                  <div className="border-t border-beige pt-3 flex justify-between">
+                  <div className="border-t border-lavender pt-3 flex justify-between">
                     <span className="font-sans text-sm font-medium text-anthracite">Totaal</span>
                     <span className="font-serif text-xl text-anthracite">
                       € {total.toFixed(2).replace('.', ',')}
@@ -455,12 +458,12 @@ export default function CheckoutPage() {
                 <div className="px-6 pb-6 space-y-2">
                   {[
                     { icon: Shield, text: 'Veilig betalen' },
-                    { icon: Package, text: 'Luxe geschenkverpakking' },
-                    { icon: Heart, text: 'Voorbeeld voor productie' },
+                    { icon: Package, text: 'Zorgvuldig verpakt' },
+                    { icon: Heart, text: '30 dagen retour' },
                   ].map((item) => (
                     <div key={item.text} className="flex items-center gap-2">
-                      <item.icon className="w-3.5 h-3.5 text-gold-deep flex-shrink-0" strokeWidth={1.5} />
-                      <span className="font-sans text-xs text-taupe">{item.text}</span>
+                      <item.icon className="w-3.5 h-3.5 text-lilac-deep flex-shrink-0" strokeWidth={1.5} />
+                      <span className="font-sans text-xs text-violet">{item.text}</span>
                     </div>
                   ))}
                 </div>

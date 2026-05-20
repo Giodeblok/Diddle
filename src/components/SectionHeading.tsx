@@ -26,25 +26,25 @@ export default function SectionHeading({
       {eyebrow && (
         <span
           className={`inline-block text-xs tracking-[0.25em] uppercase font-sans mb-4 ${
-            light ? 'text-gold/80' : 'text-taupe'
+            light ? 'text-lilac/80' : 'text-violet'
           }`}
         >
           {eyebrow}
         </span>
       )}
       <h2
-        className={`font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-5 ${
-          light ? 'text-ivory' : 'text-anthracite'
+        className={`font-serif text-3xl md:text-4xl lg:text-5xl leading-tight mb-5 font-bold ${
+          light ? 'text-off-white' : 'text-anthracite'
         }`}
       >
         {title}
       </h2>
-      <div className={`luxury-divider mb-5 ${centered ? '' : 'ml-0 mr-auto'}`} />
+      <div className={`diddl-divider mb-5 ${centered ? '' : 'ml-0 mr-auto'}`} />
       {subtitle && (
         <p
           className={`font-sans text-base md:text-lg leading-relaxed max-w-2xl ${
             centered ? 'mx-auto' : ''
-          } ${light ? 'text-beige/80' : 'text-taupe'}`}
+          } ${light ? 'text-lavender/80' : 'text-anthracite/60'}`}
         >
           {subtitle}
         </p>

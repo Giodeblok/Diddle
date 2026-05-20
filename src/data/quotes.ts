@@ -5,66 +5,57 @@ export interface Quote {
 }
 
 export type QuoteCategory =
-  | 'Kort & Klassiek'
-  | 'Voor Moeder'
-  | 'Voor Vader'
-  | 'Voor Partner'
-  | 'Religieus'
-  | 'Modern Minimaal'
-  | 'Liefdevol & Warm';
+  | 'Nostalgie'
+  | 'Vriendschap'
+  | 'Verzamelen'
+  | 'Kindertijd'
+  | 'Diddl Classics'
+  | 'Comeback';
 
 export const quoteCategories: QuoteCategory[] = [
-  'Kort & Klassiek',
-  'Voor Moeder',
-  'Voor Vader',
-  'Voor Partner',
-  'Religieus',
-  'Modern Minimaal',
-  'Liefdevol & Warm',
+  'Nostalgie',
+  'Vriendschap',
+  'Verzamelen',
+  'Kindertijd',
+  'Diddl Classics',
+  'Comeback',
 ];
 
 export const quotes: Quote[] = [
-  // Kort & Klassiek
-  { id: 'q1', text: 'Voor altijd in ons hart.', category: 'Kort & Klassiek' },
-  { id: 'q2', text: 'Nooit vergeten, altijd geliefd.', category: 'Kort & Klassiek' },
-  { id: 'q3', text: 'Voor altijd geliefd, nooit vergeten.', category: 'Kort & Klassiek' },
-  { id: 'q4', text: 'Liefde eindigt niet waar het leven stopt.', category: 'Kort & Klassiek' },
-  { id: 'q5', text: 'Dichtbij, ook al ben je niet meer hier.', category: 'Kort & Klassiek' },
+  // Nostalgie
+  { id: 'q1', text: 'Het geluk van vroeger, nu in jouw handen.', category: 'Nostalgie' },
+  { id: 'q2', text: 'Sommige dingen worden beter met de tijd — nostalgie is er één van.', category: 'Nostalgie' },
+  { id: 'q3', text: 'Herinneringen zijn de mooiste dingen die je kunt verzamelen.', category: 'Nostalgie' },
+  { id: 'q4', text: 'Een geur, een kleur, een muisje — en je bent weer kind.', category: 'Nostalgie' },
+  { id: 'q5', text: 'De mooiste jaren zijn die waaraan je terugdenkt met een glimlach.', category: 'Nostalgie' },
 
-  // Voor Moeder
-  { id: 'q6', text: 'Mama, jouw liefde is ons eeuwige licht.', category: 'Voor Moeder' },
-  { id: 'q7', text: 'Een moeder is nooit weg, ze leeft voort in elk kind.', category: 'Voor Moeder' },
-  { id: 'q8', text: 'Jouw warmte voelen wij elke dag opnieuw.', category: 'Voor Moeder' },
-  { id: 'q9', text: 'In alles wat ik doe, draag ik jou mee.', category: 'Voor Moeder' },
+  // Vriendschap
+  { id: 'q6', text: 'Een Diddl-blokje voor mijn BFF — de beste valuta ooit.', category: 'Vriendschap' },
+  { id: 'q7', text: 'Echte vrienden herinneren zich nog welk Diddl-blokje jij het liefst had.', category: 'Vriendschap' },
+  { id: 'q8', text: 'Vriendschap begint bij het ruilen van Diddl-blokjes op het schoolplein.', category: 'Vriendschap' },
+  { id: 'q9', text: 'Met de juiste vriend(in) is een Diddl-middag nooit saai.', category: 'Vriendschap' },
 
-  // Voor Vader
-  { id: 'q10', text: 'Papa, jouw kracht leeft voort in ons.', category: 'Voor Vader' },
-  { id: 'q11', text: 'Een vader die geleefd heeft zoals jij, wordt nooit vergeten.', category: 'Voor Vader' },
-  { id: 'q12', text: 'Dank je voor elke stap die je naast mij zette.', category: 'Voor Vader' },
-  { id: 'q13', text: 'Jij was mijn rots. Dat blijf je altijd.', category: 'Voor Vader' },
+  // Verzamelen
+  { id: 'q10', text: 'Je kunt nooit te veel Diddl hebben. Dat is gewoon een feit.', category: 'Verzamelen' },
+  { id: 'q11', text: 'Elke nieuwe Diddl is een nieuw stukje geluk.', category: 'Verzamelen' },
+  { id: 'q12', text: 'De beste collectie is degene die je zelf bouwt, blokje voor blokje.', category: 'Verzamelen' },
+  { id: 'q13', text: 'Verzamelen is niet hamsteren — het is liefde bewaren.', category: 'Verzamelen' },
 
-  // Voor Partner
-  { id: 'q14', text: 'Wat liefde was, blijft liefde.', category: 'Voor Partner' },
-  { id: 'q15', text: 'Jij was mijn thuis. Voor altijd.', category: 'Voor Partner' },
-  { id: 'q16', text: 'Geen dag voorbij zonder jou.', category: 'Voor Partner' },
-  { id: 'q17', text: 'Jouw liefde blijft ons licht.', category: 'Voor Partner' },
+  // Kindertijd
+  { id: 'q14', text: 'Elke Diddl-blokje ruikt naar vrijdag na school.', category: 'Kindertijd' },
+  { id: 'q15', text: 'De beste schooltas was die met het meeste Diddl erin.', category: 'Kindertijd' },
+  { id: 'q16', text: 'Kindertijd is een Diddl-blokje dat je nooit helemaal opgebruikt.', category: 'Kindertijd' },
+  { id: 'q17', text: 'Groot worden is optioneel. Diddl liefhebben niet.', category: 'Kindertijd' },
 
-  // Religieus
-  { id: 'q18', text: 'Veilig bij God, voor altijd in ons hart.', category: 'Religieus' },
-  { id: 'q19', text: 'Tot wij elkaar weerzien.', category: 'Religieus' },
-  { id: 'q20', text: 'Rust in vrede, geliefd en onvergeten.', category: 'Religieus' },
-  { id: 'q21', text: 'In Gods handen geborgen, in onze harten gebleven.', category: 'Religieus' },
+  // Diddl Classics
+  { id: 'q18', text: 'Diddl: de witte muis met de grote voeten en een nog groter hart.', category: 'Diddl Classics' },
+  { id: 'q19', text: 'Cheesecakeland — waar dromen en Diddl wonen.', category: 'Diddl Classics' },
+  { id: 'q20', text: 'Diddl is geen merk. Diddl is een gevoel.', category: 'Diddl Classics' },
+  { id: 'q21', text: 'Een blokje Diddl bevat meer geluk per gram dan wat dan ook.', category: 'Diddl Classics' },
 
-  // Modern Minimaal
-  { id: 'q22', text: 'Altijd.', category: 'Modern Minimaal' },
-  { id: 'q23', text: 'Nooit weg.', category: 'Modern Minimaal' },
-  { id: 'q24', text: 'Geliefd. Gemist. Herinnerd.', category: 'Modern Minimaal' },
-  { id: 'q25', text: 'Jij. Altijd.', category: 'Modern Minimaal' },
-
-  // Liefdevol & Warm
-  { id: 'q26', text: 'Een herinnering vol liefde, voor altijd bewaard.', category: 'Liefdevol & Warm' },
-  { id: 'q27', text: 'Jouw glimlach leeft voort in alles wat mooi is.', category: 'Liefdevol & Warm' },
-  { id: 'q28', text: 'Met zoveel liefde gedragen, elke dag opnieuw.', category: 'Liefdevol & Warm' },
-  { id: 'q29', text: 'Dichtbij in elk zacht moment van de dag.', category: 'Liefdevol & Warm' },
-  { id: 'q30', text: 'Jouw liefde is het mooiste wat ik ooit heb mogen ontvangen.', category: 'Liefdevol & Warm' },
+  // Comeback
+  { id: 'q22', text: 'Diddl is terug. En dit keer blijft hij.', category: 'Comeback' },
+  { id: 'q23', text: 'Soms keert het mooiste terug precies wanneer je het nodig hebt.', category: 'Comeback' },
+  { id: 'q24', text: 'Welkom terug, klein muisje. We hebben je gemist.', category: 'Comeback' },
+  { id: 'q25', text: '2026: het jaar dat nostalgie weer hip werd.', category: 'Comeback' },
 ];

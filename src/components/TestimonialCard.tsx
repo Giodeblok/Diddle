@@ -25,16 +25,16 @@ export default function TestimonialCard({ review, index = 0 }: TestimonialCardPr
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, delay: index * 0.1 }}
-      className="bg-ivory border border-beige p-8 hover:shadow-luxury transition-shadow duration-500"
+      className="bg-off-white border border-lavender p-8 rounded-2xl hover:shadow-luxury transition-shadow duration-500"
     >
       {/* Stars + Google badge */}
       <div className="flex items-center justify-between mb-5">
         <div className="flex gap-1">
           {[...Array(review.rating)].map((_, i) => (
-            <Star key={i} className="w-3.5 h-3.5 fill-gold stroke-gold" />
+            <Star key={i} className="w-3.5 h-3.5 fill-lilac stroke-lilac" />
           ))}
         </div>
-        <span className="flex items-center gap-1 text-[10px] text-taupe/60 font-sans">
+        <span className="flex items-center gap-1 text-[10px] text-violet/60 font-sans">
           <GoogleIcon />
           Google
         </span>
@@ -46,7 +46,7 @@ export default function TestimonialCard({ review, index = 0 }: TestimonialCardPr
       </p>
 
       {/* Divider */}
-      <div className="luxury-divider ml-0 mb-5 w-8" />
+      <div className="diddl-divider ml-0 mb-5 w-8" />
 
       {/* Reviewer */}
       <div className="flex items-center gap-3">
@@ -57,7 +57,7 @@ export default function TestimonialCard({ review, index = 0 }: TestimonialCardPr
             className="w-9 h-9 rounded-full object-cover flex-shrink-0"
           />
         ) : (
-          <div className="w-9 h-9 bg-gold-gradient flex items-center justify-center flex-shrink-0">
+          <div className="w-9 h-9 bg-lilac-gradient flex items-center justify-center rounded-full flex-shrink-0">
             <span className="font-serif text-xs text-anthracite font-medium">
               {review.initials}
             </span>
@@ -65,7 +65,7 @@ export default function TestimonialCard({ review, index = 0 }: TestimonialCardPr
         )}
         <div>
           <p className="font-sans text-sm text-anthracite font-medium">{review.name}</p>
-          <p className="font-sans text-xs text-taupe">
+          <p className="font-sans text-xs text-violet">
             {[review.location, review.date].filter(Boolean).join(' · ')}
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function TestimonialCard({ review, index = 0 }: TestimonialCardPr
 
       {review.product && (
         <div className="mt-4">
-          <span className="font-sans text-[10px] tracking-[0.15em] uppercase text-taupe/60">
+          <span className="font-sans text-[10px] tracking-[0.15em] uppercase text-violet/60">
             {review.product}
           </span>
         </div>
