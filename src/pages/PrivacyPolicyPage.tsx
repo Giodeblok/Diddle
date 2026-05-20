@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+﻿import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const sections = [
@@ -16,7 +16,7 @@ const sections = [
   {
     title: '2. Welke gegevens verwerken wij?',
     content: [
-      'Wij verwerken de volgende categorieën persoonsgegevens:',
+      'Wij verwerken de volgende categorieÃ«n persoonsgegevens:',
       'Bestelgegevens: voornaam, achternaam, e-mailadres, bezorgadres (straat, huisnummer, postcode, woonplaats) en telefoonnummer (voor bezorging via MyParcel).',
       'Contactformuliergegevens: naam, e-mailadres en de inhoud van uw bericht.',
       'Beheerdersgegevens (intern): gebruikersnaam en een versleuteld wachtwoord (bcrypt-hashing), uitsluitend zichtbaar voor bevoegd personeel.',
@@ -28,12 +28,12 @@ const sections = [
     title: '3. Grondslag en doel',
     content: [
       'Wij verwerken uw persoonsgegevens uitsluitend voor de volgende doeleinden en op basis van de bijbehorende wettelijke grondslagen (AVG):',
-      'Uitvoering van uw bestelling (orderbevestiging, productie, bezorging) — grondslag: uitvoering van een overeenkomst (art. 6(1)(b) AVG).',
-      'Verzending via MyParcel (PostNL, bpost of DPD) — grondslag: uitvoering van een overeenkomst (art. 6(1)(b) AVG).',
-      'Verwerking van betaling via iCEPAY — grondslag: uitvoering van een overeenkomst (art. 6(1)(b) AVG).',
-      'Beantwoording van contactberichten — grondslag: gerechtvaardigd belang (klantenservice, art. 6(1)(f) AVG).',
-      'Transactionele e-mails via Resend (orderbevestiging, digitale preview) — grondslag: uitvoering van een overeenkomst (art. 6(1)(b) AVG).',
-      'Opslag van bestelgegevens in Supabase — grondslag: gerechtvaardigd belang (technische bedrijfsvoering, art. 6(1)(f) AVG).',
+      'Uitvoering van uw bestelling (orderbevestiging, productie, bezorging) â€” grondslag: uitvoering van een overeenkomst (art. 6(1)(b) AVG).',
+      'Verzending via MyParcel (PostNL, bpost of DPD) â€” grondslag: uitvoering van een overeenkomst (art. 6(1)(b) AVG).',
+      'Verwerking van betaling via iCEPAY â€” grondslag: uitvoering van een overeenkomst (art. 6(1)(b) AVG).',
+      'Beantwoording van contactberichten â€” grondslag: gerechtvaardigd belang (klantenservice, art. 6(1)(f) AVG).',
+      'Transactionele e-mails via Resend (orderbevestiging, digitale preview) â€” grondslag: uitvoering van een overeenkomst (art. 6(1)(b) AVG).',
+      'Opslag van bestelgegevens in Supabase â€” grondslag: gerechtvaardigd belang (technische bedrijfsvoering, art. 6(1)(f) AVG).',
       'Mijn Diddl verstuurt geen nieuwsbrieven en verwerkt geen persoonsgegevens voor marketingdoeleinden.',
     ],
   },
@@ -50,11 +50,11 @@ const sections = [
     title: '5. Derden en verwerkers',
     content: [
       'Om onze diensten te kunnen verlenen, maken wij gebruik van de volgende externe verwerkers. Met elk van deze partijen is een verwerkersovereenkomst gesloten of zijn zij gebonden aan passende juridische waarborgen. Uw gegevens worden nooit verkocht of voor andere doeleinden gedeeld.',
-      'iCEPAY (betaalverwerker, Nederland) — ontvangt: e-mailadres en transactiebedrag. PCI-DSS gecertificeerd. Betaalkaartgegevens komen nooit bij Mijn Diddl.',
-      'bol.com (verkoopplatform, Nederland) — ontvangt: volledige klantgegevens bij via bol.com geplaatste bestellingen. Eigen privacybeleid van bol.com is van toepassing.',
-      'MyParcel (verzendlogistiek via PostNL, bpost of DPD, Nederland) — ontvangt: naam, adres, postcode, woonplaats, telefoonnummer en e-mailadres.',
-      'Resend (transactionele e-maildienst, VS) — ontvangt: e-mailadres, naam en orderinhoud. Doorgifte buiten de EU op basis van Standard Contractual Clauses (SCCs).',
-      'Supabase (databasehosting, serverlocatie EU — Frankfurt) — bevat: bestel- en klantgegevens. Supabase is gevestigd in de VS; passende waarborgen (SCCs) zijn van toepassing.',
+      'iCEPAY (betaalverwerker, Nederland) â€” ontvangt: e-mailadres en transactiebedrag. PCI-DSS gecertificeerd. Betaalkaartgegevens komen nooit bij Mijn Diddl.',
+      'bol.com (verkoopplatform, Nederland) â€” ontvangt: volledige klantgegevens bij via bol.com geplaatste bestellingen. Eigen privacybeleid van bol.com is van toepassing.',
+      'MyParcel (verzendlogistiek via PostNL, bpost of DPD, Nederland) â€” ontvangt: naam, adres, postcode, woonplaats, telefoonnummer en e-mailadres.',
+      'Resend (transactionele e-maildienst, VS) â€” ontvangt: e-mailadres, naam en orderinhoud. Doorgifte buiten de EU op basis van Standard Contractual Clauses (SCCs).',
+      'Supabase (databasehosting, serverlocatie EU â€” Frankfurt) â€” bevat: bestel- en klantgegevens. Supabase is gevestigd in de VS; passende waarborgen (SCCs) zijn van toepassing.',
     ],
   },
   {
@@ -79,7 +79,7 @@ const sections = [
       'Recht op beperking van de verwerking (art. 18 AVG): u kunt in bepaalde situaties vragen de verwerking tijdelijk te stoppen.',
       'Recht op bezwaar (art. 21 AVG): u kunt bezwaar maken tegen verwerking op basis van gerechtvaardigd belang. Wij stoppen dan met de verwerking, tenzij wij dwingende gerechtvaardigde gronden hebben.',
       'Recht op gegevensoverdraagbaarheid (art. 20 AVG): u kunt uw gegevens opvragen in een gestructureerd, gangbaar en machineleesbaar formaat.',
-      'U kunt uw verzoek indienen via info@mijndiddl.nl. Wij reageren binnen 30 dagen. Wij kunnen om een identiteitsbevestiging vragen om uw verzoek te verifiëren.',
+      'U kunt uw verzoek indienen via info@mijndiddl.nl. Wij reageren binnen 30 dagen. Wij kunnen om een identiteitsbevestiging vragen om uw verzoek te verifiÃ«ren.',
     ],
   },
   {
@@ -95,7 +95,7 @@ const sections = [
     content: [
       'Bent u niet tevreden over de wijze waarop wij met uw persoonsgegevens omgaan? Neem dan eerst contact met ons op via info@mijndiddl.nl. Wij lossen het graag persoonlijk met u op.',
       'U heeft ook het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens, de Nederlandse toezichthouder voor gegevensbescherming:',
-      'Autoriteit Persoonsgegevens — Postbus 93374, 2509 AJ Den Haag — autoriteitpersoonsgegevens.nl',
+      'Autoriteit Persoonsgegevens â€” Postbus 93374, 2509 AJ Den Haag â€” autoriteitpersoonsgegevens.nl',
     ],
   },
   {
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
           </h1>
           <div className="diddl-divider mb-5" />
           <p className="font-sans text-base text-violet max-w-lg mx-auto px-6">
-            Versie mei 2025 — van toepassing op alle verwerkingen via mijndiddl.nl
+            Versie mei 2025 â€” van toepassing op alle verwerkingen via mijndiddl.nl
           </p>
         </div>
 
@@ -170,3 +170,4 @@ export default function PrivacyPolicyPage() {
     </>
   );
 }
+

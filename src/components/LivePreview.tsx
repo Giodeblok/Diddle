@@ -14,7 +14,7 @@ export default function LivePreview() {
         <SectionHeading
           eyebrow="Nieuw binnen"
           title="Vers uit de comeback collectie"
-          subtitle="De nieuwste Diddl-items zijn gearriveerd. Wees er snel bij — sommige zijn al bijna uitverkocht."
+          subtitle="De nieuwste Diddl-items zijn gearriveerd. Wees er snel bij, sommige zijn al bijna uitverkocht."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

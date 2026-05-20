@@ -1,4 +1,4 @@
-export interface BlogPost {
+﻿export interface BlogPost {
   slug: string;
   title: string;
   metaTitle: string;
@@ -14,17 +14,17 @@ export interface BlogPost {
 
 const diddlIsTerug = `# Diddl is terug! De comeback van het iconische muisje
 
-Na jaren van stilte is Diddl officieel terug. Het kleine witte muisje met de grote roze voeten — dat generaties kinderen op het schoolplein bezig hield — maakt in 2026 een grote internationale comeback. En Nederland is één van de eerste landen waar je de nieuwe collectie kunt kopen.
+Na jaren van stilte is Diddl officieel terug. Het kleine witte muisje met de grote roze voeten â€” dat generaties kinderen op het schoolplein bezig hield â€” maakt in 2026 een grote internationale comeback. En Nederland is Ã©Ã©n van de eerste landen waar je de nieuwe collectie kunt kopen.
 
 ---
 
 ## Wie is Diddl?
 
-Diddl is de creatie van de Duitse illustrator Thomas Goletz, die het karakter in 1990 tekende. Het muisje woont in "Cheesecakeland" — een fantasiewereld van zoetigheden, wolken en speelsheid. Vanaf 1991 kwamen de eerste notitieboekjes en ansichtkaarten op de markt.
+Diddl is de creatie van de Duitse illustrator Thomas Goletz, die het karakter in 1990 tekende. Het muisje woont in "Cheesecakeland" â€” een fantasiewereld van zoetigheden, wolken en speelsheid. Vanaf 1991 kwamen de eerste notitieboekjes en ansichtkaarten op de markt.
 
-Het succes was explosief. In de jaren '90 groeide Diddl uit tot een waar fenomeen in heel Europa, met name in Nederland, Duitsland, Oostenrijk en België. Op bijna elk schoolplein werden Diddl-blokjes geruild als kostbare handelswaar.
+Het succes was explosief. In de jaren '90 groeide Diddl uit tot een waar fenomeen in heel Europa, met name in Nederland, Duitsland, Oostenrijk en BelgiÃ«. Op bijna elk schoolplein werden Diddl-blokjes geruild als kostbare handelswaar.
 
-Op het hoogtepunt van de populariteit waren er meer dan 1.000 verschillende Diddl-producten beschikbaar — van notitieboekjes en kaarten tot kleding, beddengoed en muziek-cd's.
+Op het hoogtepunt van de populariteit waren er meer dan 1.000 verschillende Diddl-producten beschikbaar â€” van notitieboekjes en kaarten tot kleding, beddengoed en muziek-cd's.
 
 ---
 
@@ -38,9 +38,9 @@ Maar de liefde voor Diddl ging nooit echt weg. Op rommelmarkten en vintage-sites
 
 ## De comeback van 2026
 
-In 2025 maakte Diddl zijn eerste stap terug, met een re-launch in Frankrijk. Het succes was enorm — producten waren razendsnel uitverkocht. In oktober 2025 volgde de uitrol naar meer landen.
+In 2025 maakte Diddl zijn eerste stap terug, met een re-launch in Frankrijk. Het succes was enorm â€” producten waren razendsnel uitverkocht. In oktober 2025 volgde de uitrol naar meer landen.
 
-En dan, op 21 mei 2026, is het officieel: Diddl landt in **Nederland, België en Luxemburg**. Met een complete nieuwe collectie, modern ontworpen maar trouw aan de klassieke uitstraling.
+En dan, op 21 mei 2026, is het officieel: Diddl landt in **Nederland, BelgiÃ« en Luxemburg**. Met een complete nieuwe collectie, modern ontworpen maar trouw aan de klassieke uitstraling.
 
 De eerste reacties zijn overweldigend. Millennials die Diddl kennen van vroeger rennen naar de webshops. Maar ook een nieuwe generatie kinderen ontdekt het muisje voor het eerst.
 
@@ -52,7 +52,7 @@ De kracht van Diddl zit in de combinatie van nostalgie, karakter en collectiewaa
 
 **Nostalgie**: voor iedereen die opgroeide in de jaren '90 of '00 zijn Diddl-blokjes een directe link naar hun kindertijd. Die emotionele verbinding is uniek en onvervangbaar.
 
-**Karakter**: Diddl is niet zomaar een logo. Het is een compleet universum met karakters, verhalen en een eigen wereld. Dat maakt het meer dan een product — het is een ervaring.
+**Karakter**: Diddl is niet zomaar een logo. Het is een compleet universum met karakters, verhalen en een eigen wereld. Dat maakt het meer dan een product â€” het is een ervaring.
 
 **Collectiewaardigheid**: Diddl-producten zijn van nature verzamelbaar. Elk blokje, elke kaart is anders. De drang om te verzamelen en te ruilen zit diep in de Diddl-DNA.
 
@@ -72,20 +72,20 @@ De comeback collectie van 2026 is respectvol voor het origineel, maar ook fris e
 
 ## Hoe kun je Diddl kopen?
 
-Bij **Mijn Diddl** verkopen we de volledige comeback collectie. We zijn een officiële webshop met snel geleverde, zorgvuldig verpakte producten — rechtstreeks bij jou thuis.
+Bij **Mijn Diddl** verkopen we de volledige comeback collectie. We zijn een officiÃ«le webshop met snel geleverde, zorgvuldig verpakte producten â€” rechtstreeks bij jou thuis.
 
-Bekijk onze [collectie](/collectie) en laat de nostalgie terugkomen. Want Diddl is terug — en hij gaat nergens meer heen.
+Bekijk onze [collectie](/collectie) en laat de nostalgie terugkomen. Want Diddl is terug â€” en hij gaat nergens meer heen.
 `;
 
 const diddlVerzamelenTips = `# Diddl verzamelen: tips voor beginners en nostalgische fans
 
-Of je nu nieuw bent in de wereld van Diddl, of een oude fan die zijn collectie wil uitbreiden — verzamelen is een van de leukste aspecten van Diddl. In deze gids geven we praktische tips om te beginnen én om je verzameling slim op te bouwen.
+Of je nu nieuw bent in de wereld van Diddl, of een oude fan die zijn collectie wil uitbreiden â€” verzamelen is een van de leukste aspecten van Diddl. In deze gids geven we praktische tips om te beginnen Ã©n om je verzameling slim op te bouwen.
 
 ---
 
 ## Waarom Diddl verzamelen zo leuk is
 
-Diddl heeft iets wat weinig merken hebben: een intrinsieke verzameldrang. Elk blokje, elke kaart is anders. Er zijn honderden varianten, series en limited editions. En de producten zijn betaalbaar genoeg om er écht een collectie van op te bouwen.
+Diddl heeft iets wat weinig merken hebben: een intrinsieke verzameldrang. Elk blokje, elke kaart is anders. Er zijn honderden varianten, series en limited editions. En de producten zijn betaalbaar genoeg om er Ã©cht een collectie van op te bouwen.
 
 Bovendien is het sociaal. Net zoals vroeger op het schoolplein, brengt Diddl verzamelaars samen. Er zijn online communities, ruilgroepen en markten speciaal voor Diddl-items.
 
@@ -104,7 +104,7 @@ Koop er een paar in verschillende designs en kijk welke je het meest aanspreken.
 Een focus maakt verzamelen leuker en overzichtelijker. Mogelijke focusgebieden:
 
 - **Karakters**: alleen Diddl-muisje, of juist ook Diddlina en andere karakters
-- **Categorieën**: alleen notitieboekjes, of juist alleen ansichtkaarten
+- **CategorieÃ«n**: alleen notitieboekjes, of juist alleen ansichtkaarten
 - **Thema's**: seizoensproducten, vriendschapsitems, pluche
 - **Tijdperk**: originele jaren '90 producten vs. de 2026 comeback collectie
 
@@ -118,9 +118,9 @@ Voor serieuze verzamelaars geldt: bewaar producten in originele staat. Open verp
 
 Bij het verzamelen heb je twee werelden: de nieuwe 2026 comeback producten en de originele vintage Diddl.
 
-**Nieuwe producten** zijn makkelijk te krijgen via officiële webshops zoals Mijn Diddl. Ze zijn betaalbaar, in perfecte staat en beschikbaar in grote variëteit.
+**Nieuwe producten** zijn makkelijk te krijgen via officiÃ«le webshops zoals Mijn Diddl. Ze zijn betaalbaar, in perfecte staat en beschikbaar in grote variÃ«teit.
 
-**Vintage Diddl** — de originele producten uit de jaren '90 en '00 — is te vinden via rommelmarkten, Vinted of Marktplaats. Deze producten hebben een extra nostalgiewaarde en sommige zijn zeldzaam en gewild door verzamelaars.
+**Vintage Diddl** â€” de originele producten uit de jaren '90 en '00 â€” is te vinden via rommelmarkten, Vinted of Marktplaats. Deze producten hebben een extra nostalgiewaarde en sommige zijn zeldzaam en gewild door verzamelaars.
 
 Een goede strategie is: koop nieuwe producten voor dagelijks gebruik en plezier, en voeg selectief vintage stukken toe aan je collectie voor de nostalgiefactor.
 
@@ -128,7 +128,7 @@ Een goede strategie is: koop nieuwe producten voor dagelijks gebruik en plezier,
 
 ## Diddl ruilen: de traditie voortgezet
 
-Eén van de leukste Diddl-tradities is ruilen. Op schoolpleinen in de jaren '90 was dit de normaalste zaak van de wereld. Nu leeft die traditie voort in online communities.
+EÃ©n van de leukste Diddl-tradities is ruilen. Op schoolpleinen in de jaren '90 was dit de normaalste zaak van de wereld. Nu leeft die traditie voort in online communities.
 
 Op Facebook-groepen en forums vind je andere verzamelaars die willen ruilen. Tips voor goed ruilen:
 
@@ -140,7 +140,7 @@ Op Facebook-groepen en forums vind je andere verzamelaars die willen ruilen. Tip
 
 ## De mooiste plekken om Diddl te vinden
 
-- **Mijn Diddl webshop**: de officiële plek voor nieuwe producten — snel geleverd en officieel gelicentieerd
+- **Mijn Diddl webshop**: de officiÃ«le plek voor nieuwe producten â€” snel geleverd en officieel gelicentieerd
 - **Bol.com**: ook een selectie nieuwe Diddl-producten
 - **Vinted / Marktplaats**: voor vintage en tweedehands
 - **Rommelmarkten en vlooienmarkten**: soms echte pareltjes te vinden
@@ -157,7 +157,7 @@ Bekijk onze [collectie](/collectie) voor de nieuwste Diddl-producten en start jo
 
 const diddlGeschiedenis = `# De geschiedenis van Diddl: van 1990 tot de comeback van 2026
 
-Diddl is meer dan een muisje. Het is een cultureel fenomeen dat twee generaties heeft verbonden en nu een indrukwekkende comeback maakt. In dit artikel nemen we je mee door de volledige geschiedenis van Diddl — van de eerste pen­nentrek tot de lancering in 2026.
+Diddl is meer dan een muisje. Het is een cultureel fenomeen dat twee generaties heeft verbonden en nu een indrukwekkende comeback maakt. In dit artikel nemen we je mee door de volledige geschiedenis van Diddl â€” van de eerste penÂ­nentrek tot de lancering in 2026.
 
 ---
 
@@ -165,19 +165,19 @@ Diddl is meer dan een muisje. Het is een cultureel fenomeen dat twee generaties 
 
 Thomas Goletz, een illustrator uit Duitsland, tekent in 1990 voor het eerst het kleine witte muisje. Het karakter heeft grote oren, een vrolijk gezicht en de kenmerkende grote, roze voeten.
 
-Het muisje krijgt de naam Diddl en woont in een fantasieland genaamd "Cheesecakeland" — een wereld van zoetigheden, gekleurde wolken en eindeloos geluk.
+Het muisje krijgt de naam Diddl en woont in een fantasieland genaamd "Cheesecakeland" â€” een wereld van zoetigheden, gekleurde wolken en eindeloos geluk.
 
-In 1991 verschijnen de eerste officiële Diddl-producten: eenvoudige notitieboekjes en ansichtkaarten. Klein, betaalbaar en direct geliefd.
+In 1991 verschijnen de eerste officiÃ«le Diddl-producten: eenvoudige notitieboekjes en ansichtkaarten. Klein, betaalbaar en direct geliefd.
 
 ---
 
 ## De jaren '90: de grote hype
 
-In de tweede helft van de jaren '90 explodeert Diddl. In heel Europa — maar vooral in Nederland, Duitsland, Oostenrijk en België — wordt Diddl een heuse rage op scholen.
+In de tweede helft van de jaren '90 explodeert Diddl. In heel Europa â€” maar vooral in Nederland, Duitsland, Oostenrijk en BelgiÃ« â€” wordt Diddl een heuse rage op scholen.
 
 Kinderen ruilen Diddl-blokjes op het schoolplein als waren het speelkaarten of stickers. Een zeldzaam ontwerp is meer waard dan een dagelijks blokje. Er ontstaat een echte ruileconomie, met vaste prijzen en handelsnormen die kinderen onderling hanteren.
 
-Op het hoogtepunt telt het Diddl-assortiment meer dan **1.000 verschillende producten**: van notitieboekjes en kaarten tot kleding, beddengoed, muziek-cd's, een tijdschrift ("Diddl's Käseblatt") en zelfs een animatieserie.
+Op het hoogtepunt telt het Diddl-assortiment meer dan **1.000 verschillende producten**: van notitieboekjes en kaarten tot kleding, beddengoed, muziek-cd's, een tijdschrift ("Diddl's KÃ¤seblatt") en zelfs een animatieserie.
 
 ---
 
@@ -197,7 +197,7 @@ Het merk wordt verkocht in bijna **30 landen** wereldwijd. In Nederland is Diddl
 
 Rond 2010 begint de populariteit langzaam af te nemen. Nieuwe trends nemen de aandacht over en kinderen communiceren steeds meer digitaal. De vraag naar fysieke notitieboekjes daalt.
 
-Diddl verdwijnt niet helemaal — maar het aanbod wordt kleiner en de publieke aandacht verslapt. Vintage Diddl-producten vinden nog steeds hun weg naar rommelmarkten en verzamelaarssites.
+Diddl verdwijnt niet helemaal â€” maar het aanbod wordt kleiner en de publieke aandacht verslapt. Vintage Diddl-producten vinden nog steeds hun weg naar rommelmarkten en verzamelaarssites.
 
 De nostalgie echter, blijft sluimeren.
 
@@ -205,11 +205,11 @@ De nostalgie echter, blijft sluimeren.
 
 ## 2025-2026: de comeback
 
-De wereld verandert. Nostalgie wordt groot. En dan, in 2025, kondigt de Warimex Group — de nieuwe officiële distributeur — de comeback van Diddl aan.
+De wereld verandert. Nostalgie wordt groot. En dan, in 2025, kondigt de Warimex Group â€” de nieuwe officiÃ«le distributeur â€” de comeback van Diddl aan.
 
 **Oktober 2025**: re-launch in **Frankrijk**. Producten zijn binnen dagen uitverkocht. De sociale media ontploffen met herinneringen en reacties van fans.
 
-**21 mei 2026**: officiële lancering in **Nederland, België en Luxemburg**. Mijn Diddl is er klaar voor met de volledige comeback collectie.
+**21 mei 2026**: officiÃ«le lancering in **Nederland, BelgiÃ« en Luxemburg**. Mijn Diddl is er klaar voor met de volledige comeback collectie.
 
 **Zomer 2026**: lancering in Duitsland, Oostenrijk en Zwitserland gepland.
 
@@ -221,7 +221,7 @@ De comeback van Diddl is geen toeval. Hij wordt gedragen door drie krachtige tre
 
 1. **Nostalgie-economie**: millennials en Gen X-ers zijn bereid te betalen voor herinneringen aan hun kindertijd
 2. **Fysieke producten**: in een digitale wereld groeit de behoefte aan tastbare, analoge objecten
-3. **Nieuwe generatie**: kinderen van vandaag ontdekken Diddl voor het eerst — en zijn net zo enthousiast
+3. **Nieuwe generatie**: kinderen van vandaag ontdekken Diddl voor het eerst â€” en zijn net zo enthousiast
 
 ---
 
@@ -234,19 +234,19 @@ Bekijk ons volledige [assortiment](/collectie) en schrijf jezelf een stukje gesc
 
 const diddlPopulairsteProdukten = `# De populairste Diddl producten van 2026
 
-De comeback van Diddl is een feit — en de vraag naar bepaalde producten is enorm. In dit artikel delen we de meest populaire Diddl-items van het moment, zodat je weet wat je écht niet mag missen.
+De comeback van Diddl is een feit â€” en de vraag naar bepaalde producten is enorm. In dit artikel delen we de meest populaire Diddl-items van het moment, zodat je weet wat je Ã©cht niet mag missen.
 
 ---
 
 ## 1. Het klassieke Diddl notitieboekje
 
-Het absolute icoon. De geperforeerde blaadjes op een kartonnen blok, met het witte muisje als mascotte — dit is waar het allemaal mee begon.
+Het absolute icoon. De geperforeerde blaadjes op een kartonnen blok, met het witte muisje als mascotte â€” dit is waar het allemaal mee begon.
 
 Het klassieke notitieboekje is nog steeds het populairste Diddl-product. Iedereen die opgroeide in de jaren '90 kent het, en de nostalgie zorgt voor een enorme vraag bij de comeback.
 
 **Waarom zo populair?**
 - Directe nostalgie-trigger
-- Betaalbaar (vanaf €7,95)
+- Betaalbaar (vanaf â‚¬7,95)
 - Verzamelbaar in veel verschillende designs
 - Ideaal als cadeau of persoonlijk gebruik
 
@@ -254,11 +254,11 @@ Het klassieke notitieboekje is nog steeds het populairste Diddl-product. Iederee
 
 ## 2. De 3D verjaardagskaart
 
-Wow-effect gegarandeerd. De Diddl 3D verjaardagskaart is een ware favoriet geworden in de comeback collectie. Als je hem opent, springt Diddl eruit — letterlijk.
+Wow-effect gegarandeerd. De Diddl 3D verjaardagskaart is een ware favoriet geworden in de comeback collectie. Als je hem opent, springt Diddl eruit â€” letterlijk.
 
 Perfect als verjaardagscadeau, als verrassing of gewoon omdat het zo ontzettend leuk is. Kinderen zijn er gek op, maar ook volwassenen vinden hem geweldig.
 
-**Prijs**: €4,95 — een van de meest betaalbare Diddl-producten
+**Prijs**: â‚¬4,95 â€” een van de meest betaalbare Diddl-producten
 
 ---
 
@@ -266,7 +266,7 @@ Perfect als verjaardagscadeau, als verrassing of gewoon omdat het zo ontzettend 
 
 Wie kan nee zeggen tegen een zachte, 30 cm grote Diddl pluche knuffel? Niemand, blijkt.
 
-De Diddl knuffel is één van de best verkopende producten van de comeback. Zowel kinderen als nostalgische volwassenen slaan hem graag in huis.
+De Diddl knuffel is Ã©Ã©n van de best verkopende producten van de comeback. Zowel kinderen als nostalgische volwassenen slaan hem graag in huis.
 
 Beschikbaar in groot (30 cm) en klein (15 cm) formaat, en ook als Diddlina variant.
 
@@ -300,59 +300,59 @@ Ruim genoeg voor al je schrijfwaren, met een vrolijk Diddl-design dat meteen opv
 Bekijk alle [populaire producten](/collectie) in onze webshop en ontdek je nieuwe favorieten!
 `;
 
-const diddlCadeauIdeeen = `# Diddl cadeau-ideeën: perfecte nostalgie voor elk budget
+const diddlCadeauIdeeen = `# Diddl cadeau-ideeÃ«n: perfecte nostalgie voor elk budget
 
-Ben je op zoek naar een origineel cadeau dat zowel kinderen als volwassenen blij maakt? Diddl is dé keuze voor wie nostalgie wil geven — een cadeau dat een glimlach garanteert.
+Ben je op zoek naar een origineel cadeau dat zowel kinderen als volwassenen blij maakt? Diddl is dÃ© keuze voor wie nostalgie wil geven â€” een cadeau dat een glimlach garanteert.
 
-In dit artikel geven we cadeau-ideeën voor elk budget en elke gelegenheid.
+In dit artikel geven we cadeau-ideeÃ«n voor elk budget en elke gelegenheid.
 
 ---
 
-## Cadeau-ideeën onder €10
+## Cadeau-ideeÃ«n onder â‚¬10
 
-### 1. Diddl notitieboekje (€7,95)
+### 1. Diddl notitieboekje (â‚¬7,95)
 
 Een klassieker die nooit teleurstelt. Het iconische Diddl-blokje met geperforeerde blaadjes is betaalbaar, herkenbaar en geliefd door iedereen die Diddl kent.
 
 Ideaal als kleine attentie, als toevoeging bij een groter cadeau, of gewoon om iemand te verrassen met een stukje nostalgie.
 
-### 2. Diddl ansichtkaart of 3D kaart (€2,95–€4,95)
+### 2. Diddl ansichtkaart of 3D kaart (â‚¬2,95â€“â‚¬4,95)
 
-Voor wie iets heel kleins wil geven — maar met veel impact. De 3D verjaardagskaart is een absolute topper: als de ontvanger hem opent, springt Diddl eruit. Gegarandeerd een glimlach.
+Voor wie iets heel kleins wil geven â€” maar met veel impact. De 3D verjaardagskaart is een absolute topper: als de ontvanger hem opent, springt Diddl eruit. Gegarandeerd een glimlach.
 
-### 3. Diddl gummenset (€4,95)
+### 3. Diddl gummenset (â‚¬4,95)
 
 Vier schattige Diddl gummen in verschillende designs. Verzamelbaar, functioneel en ontzettend schattig.
 
 ---
 
-## Cadeau-ideeën van €10–€25
+## Cadeau-ideeÃ«n van â‚¬10â€“â‚¬25
 
-### 4. Diddl pennenzak (€8,95) + pennenset (€6,95) combinatie
+### 4. Diddl pennenzak (â‚¬8,95) + pennenset (â‚¬6,95) combinatie
 
 Een cadeautje voor op school dat er meteen uitspringt. De pennenzak met het Diddl-design en de bijpassende pennenset zijn een perfect duo.
 
-### 5. Diddl knuffel klein (€11,95)
+### 5. Diddl knuffel klein (â‚¬11,95)
 
-De kleine Diddl pluche knuffel is perfect voor kinderen én voor volwassenen die hun inner child willen knuffelen. 15 cm, superzacht en onmiskenbaar Diddl.
+De kleine Diddl pluche knuffel is perfect voor kinderen Ã©n voor volwassenen die hun inner child willen knuffelen. 15 cm, superzacht en onmiskenbaar Diddl.
 
-### 6. Diddl seizoenenkaarten set (€12,95)
+### 6. Diddl seizoenenkaarten set (â‚¬12,95)
 
-Twaalf Diddl ansichtkaarten voor het hele jaar — van zomer tot kerst. Een cadeau dat de hele rest van het jaar nog gebruikt wordt.
+Twaalf Diddl ansichtkaarten voor het hele jaar â€” van zomer tot kerst. Een cadeau dat de hele rest van het jaar nog gebruikt wordt.
 
-### 7. Diddlina knuffel (€17,95)
+### 7. Diddlina knuffel (â‚¬17,95)
 
 Voor wie een fan is van Diddl's lieftallige vriendinnetje. 25 cm zacht pluche, in het herkenbare roze design van Diddlina.
 
 ---
 
-## Cadeau-ideeën boven €25
+## Cadeau-ideeÃ«n boven â‚¬25
 
-### 8. Diddl mini rugzak (€24,95)
+### 8. Diddl mini rugzak (â‚¬24,95)
 
 Een stijlvolle en praktische rugzak met Diddl-borduursel. Perfect voor tieners of als fashion-item voor volwassenen die niet bang zijn voor een nostalgie-statement.
 
-### 9. Diddl knuffel groot (€19,95) + notitieboekje + kaart
+### 9. Diddl knuffel groot (â‚¬19,95) + notitieboekje + kaart
 
 Combineer de grote Diddl pluche knuffel (30 cm) met een notitieboekje en een persoonlijke kaart voor een compleet, indrukwekkend cadeau.
 
@@ -364,7 +364,7 @@ Combineer de grote Diddl pluche knuffel (30 cm) met een notitieboekje en een per
 
 **Kinderen**: de nieuwe generatie ontdekt Diddl voor het eerst. De speelse karakters, de knuffels en de verzamelbare producten spreken ook moderne kinderen meteen aan.
 
-**Leraren en collega's**: een Diddl notitieboekje of kaart is een originele en leuke kleine attentie — anders dan de gemiddelde cadeaubon.
+**Leraren en collega's**: een Diddl notitieboekje of kaart is een originele en leuke kleine attentie â€” anders dan de gemiddelde cadeaubon.
 
 **Jezelf**: het meest onderschatte cadeau-idee. Gewoon een Diddl-blokje kopen voor jezelf is volkomen legitiem en volledig begrijpelijk.
 
@@ -387,8 +387,8 @@ export const blogs: BlogPost[] = [
     readTime: 5,
     category: 'Nieuws',
     heroImage: 'https://images.unsplash.com/photo-1513201099705-a9746072f579?auto=format&fit=crop&w=1200&q=80',
-    heroImageAlt: 'Kleurrijke notitieboekjes en stationery — nostalgie in een oogopslag',
-    excerpt: 'Na jaren van stilte is Diddl officieel terug. Het kleine witte muisje met de grote roze voeten maakt in 2026 een ongekende comeback — en Nederland is één van de eerste landen.',
+    heroImageAlt: 'Kleurrijke notitieboekjes en stationery â€” nostalgie in een oogopslag',
+    excerpt: 'Na jaren van stilte is Diddl officieel terug. Het kleine witte muisje met de grote roze voeten maakt in 2026 een ongekende comeback â€” en Nederland is Ã©Ã©n van de eerste landen.',
     content: diddlIsTerug,
   },
   {
@@ -400,47 +400,47 @@ export const blogs: BlogPost[] = [
     readTime: 4,
     category: 'Verzamelen',
     heroImage: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=1200&q=80',
-    heroImageAlt: 'Een plank vol kleurrijke boeken en stationery — de vreugde van verzamelen',
-    excerpt: 'Diddl verzamelen is een hobby die nostalgie, creativiteit en socialiteit combineert. Of je nu net begint of een oude verzamelaar bent — deze tips helpen je verder.',
+    heroImageAlt: 'Een plank vol kleurrijke boeken en stationery â€” de vreugde van verzamelen',
+    excerpt: 'Diddl verzamelen is een hobby die nostalgie, creativiteit en socialiteit combineert. Of je nu net begint of een oude verzamelaar bent â€” deze tips helpen je verder.',
     content: diddlVerzamelenTips,
   },
   {
     slug: 'diddl-geschiedenis',
     title: 'De geschiedenis van Diddl: van 1990 tot de comeback van 2026',
     metaTitle: 'Geschiedenis van Diddl 1990-2026 | Mijn Diddl Blog',
-    metaDescription: 'De complete geschiedenis van Diddl — van de eerste tekening in 1990 tot de ongekende comeback van 2026. Ontdek hoe het kleine muisje de wereld veroverde.',
+    metaDescription: 'De complete geschiedenis van Diddl â€” van de eerste tekening in 1990 tot de ongekende comeback van 2026. Ontdek hoe het kleine muisje de wereld veroverde.',
     publishedAt: '21 mei 2026',
     readTime: 6,
     category: 'Historie',
     heroImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80',
-    heroImageAlt: 'Retro stationery en kleurpotloden — een knipoog naar de jaren 90',
-    excerpt: 'Van de eerste notitieboekjes in 1991 tot de verkoop in 30 landen — en nu de grote comeback van 2026. De volledige geschiedenis van Diddl, het muisje dat nooit echt verdween.',
+    heroImageAlt: 'Retro stationery en kleurpotloden â€” een knipoog naar de jaren 90',
+    excerpt: 'Van de eerste notitieboekjes in 1991 tot de verkoop in 30 landen â€” en nu de grote comeback van 2026. De volledige geschiedenis van Diddl, het muisje dat nooit echt verdween.',
     content: diddlGeschiedenis,
   },
   {
     slug: 'diddl-populairste-producten',
     title: 'De populairste Diddl producten van 2026',
     metaTitle: 'Populairste Diddl producten 2026 | Mijn Diddl Blog',
-    metaDescription: 'Welke Diddl producten zijn het populairst in 2026? Van het klassieke notitieboekje tot de pluche knuffel — dit zijn de must-haves van de comeback collectie.',
+    metaDescription: 'Welke Diddl producten zijn het populairst in 2026? Van het klassieke notitieboekje tot de pluche knuffel â€” dit zijn de must-haves van de comeback collectie.',
     publishedAt: '21 mei 2026',
     readTime: 4,
     category: 'Producten',
     heroImage: 'https://images.unsplash.com/photo-1596727147705-61a532a659bd?auto=format&fit=crop&w=1200&q=80',
-    heroImageAlt: 'Schattige stationery en knuffels op een bureau — een Diddl-sfeer',
-    excerpt: 'De comeback van Diddl is een feit — en sommige producten zijn al bijna uitverkocht. In dit artikel delen we de meest populaire items zodat jij niet te laat bent.',
+    heroImageAlt: 'Schattige stationery en knuffels op een bureau â€” een Diddl-sfeer',
+    excerpt: 'De comeback van Diddl is een feit â€” en sommige producten zijn al bijna uitverkocht. In dit artikel delen we de meest populaire items zodat jij niet te laat bent.',
     content: diddlPopulairsteProdukten,
   },
   {
     slug: 'diddl-cadeau-ideeen',
-    title: 'Diddl cadeau-ideeën: perfecte nostalgie voor elk budget',
-    metaTitle: 'Diddl cadeau-ideeën 2026 | Mijn Diddl Blog',
-    metaDescription: 'Op zoek naar het perfecte Diddl cadeau? Van €4,95 tot meer dan €25 — ontdek de beste Diddl cadeau-ideeën voor kinderen, millennials en iedereen daartussenin.',
+    title: 'Diddl cadeau-ideeÃ«n: perfecte nostalgie voor elk budget',
+    metaTitle: 'Diddl cadeau-ideeÃ«n 2026 | Mijn Diddl Blog',
+    metaDescription: 'Op zoek naar het perfecte Diddl cadeau? Van â‚¬4,95 tot meer dan â‚¬25 â€” ontdek de beste Diddl cadeau-ideeÃ«n voor kinderen, millennials en iedereen daartussenin.',
     publishedAt: '21 mei 2026',
     readTime: 4,
-    category: 'Cadeau-ideeën',
+    category: 'Cadeau-ideeÃ«n',
     heroImage: 'https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80',
-    heroImageAlt: 'Kleurrijke cadeautjes met strikjes — nostalgie als cadeau',
-    excerpt: 'Diddl is het perfecte cadeau voor millennials, kinderen én iedereen daartussenin. Ontdek cadeau-ideeën voor elk budget — van een leuke ansichtkaart tot een complete cadeauset.',
+    heroImageAlt: 'Kleurrijke cadeautjes met strikjes â€” nostalgie als cadeau',
+    excerpt: 'Diddl is het perfecte cadeau voor millennials, kinderen Ã©n iedereen daartussenin. Ontdek cadeau-ideeÃ«n voor elk budget â€” van een leuke ansichtkaart tot een complete cadeauset.',
     content: diddlCadeauIdeeen,
   },
 ];
@@ -452,3 +452,4 @@ export function getBlogBySlug(slug: string): BlogPost | undefined {
 export function getRelatedBlogs(currentSlug: string, count = 2): BlogPost[] {
   return blogs.filter((b) => b.slug !== currentSlug).slice(0, count);
 }
+

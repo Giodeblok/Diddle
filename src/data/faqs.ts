@@ -33,7 +33,7 @@ export const faqs: FAQ[] = [
     category: 'Producten & Collectie',
     question: 'Zijn er ook producten van Diddlina en andere karakters?',
     answer:
-      'Ja! Naast het klassieke Diddl muisje hebben we ook producten met Diddlina — Diddl\'s lieftallige vriendinnetje. We breiden ons assortiment met andere karakters uit het Diddl-universum continue uit.',
+      'Ja! Naast het klassieke Diddl muisje hebben we ook producten met Diddlina, Diddl\'s lieftallige vriendinnetje. We breiden ons assortiment met andere karakters uit het Diddl-universum continue uit.',
   },
 
   // ── Bestelling & Levering ────────────────────────────────────────
@@ -63,7 +63,7 @@ export const faqs: FAQ[] = [
     category: 'Bestelling & Levering',
     question: 'Kan ik mijn bestelling ook als cadeau laten verzenden?',
     answer:
-      'Ja! Geef tijdens het bestellen het afleveradres van de ontvanger op. Op verzoek voegen we een gratis handgeschreven cadeaukaartje toe — geef dit aan in het opmerkingenveld bij het afrekenen.',
+      'Ja! Geef tijdens het bestellen het afleveradres van de ontvanger op. Op verzoek voegen we een gratis handgeschreven cadeaukaartje toe, geef dit aan in het opmerkingenveld bij het afrekenen.',
   },
 
   // ── Betaling ─────────────────────────────────────────────────────
@@ -95,7 +95,7 @@ export const faqs: FAQ[] = [
     category: 'Retour & Garantie',
     question: 'Wat als mijn product beschadigd aankomt?',
     answer:
-      'Neem binnen 14 dagen contact op en stuur een foto van de beschadiging mee. We zorgen dan voor een passende oplossing — vervanging of terugbetaling. Jouw tevredenheid staat voorop.',
+      'Neem binnen 14 dagen contact op en stuur een foto van de beschadiging mee. We zorgen dan voor een passende oplossing, vervanging of terugbetaling. Jouw tevredenheid staat voorop.',
   },
 
   // ── Over Diddl ───────────────────────────────────────────────────

@@ -92,7 +92,7 @@ export default function Hero() {
               transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <span className="inline-block font-sans text-xs tracking-[0.25em] uppercase text-violet mb-6 bg-lavender px-4 py-2 rounded-full font-semibold">
-                🐭 Officieel terug in Nederland — mei 2026
+                🐭 Officieel terug in Nederland, mei 2026
               </span>
             </motion.div>
 
@@ -112,7 +112,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.25 }}
               className="font-sans text-base md:text-lg text-anthracite/70 leading-relaxed mb-10 max-w-lg"
             >
-              Diddl is terug! Shop de officiële comeback collectie — notitieboekjes, ansichtkaarten, pluche en accessoires. Snel geleverd, zorgvuldig verpakt.
+              Diddl is terug! Shop de officiële comeback collectie, notitieboekjes, ansichtkaarten, pluche en accessoires. Snel geleverd, zorgvuldig verpakt.
             </motion.p>
 
             <motion.div

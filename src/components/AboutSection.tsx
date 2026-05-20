@@ -10,7 +10,7 @@ const values = [
   {
     number: '02',
     title: 'Nostalgie bewaard',
-    description: 'Van 1990 tot 2026 — wij brengen het geluk van vroeger terug in jouw handen.',
+    description: 'Van 1990 tot 2026, wij brengen het geluk van vroeger terug in jouw handen.',
   },
   {
     number: '03',
@@ -20,7 +20,7 @@ const values = [
   {
     number: '04',
     title: 'Voor iedereen',
-    description: 'Of je 8 of 38 bent — Diddl brengt een glimlach op elk gezicht. Altijd.',
+    description: 'Of je 8 of 38 bent, Diddl brengt een glimlach op elk gezicht. Altijd.',
   },
 ];
 
@@ -48,7 +48,7 @@ export default function AboutSection() {
               transition={{ duration: 0.8 }}
               className="font-serif text-3xl md:text-4xl lg:text-5xl text-off-white leading-tight mb-6 font-bold"
             >
-              Nostalgie is meer dan een gevoel —{' '}
+              Nostalgie is meer dan een gevoel,{' '}
               <span className="lilac-text">het is een superkracht.</span>
             </motion.h2>
 
@@ -61,7 +61,7 @@ export default function AboutSection() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="font-sans text-base text-off-white/60 leading-relaxed mb-6"
             >
-              Mijn Diddl is opgericht door mensen die opgroeiden met het iconische muisje op het schoolplein. We weten hoe het voelt als je een Diddl-blokje in handen krijgt — die directe glimlach, die warme herinnering.
+              Mijn Diddl is opgericht door mensen die opgroeiden met het iconische muisje op het schoolplein. We weten hoe het voelt als je een Diddl-blokje in handen krijgt, die directe glimlach, die warme herinnering.
             </motion.p>
 
             <motion.p
@@ -71,7 +71,7 @@ export default function AboutSection() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="font-sans text-base text-off-white/60 leading-relaxed mb-10"
             >
-              We verkopen officieel gelicentieerde Diddl-producten — van de klassieke notitieboekjes tot de nieuwste comeback items. Snel, zorgvuldig en met de liefde die Diddl verdient.
+              We verkopen officieel gelicentieerde Diddl-producten, van de klassieke notitieboekjes tot de nieuwste comeback items. Snel, zorgvuldig en met de liefde die Diddl verdient.
             </motion.p>
 
             <LuxuryButton to="/over-ons" variant="outline" size="lg">

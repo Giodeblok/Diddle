@@ -12,7 +12,7 @@ const categoryEmojis: Record<string, string> = {
 };
 
 const categoryDescriptions: Record<string, string> = {
-  'Notitieboekjes': 'Het iconische Diddl blokje — de basis van elke collectie.',
+  'Notitieboekjes': 'Het iconische Diddl blokje, de basis van elke collectie.',
   'Ansichtkaarten': '3D-kaarten, seizoenskaarten en verjaardagskaarten.',
   'Schrijfwaren': 'Pennen, gummen en pennenzakken met Diddl print.',
   'Accessoires': 'Rugzakken, sleutelhangers en portemonnees.',
@@ -26,7 +26,7 @@ export default function QuoteSelector() {
         <SectionHeading
           eyebrow="Ontdek de collectie"
           title="Wat ben jij op zoek naar?"
-          subtitle="Van klassieke notitieboekjes tot schattige knuffels — browse per categorie en vind jouw favoriete Diddl."
+          subtitle="Van klassieke notitieboekjes tot schattige knuffels, browse per categorie en vind jouw favoriete Diddl."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -75,7 +75,7 @@ export default function QuoteSelector() {
                 Alles bekijken
               </h3>
               <p className="font-sans text-sm text-white/80 leading-relaxed">
-                Browse de volledige Diddl comeback collectie — alles op één plek.
+                Browse de volledige Diddl comeback collectie, alles op één plek.
               </p>
               <div className="mt-5 flex items-center gap-2 text-white font-sans text-xs font-semibold tracking-wide uppercase">
                 <span>Volledige collectie</span>

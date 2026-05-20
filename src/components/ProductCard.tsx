@@ -49,13 +49,13 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
       {/* Inhoud */}
       <div className="p-6 flex flex-col flex-1">
         <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-violet mb-1">{product.category}</p>
-        <h3 className="font-serif text-lg text-anthracite mb-1 leading-snug font-bold">{product.name}</h3>
+        <h3 className="font-serif text-lg text-anthracite mb-1 leading-snug font-bold line-clamp-2 min-h-[3.5rem]">{product.name}</h3>
         <p className="font-sans text-xs text-violet/70 italic mb-3">{product.subtitle}</p>
         <p className="font-sans text-sm text-anthracite/70 leading-relaxed mb-5 line-clamp-3">
           {product.description}
         </p>
 
-        <ul className="space-y-1.5 mb-5">
+        <ul className="space-y-1.5 mb-5 min-h-[4.5rem]">
           {product.features.slice(0, 3).map((feature) => (
             <li key={feature} className="flex items-center gap-2">
               <Check className="w-3 h-3 text-lilac-deep flex-shrink-0" />

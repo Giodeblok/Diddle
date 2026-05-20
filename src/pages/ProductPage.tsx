@@ -11,7 +11,7 @@ export default function ProductPage() {
         <title>De Collectie | Mijn Diddl</title>
         <meta
           name="description"
-          content="Ontdek de volledige Diddl comeback collectie bij Mijn Diddl. Notitieboekjes, ansichtkaarten, pluche, schrijfwaren en accessoires — allemaal officieel gelicentieerd."
+          content="Ontdek de volledige Diddl comeback collectie bij Mijn Diddl. Notitieboekjes, ansichtkaarten, pluche, schrijfwaren en accessoires, allemaal officieel gelicentieerd."
         />
       </Helmet>
 
@@ -27,7 +27,7 @@ export default function ProductPage() {
           </h1>
           <div className="diddl-divider mb-5" />
           <p className="font-sans text-base text-violet max-w-lg mx-auto px-6">
-            Van klassieke notitieboekjes tot schattige knuffels — vind jouw favoriete Diddl artikel.
+            Van klassieke notitieboekjes tot schattige knuffels, vind jouw favoriete Diddl artikel.
           </p>
         </div>
         <TrustSection />

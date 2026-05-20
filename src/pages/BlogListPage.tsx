@@ -123,7 +123,7 @@ export default function BlogListPage() {
               Klaar om te winkelen?
             </h2>
             <p className="font-sans text-sm text-violet leading-relaxed mb-8">
-              Bekijk de volledige Diddl collectie — notitieboekjes, ansichtkaarten, pluche en meer.
+              Bekijk de volledige Diddl collectie, notitieboekjes, ansichtkaarten, pluche en meer.
             </p>
             <Link
               to="/collectie"

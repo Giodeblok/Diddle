@@ -22,7 +22,7 @@ const values = [
   {
     number: '04',
     title: 'Voor iedereen',
-    description: 'Of je 8 of 48 bent — Diddl brengt een glimlach. We zijn er voor jong én oud.',
+    description: 'Of je 8 of 48 bent, Diddl brengt een glimlach. We zijn er voor jong én oud.',
   },
 ];
 
@@ -33,7 +33,7 @@ export default function OverOnsPage() {
         <title>Over Ons | Mijn Diddl</title>
         <meta
           name="description"
-          content="Ontdek het verhaal achter Mijn Diddl. We brengen het geluk van vroeger terug — officieel gelicentieerde Diddl producten voor heel Nederland en België."
+          content="Ontdek het verhaal achter Mijn Diddl. We brengen het geluk van vroeger terug, officieel gelicentieerde Diddl producten voor heel Nederland en België."
         />
       </Helmet>
 
@@ -64,7 +64,7 @@ export default function OverOnsPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="font-sans text-base text-violet max-w-xl mx-auto leading-relaxed"
           >
-            Mijn Diddl is dé officiële webshop voor Diddl-producten in Nederland en België. We brengen de nostalgie van het iconische muisje terug — met liefde voor het merk en voor jou.
+            Mijn Diddl is dé officiële webshop voor Diddl-producten in Nederland en België. We brengen de nostalgie van het iconische muisje terug, met liefde voor het merk en voor jou.
           </motion.p>
         </div>
 
@@ -93,9 +93,9 @@ export default function OverOnsPage() {
             <div className="diddl-divider ml-0 mb-8" />
             <div className="space-y-6">
               {[
-                'Mijn Diddl is opgericht door mensen die opgroeiden met het iconische muisje op het schoolplein. We weten hoe het voelt als je een Diddl-blokje in handen krijgt na jaren van gemis — die directe glimlach, die onmiddellijke herinnering aan vroeger.',
+                'Mijn Diddl is opgericht door mensen die opgroeiden met het iconische muisje op het schoolplein. We weten hoe het voelt als je een Diddl-blokje in handen krijgt na jaren van gemis, die directe glimlach, die onmiddellijke herinnering aan vroeger.',
                 'Toen Diddl in 2026 zijn grote comeback aankondigde, waren wij er klaar voor. We hebben Mijn Diddl opgericht om ervoor te zorgen dat iedereen in Nederland en België makkelijk toegang heeft tot authentieke, officieel gelicentieerde Diddl-producten.',
-                'Wij geloven dat nostalgie een superkracht is. Het verbindt generaties, wekt vreugde op en herinnert ons aan wie we waren. Diddl is daarin uniek — het merk raakt zowel de kinderen van nu als de volwassenen die het vroeger zo goed kenden.',
+                'Wij geloven dat nostalgie een superkracht is. Het verbindt generaties, wekt vreugde op en herinnert ons aan wie we waren. Diddl is daarin uniek, het merk raakt zowel de kinderen van nu als de volwassenen die het vroeger zo goed kenden.',
               ].map((text, i) => (
                 <motion.p
                   key={i}

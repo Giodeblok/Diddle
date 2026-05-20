@@ -16,7 +16,7 @@ export default function Home() {
         <title>Mijn Diddl | Officiële Diddl Webshop Nederland & België</title>
         <meta
           name="description"
-          content="Mijn Diddl — dé officiële webshop voor Diddl-producten in Nederland en België. Notitieboekjes, ansichtkaarten, pluche en accessoires. Snel geleverd, officieel gelicentieerd."
+          content="Mijn Diddl, dé officiële webshop voor Diddl-producten in Nederland en België. Notitieboekjes, ansichtkaarten, pluche en accessoires. Snel geleverd, officieel gelicentieerd."
         />
         <meta name="keywords" content="Diddl kopen Nederland, Diddl notitieboekje, Diddl knuffel, Diddl comeback 2026, Diddl muisje, Diddl webshop, Diddlina, Diddl stationery" />
       </Helmet>

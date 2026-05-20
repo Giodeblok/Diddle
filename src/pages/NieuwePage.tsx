@@ -14,7 +14,7 @@ export default function NieuwePage() {
         <title>Nieuw Binnen | Mijn Diddl</title>
         <meta
           name="description"
-          content="Ontdek de nieuwste Diddl-producten van de 2026 comeback collectie. Van notitieboekjes tot pluche — vers in de webshop!"
+          content="Ontdek de nieuwste Diddl-producten van de 2026 comeback collectie. Van notitieboekjes tot pluche, vers in de webshop!"
         />
       </Helmet>
 
@@ -45,7 +45,7 @@ export default function NieuwePage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="font-sans text-base text-violet max-w-xl mx-auto leading-relaxed"
           >
-            De allernieuwste producten uit de Diddl comeback collectie. Wees er snel bij — populaire items raken snel uitverkocht!
+            De allernieuwste producten uit de Diddl comeback collectie. Wees er snel bij, populaire items raken snel uitverkocht!
           </motion.p>
         </div>
 
@@ -54,7 +54,7 @@ export default function NieuwePage() {
           <SectionHeading
             eyebrow="Nieuwe arrivals"
             title="De nieuwste Diddl items"
-            subtitle="Van klassieke notitieboekjes tot schattige knuffels — alles vers uit de 2026 comeback collectie."
+            subtitle="Van klassieke notitieboekjes tot schattige knuffels, alles vers uit de 2026 comeback collectie."
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

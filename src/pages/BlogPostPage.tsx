@@ -158,10 +158,10 @@ export default function BlogPostPage() {
             <div className="mt-16 bg-lavender/20 border border-lilac/20 rounded-2xl p-8 text-center">
               <span className="font-sans text-xs tracking-[0.25em] uppercase text-violet block mb-3">Shop nu</span>
               <h3 className="font-serif text-2xl mt-3 mb-4 text-anthracite font-bold">
-                Diddl is terug — shop de collectie.
+                Diddl is terug, shop de collectie.
               </h3>
               <p className="font-sans text-sm text-violet leading-relaxed mb-6 max-w-sm mx-auto">
-                Van notitieboekjes tot pluche — alles officieel gelicentieerd en snel geleverd.
+                Van notitieboekjes tot pluche, alles officieel gelicentieerd en snel geleverd.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link to="/collectie" className="bg-lilac-gradient text-white font-sans text-xs tracking-[0.2em] uppercase font-bold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">

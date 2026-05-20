@@ -30,7 +30,7 @@ export default function Footer() {
               <span className="font-serif text-xl text-off-white font-bold">Mijn Diddl</span>
             </div>
             <p className="font-sans text-sm leading-relaxed text-off-white/60 max-w-sm mb-4">
-              De officiële Diddl webshop voor Nederland en België. Authentieke, gelicentieerde producten — snel geleverd, zorgvuldig verpakt.
+              De officiële Diddl webshop voor Nederland en België. Authentieke, gelicentieerde producten, snel geleverd, zorgvuldig verpakt.
             </p>
             <p className="font-sans text-xs text-off-white/40 mb-6">
               Officieel gelicentieerde Diddl merchandise. Diddl is een geregistreerd merk van Thomas Goletz / Kiddinx GmbH.

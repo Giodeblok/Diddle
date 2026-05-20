@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import SectionHeading from './SectionHeading';
 import ProductCard from './ProductCard';
 import { categories } from '../data/products';
@@ -5,6 +6,9 @@ import { useProducts } from '../hooks/useProducts';
 
 export default function ProductShowcase() {
   const products = useProducts();
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const visibleCategories = activeCategory ? [activeCategory] : categories;
 
   return (
     <section id="collectie" className="bg-lavender/20 py-24 lg:py-32">
@@ -12,10 +16,40 @@ export default function ProductShowcase() {
         <SectionHeading
           eyebrow="De collectie"
           title="Jouw favoriete Diddl artikelen, nu bestelbaar."
-          subtitle="Van klassieke notitieboekjes tot schattige pluche — alles officieel gelicentieerd."
+          subtitle="Van klassieke notitieboekjes tot schattige pluche, alles officieel gelicentieerd."
         />
 
-        {categories.map((category) => {
+        <div className="flex flex-wrap gap-2 mb-12">
+          <button
+            onClick={() => setActiveCategory(null)}
+            className={`font-sans text-xs tracking-[0.15em] uppercase px-4 py-2 rounded-full border transition-colors ${
+              activeCategory === null
+                ? 'bg-violet text-white border-violet'
+                : 'border-lavender text-violet hover:border-violet'
+            }`}
+          >
+            Alles
+          </button>
+          {categories.map((category) => {
+            const count = products.filter((p) => p.category === category).length;
+            return (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`font-sans text-xs tracking-[0.15em] uppercase px-4 py-2 rounded-full border transition-colors ${
+                  activeCategory === category
+                    ? 'bg-violet text-white border-violet'
+                    : 'border-lavender text-violet hover:border-violet'
+                }`}
+              >
+                {category}
+                <span className="ml-1.5 opacity-60">{count}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {visibleCategories.map((category) => {
           const categoryProducts = products.filter((p) => p.category === category);
           return (
             <div key={category} className="mb-16">
