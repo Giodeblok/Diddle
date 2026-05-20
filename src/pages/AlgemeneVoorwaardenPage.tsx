@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 const articles = [
   {
-    title: 'Artikel 1 â€“ Bedrijfsgegevens',
+    title: 'Artikel 1 – Bedrijfsgegevens',
     content: [
       'Handelsnaam: Mijn Diddl',
       'E-mailadres: info@mijndiddl.nl',
       'Telefoon: +31 (0)85 000 0000',
-      'Bereikbaar: maandag t/m vrijdag 09:00 â€“ 17:00',
+      'Bereikbaar: maandag t/m vrijdag 09:00 – 17:00',
       'KVK-nummer: [in te vullen]',
       'BTW-nummer: [in te vullen]',
       'Vestigingsadres: [in te vullen]',
     ],
   },
   {
-    title: 'Artikel 2 â€“ Toepasselijkheid',
+    title: 'Artikel 2 – Toepasselijkheid',
     content: [
       'Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen, bestellingen en overeenkomsten die via mijndiddl.nl tot stand komen.',
       'Afwijkingen van deze voorwaarden zijn uitsluitend geldig indien schriftelijk overeengekomen.',
@@ -23,7 +23,7 @@ const articles = [
     ],
   },
   {
-    title: 'Artikel 3 â€“ Het Aanbod',
+    title: 'Artikel 3 – Het Aanbod',
     content: [
       'Alle aanbiedingen zijn vrijblijvend en gelden zolang de voorraad strekt, tenzij uitdrukkelijk anders vermeld.',
       'Productafbeeldingen op de website zijn zo accuraat mogelijk. Kleine afwijkingen in kleur zijn mogelijk door schermverschillen.',
@@ -31,43 +31,43 @@ const articles = [
     ],
   },
   {
-    title: 'Artikel 4 â€“ De Overeenkomst & Digitale Preview',
+    title: 'Artikel 4 – De Overeenkomst & Digitale Preview',
     content: [
-      'Een overeenkomst komt tot stand op het moment dat de klant een bestelling plaatst Ã©n een orderbevestiging per e-mail heeft ontvangen.',
+      'Een overeenkomst komt tot stand op het moment dat de klant een bestelling plaatst én een orderbevestiging per e-mail heeft ontvangen.',
       'Na betaling ontvangt de klant een digitale preview van het gepersonaliseerde product ter goedkeuring. De productie start uitsluitend na expliciete schriftelijke goedkeuring door de klant.',
       'De klant dient binnen 3 werkdagen te reageren op de preview. Bij het uitblijven van een reactie wordt goedkeuring geacht te zijn verleend en start de productie.',
       'Wijzigingen aan het product zijn na goedkeuring van de preview niet meer mogelijk.',
     ],
   },
   {
-    title: 'Artikel 5 â€“ Herroepingsrecht',
+    title: 'Artikel 5 – Herroepingsrecht',
     content: [
       'Consumenten hebben in beginsel het recht een overeenkomst op afstand binnen 14 dagen na ontvangst te ontbinden, zonder opgave van reden.',
       'Diddl producten hebben standaard 30 dagen retourrecht na ontvangst, mits ongebruikt en in originele verpakking.',
-      'Deze uitzondering wordt tevens vÃ³Ã³r de afronding van de bestelling expliciet aan de klant medegedeeld.',
+      'Deze uitzondering wordt tevens vóór de afronding van de bestelling expliciet aan de klant medegedeeld.',
       'Eventuele niet-gepersonaliseerde producten vallen wel onder het standaard herroepingsrecht van 14 dagen.',
     ],
   },
   {
-    title: 'Artikel 6 â€“ Prijs',
+    title: 'Artikel 6 – Prijs',
     content: [
       'De geldende prijs is de prijs die op het moment van bestelling op de website is vermeld.',
-      'Verzendkosten: standaard bezorging (5â€“7 werkdagen) is gratis; express bezorging (2â€“3 werkdagen) bedraagt â‚¬12,95. Luxe cadeauverpakking is een optionele toevoeging van â‚¬5,00.',
+      'Verzendkosten: standaard bezorging (5–7 werkdagen) is gratis; express bezorging (2–3 werkdagen) bedraagt €12,95. Luxe cadeauverpakking is een optionele toevoeging van €5,00.',
       'Mijn Diddl is niet gebonden aan een aanbod bij een klaarblijkelijke fout in de prijsvermelding.',
     ],
   },
   {
-    title: 'Artikel 7 â€“ Levering',
+    title: 'Artikel 7 – Levering',
     content: [
-      'Levertijden zijn indicatief en beginnen te lopen na goedkeuring van de digitale preview. Standaard bezorging duurt 5â€“7 werkdagen; express bezorging 2â€“3 werkdagen.',
-      'Mijn Diddl levert uitsluitend binnen Nederland en BelgiÃ«.',
+      'Levertijden zijn indicatief en beginnen te lopen na goedkeuring van de digitale preview. Standaard bezorging duurt 5–7 werkdagen; express bezorging 2–3 werkdagen.',
+      'Mijn Diddl levert uitsluitend binnen Nederland en België.',
       'Het risico gaat over op de klant op het moment van aflevering op het opgegeven bezorgadres.',
       'Voor verzending maakt Mijn Diddl gebruik van MyParcel. Na verzending ontvangt de klant een track & trace code per e-mail.',
       'Bij overschrijding van de levertijd met meer dan 30 dagen heeft de klant het recht de overeenkomst kosteloos te ontbinden, tenzij overmacht van toepassing is.',
     ],
   },
   {
-    title: 'Artikel 8 â€“ Betaling',
+    title: 'Artikel 8 – Betaling',
     content: [
       'Betaling vindt direct bij bestelling plaats via iDEAL, creditcard, Bancontact of PayPal.',
       'Alle betalingstransacties zijn beveiligd met SSL-encryptie.',
@@ -75,7 +75,7 @@ const articles = [
     ],
   },
   {
-    title: 'Artikel 9 â€“ Conformiteit & Garantie',
+    title: 'Artikel 9 – Conformiteit & Garantie',
     content: [
       'Mijn Diddl staat ervoor in dat haar producten voldoen aan de overeenkomst en aan de redelijkerwijs te stellen eisen van deugdelijkheid.',
       'Glas is een ambachtelijk materiaal; kleine variaties in structuur, kleur of luchtigheid zijn inherent aan het productieproces en worden niet als gebrek beschouwd.',
@@ -84,7 +84,7 @@ const articles = [
     ],
   },
   {
-    title: 'Artikel 10 â€“ Klachtenregeling',
+    title: 'Artikel 10 – Klachtenregeling',
     content: [
       'Klachten dienen zo spoedig mogelijk, uiterlijk binnen 14 dagen na ontdekking, per e-mail te worden gemeld via info@mijndiddl.nl.',
       'Mijn Diddl streeft ernaar klachten binnen 5 werkdagen in behandeling te nemen.',
@@ -92,22 +92,22 @@ const articles = [
     ],
   },
   {
-    title: 'Artikel 11 â€“ Privacy & Gegevensbescherming',
+    title: 'Artikel 11 – Privacy & Gegevensbescherming',
     content: [
       'Persoonsgegevens worden verwerkt in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG/GDPR) en het Privacybeleid van Mijn Diddl.',
       'Gegevens worden uitsluitend gebruikt voor de uitvoering van de overeenkomst en klantenservice. Uw gegevens worden nooit gedeeld met derden voor marketingdoeleinden.',
     ],
   },
   {
-    title: 'Artikel 12 â€“ Aansprakelijkheid',
+    title: 'Artikel 12 – Aansprakelijkheid',
     content: [
       'De aansprakelijkheid van Mijn Diddl is beperkt tot het aankoopbedrag van de betreffende bestelling.',
-      'Mijn Diddl is niet aansprakelijk voor indirecte schade, gederfde winst of immateriÃ«le schade.',
-      'In geval van overmacht â€” waaronder brand, stakingen, natuurrampen of leveringsproblemen bij toeleveranciers â€” worden de verplichtingen opgeschort voor de duur van de overmacht.',
+      'Mijn Diddl is niet aansprakelijk voor indirecte schade, gederfde winst of immateriële schade.',
+      'In geval van overmacht — waaronder brand, stakingen, natuurrampen of leveringsproblemen bij toeleveranciers — worden de verplichtingen opgeschort voor de duur van de overmacht.',
     ],
   },
   {
-    title: 'Artikel 13 â€“ Toepasselijk Recht & Bevoegde Rechter',
+    title: 'Artikel 13 – Toepasselijk Recht & Bevoegde Rechter',
     content: [
       'Op alle overeenkomsten met Mijn Diddl is uitsluitend Nederlands recht van toepassing.',
       'Geschillen worden bij uitsluiting voorgelegd aan de bevoegde rechter in de vestigingsplaats van Mijn Diddl, tenzij dwingende wettelijke bepalingen anders voorschrijven.',
@@ -136,7 +136,7 @@ export default function AlgemeneVoorwaardenPage() {
           </h1>
           <div className="diddl-divider mb-5" />
           <p className="font-sans text-base text-violet max-w-lg mx-auto px-6">
-            Versie januari 2025 â€” van toepassing op alle bestellingen via mijndiddl.nl
+            Versie januari 2025 — van toepassing op alle bestellingen via mijndiddl.nl
           </p>
         </div>
 

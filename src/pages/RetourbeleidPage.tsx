@@ -17,9 +17,9 @@ export default function RetourbeleidPage() {
   return (
     <>
       <Helmet>
-        <title>Retourbeleid â€” Mijn Diddl</title>
+        <title>Retourbeleid — Mijn Diddl</title>
         <meta name="description" content="Alles over ons retour- en klachtenbeleid. Lees hoe u een product kunt retourneren en hoe wij u helpen bij gebreken of beschadiging." />
-        <meta property="og:title" content="Retourbeleid â€” Mijn Diddl" />
+        <meta property="og:title" content="Retourbeleid — Mijn Diddl" />
         <meta property="og:description" content="Retourneren binnen 14 dagen, uitzonderingen voor urnproducten, en hoe wij gebreken oplossen." />
       </Helmet>
 
@@ -36,7 +36,7 @@ export default function RetourbeleidPage() {
       <section className="px-6 lg:px-10 pb-32">
         <div className="max-w-2xl mx-auto">
 
-          <PolicySection title="Herroepingsrecht â€” 14 dagen">
+          <PolicySection title="Herroepingsrecht — 14 dagen">
             <p>
               U heeft het recht om uw bestelling binnen <strong className="font-medium text-foreground/85">14 dagen na ontvangst</strong> te retourneren, zonder opgave van reden. Het product dient zich in de originele, ongebruikte staat te bevinden en in de originele verpakking te worden teruggestuurd.
             </p>
@@ -70,7 +70,7 @@ export default function RetourbeleidPage() {
 
           <PolicySection title="Hoe meldt u een klacht?">
             <p>
-              Neem zo snel mogelijk â€” maar uiterlijk binnen <strong className="font-medium text-foreground/85">14 dagen na ontvangst</strong> â€” contact met ons op:
+              Neem zo snel mogelijk — maar uiterlijk binnen <strong className="font-medium text-foreground/85">14 dagen na ontvangst</strong> — contact met ons op:
             </p>
             <div className="space-y-1">
               <p>
@@ -79,11 +79,11 @@ export default function RetourbeleidPage() {
               </p>
               <p>
                 <span className="text-[10px] uppercase tracking-[0.25em] text-accent block mb-1 mt-3">Telefoon</span>
-                Maâ€“vr 09:00â€“17:00
+                Ma–vr 09:00–17:00
               </p>
             </div>
             <p>
-              Stuur ons in uw bericht: uw bestelnummer, een omschrijving van het probleem en Ã©Ã©n of meer foto's van het gebrek of de schade.
+              Stuur ons in uw bericht: uw bestelnummer, een omschrijving van het probleem en één of meer foto's van het gebrek of de schade.
             </p>
             <p>
               Wij bevestigen uw melding binnen <strong className="font-medium text-foreground/85">1 werkdag</strong> en streven ernaar uw klacht binnen <strong className="font-medium text-foreground/85">5 werkdagen</strong> volledig op te lossen.
@@ -110,7 +110,7 @@ export default function RetourbeleidPage() {
       <section className="bg-beige py-24 px-6 lg:px-10">
         <div className="max-w-2xl mx-auto text-center">
           <p className="font-serif text-2xl italic leading-snug text-foreground/85">
-            Mocht er iets zijn â€” groot of klein â€” aarzel dan nooit om ons te schrijven. Wij lezen elk bericht persoonlijk.
+            Mocht er iets zijn — groot of klein — aarzel dan nooit om ons te schrijven. Wij lezen elk bericht persoonlijk.
           </p>
           <Link to="/contact" className="btn-ghost mt-10 inline-block">
             Neem contact op

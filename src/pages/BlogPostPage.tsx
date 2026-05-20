@@ -58,6 +58,14 @@ const markdownComponents: Components = {
     </blockquote>
   ),
   hr: () => <hr className="border-lilac/20 my-10" />,
+  img: ({ src, alt }) => (
+    <img
+      src={src}
+      alt={alt ?? ''}
+      className="w-full max-w-xs mx-auto rounded-2xl my-8 shadow-lg block"
+      loading="lazy"
+    />
+  ),
 };
 
 export default function BlogPostPage() {
